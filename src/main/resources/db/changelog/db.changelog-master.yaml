@@ -1,0 +1,132 @@
+ databaseChangeLog:
+   - changeSet:
+       id: "1"
+       author: ky
+       changes:
+         - createTable:
+             tableName: User
+             columns:
+               - column:
+                   name: id
+                   type: VARCHAR(36)
+                   constraints:
+                     primaryKey: true
+               - column:
+                   name: userId
+                   type: VARCHAR(50)
+                   constraints:
+                     nullable: false
+               - column:
+                   name: passwd
+                   type: VARCHAR(50)
+                   constraints:
+                     nullable: false
+               - column:
+                   name: name
+                   type: VARCHAR(64)
+                   constraints:
+                     nullable: false
+               - column:
+                   name: email
+                   type: VARCHAR(50)
+                   constraints:
+                     nullable: false
+               - column:
+                   name: created
+                   type: TIMESTAMP
+                   constraints:
+                     nullable: false
+               - column:
+                   name: updated
+                   type: TIMESTAMP
+         - createTable:
+             tableName: Account
+             columns:
+               - column:
+                   name: id
+                   type: VARCHAR(36)
+                   constraints:
+                     primaryKey: true
+               - column:
+                   name: userId
+                   type: VARCHAR(50)
+                   constraints:
+                     nullable: false
+               - column:
+                   name: accountId
+                   type: VARCHAR(20)
+                   constraints:
+                     nullable: false
+               - column:
+                   name: name
+                   type: VARCHAR(64)
+                   constraints:
+                     nullable: false
+               - column:
+                   name: regions
+                   type: VARCHAR(300)
+               - column:
+                   name: accessKey
+                   type: VARCHAR(100)
+               - column:
+                   name: secretKey
+                   type: VARCHAR(100)
+               - column:
+                   name: created
+                   type: TIMESTAMP
+                   constraints:
+                     nullable: false
+               - column:
+                   name: updated
+                   type: TIMESTAMP
+         - createTable:
+             tableName: Instance
+             columns:
+               - column:
+                   name: id
+                   type: VARCHAR(36)
+                   constraints:
+                     primaryKey: true
+               - column:
+                   name: accountId
+                   type: VARCHAR(20)
+                   constraints:
+                     nullable: false
+               - column:
+                   name: accountName
+                   type: VARCHAR(50)
+                   constraints:
+                     nullable: false
+               - column:
+                   name: resourceId
+                   type: VARCHAR(50)
+                   constraints:
+                     nullable: false
+               - column:
+                   name: resourceName
+                   type: VARCHAR(50)
+                   constraints:
+                     nullable: false
+               - column:
+                   name: avgCpuUsage
+                   type: SMALLINT
+                   constraints:
+                     nullable: false
+               - column:
+                   name: minCpuUsage
+                   type: SMALLINT
+                   constraints:
+                     nullable: false
+               - column:
+                   name: maxCpuUsage
+                   type: SMALLINT
+                   constraints:
+                     nullable: false
+               - column:
+                   name: registered
+                   type: TIMESTAMP
+                   constraints:
+                     nullable: false
+               - column:
+                   name: modified
+                   type: TIMESTAMP

@@ -1,0 +1,23 @@
+spring:
+
+  config.activate.on-profile: dev
+
+  devtools.restart.enabled: true
+
+  mvc:
+    path match:
+      matching-strategy: ant-path-matcher
+
+  datasource:
+     url: jdbc:mysql://localhost:3306/project2022?serverTimezone=UTC&characterEncoding=UTF-8&serverTimezone=Asia/Seoul&zeroDateTimeBehavior=convertToNull
+
+logging:
+  file:
+    path: logs
+    max-size: 100MB
+  pattern:
+    console: "%clr(%d{${LOG_DATEFORMAT_PATTERN:HH:mm:ss.SSS}}){faint} %clr(${LOG_LEVEL_PATTERN:%5p}) %clr(%t){magenta} \\(%file:%line\\) %clr(%m){cyan}%n${LOG_EXCEPTION_CONVERSION_WORD:%wEx}"
+  level:
+    web: DEBUG
+    com.gytni: TRACE
+    org.hibernate.SQL: DEBUG

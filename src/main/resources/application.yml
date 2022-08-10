@@ -1,0 +1,39 @@
+spring:
+
+  mvc:
+    path match:
+      matching-strategy: ant-path-matcher
+
+  profiles:
+    include: secure
+    active: dev
+   
+  
+  devtools.restart:
+        enabled: false
+        exclude: logs/**
+
+          
+
+
+
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/project2022?serverTimezone=UTC&characterEncoding=UTF-8
+
+  liquibase.change-log: classpath:db/changelog/db.changelog-master.yaml
+
+  jpa:
+    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+    open-in-view: false
+    show-sql: true
+    hibernate:
+      format_sql: true
+      ddl-auto: none
+      naming:
+          implicit-strategy: org.hibernate.boot.model.naming.ImplicitNamingStrategyLegacyHbmImpl
+          physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+
+          
+
+      
