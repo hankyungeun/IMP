@@ -4,6 +4,8 @@ spring:
     path match:
       matching-strategy: ant-path-matcher
 
+  output.ansi.enabled: always
+
   profiles:
     include: secure
     active: dev
@@ -33,6 +35,8 @@ spring:
       naming:
           implicit-strategy: org.hibernate.boot.model.naming.ImplicitNamingStrategyLegacyHbmImpl
           physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+
+
 
           
 

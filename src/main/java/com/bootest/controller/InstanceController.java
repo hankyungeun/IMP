@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.bootest.aws.Ec2ClientManager;
+import com.bootest.dto.instance.InstanceDto;
 import com.bootest.model.*;
 import com.bootest.repository.*;
 
@@ -30,9 +31,9 @@ public class InstanceController {
     private final Ec2ClientManager ec2cm;
 
     @GetMapping
-    public Object findAll() {
+    public List<InstanceDto> findAll() {
 
-        List<Instance> results = new ArrayList<>();
+        List<InstanceDto> results = new ArrayList<>();
 
         String nextToken = null;
 
@@ -57,12 +58,17 @@ public class InstanceController {
 
                 if (res.reservations().isEmpty()) {
                     // 어떤 행동
-                    return "No instance found";
+                    return null;
                 }
 
                 for (Reservation r : res.reservations()) {
                     for (Instance i : r.instances()) {
-                        results.add(i);
+                        InstanceDto data = new InstanceDto();
+                        data.setInstanceId(i.instanceId());
+                        data.setOs(i.platformAsString() == null ? "Linux" : "Windows");
+                        data.setInstanceType(i.instanceTypeAsString());
+                        data.setVolumeId(i.blockDeviceMappings().get(0).ebs().volumeId());
+                        results.add(data);
                     }
                 }
 
