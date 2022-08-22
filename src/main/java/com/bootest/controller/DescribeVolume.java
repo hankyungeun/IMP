@@ -3,57 +3,94 @@ package com.bootest.controller;
 import java.util.ArrayList;
 import java.util.List;
 
-import software.amazon.awssdk.auth.credentials.AwsBasicCredentials;
-import software.amazon.awssdk.auth.credentials.StaticCredentialsProvider;
+import com.bootest.aws.Ec2ClientManager;
+import com.bootest.dto.volume.AttachmentDataDto;
+import com.bootest.dto.volume.AttachmentDto;
+import com.bootest.model.*;
+import com.bootest.repository.*;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import lombok.RequiredArgsConstructor;
 import software.amazon.awssdk.regions.Region;
 import software.amazon.awssdk.services.ec2.Ec2Client;
-import software.amazon.awssdk.services.ec2.model.DescribeInstancesRequest;
 import software.amazon.awssdk.services.ec2.model.DescribeVolumesRequest;
 import software.amazon.awssdk.services.ec2.model.DescribeVolumesResponse;
-import software.amazon.awssdk.services.ec2.model.Filter;
-import software.amazon.awssdk.services.ec2.model.Instance;
 import software.amazon.awssdk.services.ec2.model.Volume;
+import software.amazon.awssdk.services.ec2.model.VolumeAttachment;
 
+@RestController
+@RequiredArgsConstructor
+@RequestMapping("/volume")
 public class DescribeVolume {
-    public static void main(String[] args) {
 
-        AwsBasicCredentials abc = AwsBasicCredentials.create("", "");
+    private final AccountRepo accountRepo;
+    private final Ec2ClientManager ec2cm;
+    private final RecoVolumeRepo volumeRepo;
+    private final ObjectMapper objectMapper;
 
-        String values = "i-0de4b250800d4cac8"; //InstanceId
+    @GetMapping
+    public List<RecoVolume> findAll() throws JsonProcessingException {
 
-        Region region = Region.AP_NORTHEAST_2;
-        Ec2Client ec2 = Ec2Client.builder()
-            .credentialsProvider(StaticCredentialsProvider.create(abc))
-            .region(region)
-            .build();
+        List<RecoVolume> results = new ArrayList<>();
 
-        describeVolume(ec2, values);
-        ec2.close();
-    }
+        String nextToken = null;
 
-    public static void describeVolume(Ec2Client ec2, String values){
+        List<Account> accounts = accountRepo.findAll();
 
-        Filter f1 = Filter.builder().name("attachment.instance-id").values(values).build();
-        //Filter f2 = Filter.builder().name("attachment.delete-on-termination").values("false").build();
+        for (Account account : accounts) {
 
-        try {
-            DescribeVolumesRequest dvr = DescribeVolumesRequest.builder().filters(f1).build();
-            DescribeVolumesResponse response = ec2.describeVolumes(dvr);
+            String[] regionArr = account.getRegions().split(", ");
 
+            for (String s : regionArr) {
+                Region region = Region.of(s);
 
-            for(Volume v : response.volumes())
-            {
+                Ec2Client ec2 = ec2cm.getEc2WithAccount(region, account);
 
+                DescribeVolumesRequest request = DescribeVolumesRequest.builder()
+                        .maxResults(100)
+                        .nextToken(nextToken)
+                        .build();
 
-                
-                System.out.println(v);
+                do {
+
+                    DescribeVolumesResponse response = ec2.describeVolumes(request);
+
+                    for (Volume v : response.volumes()) {
+                        List<AttachmentDataDto> attachedIds = new ArrayList<>();
+
+                        for (VolumeAttachment va : v.attachments()) {
+                            AttachmentDataDto attachData = new AttachmentDataDto();
+                            attachData.setInstanceId(va.instanceId());
+                            attachData.setDeviceName(va.device());
+                            attachedIds.add(attachData);
+                        }
+
+                        AttachmentDto attachments = new AttachmentDto();
+                        attachments.setData(attachedIds);
+
+                        RecoVolume recoVolume = new RecoVolume();
+                        recoVolume.setVolumeId(v.volumeId());
+                        recoVolume.setInstanceId(v.attachments().get(0).instanceId());
+                        recoVolume.setVolumeType(v.volumeType());
+                        recoVolume.setAvailabilityZone(v.availabilityZone());
+                        recoVolume.setCreateTime(v.createTime().toString());
+                        recoVolume.setEncrypted(v.encrypted());
+                        recoVolume.setSize(v.size().shortValue());
+                        recoVolume.setSnapshotId(v.snapshotId());
+                        recoVolume.setAttachments(objectMapper.writeValueAsString(attachments));
+                        recoVolume.setState(v.stateAsString());
+
+                        results.add(recoVolume);
+                    }
+                } while (nextToken != null);
             }
-    
-            //List<Volume> volumes = response.volumes();
-            
-        } catch (Exception e) {
-            System.out.println("volume Id is not there");
-            throw e;
         }
+        return volumeRepo.saveAll(results);
     }
+
 }
