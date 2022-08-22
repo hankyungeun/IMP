@@ -2,6 +2,7 @@ package com.bootest.controller;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
 
 import com.bootest.aws.Ec2ClientManager;
 import com.bootest.dto.volume.AttachmentDataDto;
@@ -26,7 +27,7 @@ import software.amazon.awssdk.services.ec2.model.VolumeAttachment;
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/volume")
-public class DescribeVolume {
+public class VolumeController {
 
     private final AccountRepo accountRepo;
     private final Ec2ClientManager ec2cm;
@@ -74,6 +75,7 @@ public class DescribeVolume {
                         attachments.setData(attachedIds);
 
                         RecoVolume recoVolume = new RecoVolume();
+                        recoVolume.setId(UUID.randomUUID().toString());
                         recoVolume.setVolumeId(v.volumeId());
                         recoVolume.setInstanceId(v.attachments().get(0).instanceId());
                         recoVolume.setVolumeType(v.volumeType());

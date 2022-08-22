@@ -13,13 +13,18 @@ import org.hibernate.annotations.UpdateTimestamp;
 
 import com.fasterxml.jackson.annotation.JsonRawValue;
 
+import liquibase.pro.packaged.fa;
 import lombok.Data;
 import software.amazon.awssdk.services.ec2.model.VolumeType;
 
 @Data
 @Entity
 public class RecoVolume {
+
     @Id
+    @Column(nullable = false, length = 36)
+    private String id;
+
     @Column(nullable = false, length = 30)
     private String volumeId;
 
