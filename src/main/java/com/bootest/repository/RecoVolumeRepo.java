@@ -9,4 +9,6 @@ import com.bootest.model.RecoVolume;
 
 public interface RecoVolumeRepo extends JpaRepository<RecoVolume, String>, JpaSpecificationExecutor<RecoVolume> {
 
+    Optional<RecoVolume> findByVolumeId(String volumeId);
+
 }

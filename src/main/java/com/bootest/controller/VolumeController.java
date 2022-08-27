@@ -1,6 +1,7 @@
 package com.bootest.controller;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.UUID;
 
@@ -9,11 +10,16 @@ import com.bootest.dto.volume.AttachmentDataDto;
 import com.bootest.dto.volume.AttachmentDto;
 import com.bootest.model.*;
 import com.bootest.repository.*;
+import com.bootest.searcher.SearchBuilder;
+import com.bootest.searcher.SearchOperationType;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import lombok.RequiredArgsConstructor;
@@ -35,7 +41,20 @@ public class VolumeController {
     private final ObjectMapper objectMapper;
 
     @GetMapping
-    public List<RecoVolume> findAll() throws JsonProcessingException {
+    public List<RecoVolume> findAll(
+            @RequestParam(name = "volumeId", required = false) String volumeId) {
+        SearchBuilder<RecoVolume> searchBuilder = SearchBuilder.builder();
+
+        if (volumeId != null) {
+            searchBuilder.with("volumeId", SearchOperationType.EQUAL, volumeId);
+        }
+
+        return volumeRepo.findAll(searchBuilder.build());
+
+    }
+
+    @GetMapping("/get")
+    public List<RecoVolume> getVolumeData() throws JsonProcessingException {
 
         List<RecoVolume> results = new ArrayList<>();
 
@@ -74,10 +93,22 @@ public class VolumeController {
                         AttachmentDto attachments = new AttachmentDto();
                         attachments.setData(attachedIds);
 
-                        RecoVolume recoVolume = new RecoVolume();
-                        recoVolume.setId(UUID.randomUUID().toString());
-                        recoVolume.setVolumeId(v.volumeId());
-                        recoVolume.setInstanceId(v.attachments().get(0).instanceId());
+                        RecoVolume recoVolume = volumeRepo.findByVolumeId(v.volumeId())
+                                .orElseGet(() -> {
+                                    RecoVolume rv = new RecoVolume();
+                                    rv.setId(UUID.randomUUID().toString());
+                                    rv.setVolumeId(v.volumeId());
+                                    return rv;
+                                });
+
+                        if (!v.attachments().isEmpty()) {
+                            for (VolumeAttachment va : v.attachments()) {
+                                recoVolume.setInstanceId(va.instanceId());
+                            }
+                        } else {
+                            recoVolume.setInstanceId(null);
+                        }
+
                         recoVolume.setVolumeType(v.volumeType());
                         recoVolume.setAvailabilityZone(v.availabilityZone());
                         recoVolume.setCreateTime(v.createTime().toString());
