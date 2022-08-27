@@ -575,3 +575,49 @@ java.lang.IndexOutOfBoundsException: Index 0 out of bounds for length 0
 2022-08-26 19:42:25.542  INFO 217204 --- [Thread-4] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
 2022-08-26 19:42:25.549  INFO 217204 --- [Thread-4] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
 2022-08-26 19:42:25.579  INFO 217204 --- [Thread-4] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-08-26 19:42:25.704  INFO 217204 --- [restartedMain] com.bootest.BootestApplication           : Starting BootestApplication using Java 11.0.14 on Kyungeun with PID 217204 (A:\dev\Project2022-master\target\classes started by az2282 in A:\dev\Project2022-master)
+2022-08-26 19:42:25.704  INFO 217204 --- [restartedMain] com.bootest.BootestApplication           : The following 2 profiles are active: "secure", "dev"
+2022-08-26 19:42:26.020  INFO 217204 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-08-26 19:42:26.039  INFO 217204 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 17 ms. Found 3 JPA repository interfaces.
+2022-08-26 19:42:26.176  INFO 217204 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-08-26 19:42:26.177  INFO 217204 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-08-26 19:42:26.178  INFO 217204 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.60]
+2022-08-26 19:42:26.220  INFO 217204 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-08-26 19:42:26.221  INFO 217204 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 514 ms
+2022-08-26 19:42:26.243  INFO 217204 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2022-08-26 19:42:26.279  INFO 217204 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2022-08-26 19:42:26.280  INFO 217204 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:mysql://localhost:3306/project2022?serverTimezone=UTC&characterEncoding=UTF-8&serverTimezone=Asia/Seoul&zeroDateTimeBehavior=convertToNull'
+2022-08-26 19:42:26.293 DEBUG 217204 --- [restartedMain] o.s.b.w.s.ServletContextInitializerBeans : Mapping filters: characterEncodingFilter urls=[/*] order=-2147483648, formContentFilter urls=[/*] order=-9900, requestContextFilter urls=[/*] order=-105
+2022-08-26 19:42:26.295 DEBUG 217204 --- [restartedMain] o.s.b.w.s.ServletContextInitializerBeans : Mapping servlets: dispatcherServlet urls=[/], webServlet urls=[/h2-console/*]
+2022-08-26 19:42:26.331  INFO 217204 --- [restartedMain] liquibase.lockservice                    : Successfully acquired change log lock
+2022-08-26 19:42:26.427  INFO 217204 --- [restartedMain] liquibase.changelog                      : Reading from project2022.DATABASECHANGELOG
+2022-08-26 19:42:26.445  INFO 217204 --- [restartedMain] liquibase.lockservice                    : Successfully released change log lock
+2022-08-26 19:42:26.475  INFO 217204 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-08-26 19:42:26.486  INFO 217204 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+2022-08-26 19:42:26.600  INFO 217204 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-08-26 19:42:26.602  INFO 217204 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-08-26 19:42:26.899 DEBUG 217204 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : 21 mappings in 'requestMappingHandlerMapping'
+2022-08-26 19:42:26.989  INFO 217204 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-08-26 19:42:26.996 DEBUG 217204 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2022-08-26 19:42:27.005  INFO 217204 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2022-08-26 19:42:27.012 DEBUG 217204 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/swagger-ui/] in 'viewControllerHandlerMapping'
+2022-08-26 19:42:27.023 DEBUG 217204 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**, /swagger-ui/**] in 'resourceHandlerMapping'
+2022-08-26 19:42:27.034 DEBUG 217204 --- [restartedMain] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
+2022-08-26 19:42:27.226  INFO 217204 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-08-26 19:42:27.372  INFO 217204 --- [restartedMain] com.bootest.BootestApplication           : Started BootestApplication in 1.703 seconds (JVM running for 65.85)
+2022-08-26 19:42:27.377  INFO 217204 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2022-08-26 19:42:40.151  INFO 217204 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-08-26 19:42:40.154  INFO 217204 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-08-26 19:42:40.154 DEBUG 217204 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected StandardServletMultipartResolver
+2022-08-26 19:42:40.155 DEBUG 217204 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected AcceptHeaderLocaleResolver
+2022-08-26 19:42:40.155 DEBUG 217204 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected FixedThemeResolver
+2022-08-26 19:42:40.157 DEBUG 217204 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@7b166e6b
+2022-08-26 19:42:40.158 DEBUG 217204 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.support.SessionFlashMapManager@59295e5e
+2022-08-26 19:42:40.158 DEBUG 217204 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2022-08-26 19:42:40.160  INFO 217204 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 6 ms
+2022-08-26 19:42:40.162 DEBUG 217204 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : GET "/volume", parameters={}
+2022-08-26 19:42:40.163 DEBUG 217204 --- [http-nio-8080-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.bootest.controller.VolumeController#findAll(String)
+2022-08-26 19:42:40.313 DEBUG 217204 --- [http-nio-8080-exec-1] org.hibernate.SQL                        : select recovolume0_.id as id1_2_, recovolume0_.attachments as attachme2_2_, recovolume0_.availabilityZone as availabi3_2_, recovolume0_.createTime as createti4_2_, recovolume0_.encrypted as encrypte5_2_, recovolume0_.instanceId as instance6_2_, recovolume0_.registeredDate as register7_2_, recovolume0_.size as size8_2_, recovolume0_.snapshotId as snapshot9_2_, recovolume0_.state as state10_2_, recovolume0_.updated as updated11_2_, recovolume0_.volumeId as volumei12_2_, recovolume0_.volumeType as volumet13_2_ from RecoVolume recovolume0_
+2022-08-26 19:42:40.344 DEBUG 217204 --- [http-nio-8080-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2022-08-26 19:42:40.345 DEBUG 217204 --- [http-nio-8080-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Writing [[RecoVolume(id=1df65ca3-3759-47bb-b24f-50b0afc3a867, volumeId=vol-089330d5f0fd565a9, instanceId=null (truncated)...]
+2022-08-26 19:42:40.363 DEBUG 217204 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
