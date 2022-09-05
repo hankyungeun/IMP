@@ -55,10 +55,10 @@ public class LoginController {
 
         model.addAttribute("user", loginUser);
 
-        return "index";
+        return "redirect:/";
     }
 
-    @PostMapping("/logout")
+    @GetMapping("/logout")
     public String logout(HttpServletRequest request) {
 
         HttpSession session = request.getSession(false);

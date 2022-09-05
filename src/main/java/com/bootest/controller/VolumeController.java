@@ -23,6 +23,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import lombok.RequiredArgsConstructor;
+import org.springframework.web.servlet.ModelAndView;
 import software.amazon.awssdk.regions.Region;
 import software.amazon.awssdk.services.ec2.Ec2Client;
 import software.amazon.awssdk.services.ec2.model.DescribeVolumesRequest;
@@ -55,6 +56,7 @@ public class VolumeController {
 
     @GetMapping("/get")
     public List<RecoVolume> getVolumeData() throws JsonProcessingException {
+    //        public ModelAndView getVolumeData() throws JsonProcessingException {
 
         List<RecoVolume> results = new ArrayList<>();
 
@@ -123,7 +125,15 @@ public class VolumeController {
                 } while (nextToken != null);
             }
         }
+
+
+//        ModelAndView modelAndView = new ModelAndView();
+//        modelAndView.setViewName("index");
+//        modelAndView.addObject("response", volumeRepo.saveAll(results));
+//
+//        return modelAndView;
         return volumeRepo.saveAll(results);
+
     }
 
 }
