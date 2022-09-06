@@ -15,7 +15,8 @@ spring:
         enabled: false
         exclude: logs/**
 
-          
+task:
+  :usage: true
 
 
 

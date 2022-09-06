@@ -5,6 +5,7 @@ import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.MapsId;
 
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
@@ -17,7 +18,7 @@ public class User {
     @Column(nullable = false, length = 36)
     private String id;
 
-    @Column(nullable = false, length = 50)
+    @Column(name = "userId", nullable = false, length = 50)
     private String userId;
 
     @Column(nullable = false, length = 50)
