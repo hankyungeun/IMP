@@ -15,12 +15,7 @@ import com.bootest.searcher.SearchOperationType;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.servlet.ModelAndView;
@@ -30,6 +25,8 @@ import software.amazon.awssdk.services.ec2.model.DescribeVolumesRequest;
 import software.amazon.awssdk.services.ec2.model.DescribeVolumesResponse;
 import software.amazon.awssdk.services.ec2.model.Volume;
 import software.amazon.awssdk.services.ec2.model.VolumeAttachment;
+
+import javax.xml.transform.Result;
 
 @RestController
 @RequiredArgsConstructor
@@ -50,8 +47,11 @@ public class VolumeController {
             searchBuilder.with("volumeId", SearchOperationType.EQUAL, volumeId);
         }
 
-        return volumeRepo.findAll(searchBuilder.build());
+        List<RecoVolume> result = volumeRepo.findAll(searchBuilder.build());
 
+//        return volumeRepo.findAll(searchBuilder.build());
+
+        return result;
     }
 
     @GetMapping("/get")

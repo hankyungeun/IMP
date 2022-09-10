@@ -19,6 +19,45 @@
 
     <!-- Custom styles for this template-->
     <link href="../css/sb-admin-2.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+    <script>
+        $(function(){
+            volume_list();
+        });
+
+        function volume_list(){
+            $.ajax({
+                url : 'volume',
+                method : 'GET',
+                contentType:'application/json;',
+                dataType:'json',
+
+                error:function(error,status,msg){
+                    alert("상태코드 " + status + "에러메시지" + msg );
+                },
+                success:user_list_result
+            });
+        }
+
+        function user_list_result(xhr) {
+            $('tbody#list').empty();
+            $.each(xhr, function(idx,volume){
+                console.log(idx,volume);
+                $("<tr>")
+                    .append($("<td>").html(idx+1))
+                    .append($("<td>").html(volume.))
+                    .append($("<td>").html(volume.))
+                    .append($("<td>").html(volume.))
+                    .append($("<td>").html(volume.))
+                    // .append($("<td>").html("<button class='btn btn-success' id='btnSelect'>조회</button>"))
+                    // .append($("<td>").html("<button class='btn btn-primary' id='btnDelete'>삭제</button>"))
+                    // .append($("<input type='hidden' id='hidden_id'>").val(user.id))
+                    // .append($("<input type='hidden' id='hidden_userid'>").val(user.userid))
+                    .appendTo('tbody#list');
+            });// each
+        }
+
+    </script>
 
 </head>
 
@@ -503,7 +542,6 @@
                                 <div class="card-body">
                                     <div class="chart-area">
                                         <canvas id="myAreaChart"></canvas>
-                                        응애응애
                                         <span th:text="${response}"></span>
                                         <tr th:each="volume : ${response}">
                                             <h5 class="card-title type-2" th:text="${response}"></h5>
@@ -731,7 +769,7 @@
     <!-- Page level custom scripts -->
     <script src="../static/js/demo/chart-area-demo.js"></script>
     <script src="../static/js/demo/chart-pie-demo.js"></script>
-
+    </div>
 </body>
 
 </html>
