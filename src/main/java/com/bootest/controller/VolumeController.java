@@ -1,3 +1,5 @@
+//볼륨 상태 가져오기
+
 package com.bootest.controller;
 
 import java.util.ArrayList;

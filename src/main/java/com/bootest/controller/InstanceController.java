@@ -27,6 +27,7 @@ public class InstanceController {
 
     private final AccountRepo accountRepo;
     private final Ec2ClientManager ec2cm;
+    private final ResourceUsageRepo resourceUsageRepo;
 
     @GetMapping
     public List<InstanceDto> findAll() {
@@ -39,7 +40,7 @@ public class InstanceController {
 
         for (Account account : accounts) {
 
-            // String[] regionArr = account.getRegions().split(", ");
+            //String[] regionArr = account.getRegions().split(", ");
 
             Region region = Region.of(account.getRegions());
 
