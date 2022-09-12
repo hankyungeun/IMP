@@ -120,6 +120,7 @@ public class InstanceController {
         }
     }
 
+//    @GetMapping("/umm")
     public void mapVolumeAndInstance(Instance i, InstanceBlockDeviceMapping bdMap) {
 
         StorageAssociation storageAss = storageAssociationRepo
