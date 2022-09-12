@@ -8778,3 +8778,908 @@ org.thymeleaf.exceptions.TemplateInputException: Error resolving template [accou
 2022-09-13 02:48:58.720  INFO 23488 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
 2022-09-13 02:48:58.832  INFO 23488 --- [restartedMain] com.bootest.BootestApplication           : Started BootestApplication in 1.331 seconds (JVM running for 196.999)
 2022-09-13 02:48:58.841  INFO 23488 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2022-09-13 02:50:51.785  INFO 23488 --- [Thread-15] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-09-13 02:50:51.798  INFO 23488 --- [Thread-15] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Shutdown initiated...
+2022-09-13 02:50:51.806  INFO 23488 --- [Thread-15] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Shutdown completed.
+2022-09-13 02:50:51.928  INFO 23488 --- [restartedMain] com.bootest.BootestApplication           : Starting BootestApplication using Java 11.0.10 on Kyungeun with PID 23488 (C:\dev\Project2022\target\classes started by az2282 in C:\dev\Project2022)
+2022-09-13 02:50:51.929  INFO 23488 --- [restartedMain] com.bootest.BootestApplication           : The following 2 profiles are active: "secure", "dev"
+2022-09-13 02:50:52.164  INFO 23488 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-09-13 02:50:52.223  INFO 23488 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 48 ms. Found 6 JPA repository interfaces.
+2022-09-13 02:50:52.340  INFO 23488 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-09-13 02:50:52.340  INFO 23488 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-09-13 02:50:52.340  INFO 23488 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.60]
+2022-09-13 02:50:52.383  INFO 23488 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-09-13 02:50:52.383  INFO 23488 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 450 ms
+2022-09-13 02:50:52.394  INFO 23488 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-5 - Starting...
+2022-09-13 02:50:52.408  INFO 23488 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-5 - Start completed.
+2022-09-13 02:50:52.408  INFO 23488 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:mysql://localhost:3306/project2022?serverTimezone=UTC&characterEncoding=UTF-8&serverTimezone=Asia/Seoul&zeroDateTimeBehavior=convertToNull'
+2022-09-13 02:50:52.414 DEBUG 23488 --- [restartedMain] o.s.b.w.s.ServletContextInitializerBeans : Mapping filters: characterEncodingFilter urls=[/*] order=-2147483648, formContentFilter urls=[/*] order=-9900, requestContextFilter urls=[/*] order=-105
+2022-09-13 02:50:52.415 DEBUG 23488 --- [restartedMain] o.s.b.w.s.ServletContextInitializerBeans : Mapping servlets: dispatcherServlet urls=[/], webServlet urls=[/h2-console/*]
+2022-09-13 02:50:52.441  INFO 23488 --- [restartedMain] liquibase.lockservice                    : Successfully acquired change log lock
+2022-09-13 02:50:52.488  INFO 23488 --- [restartedMain] liquibase.changelog                      : Reading from project2022.DATABASECHANGELOG
+2022-09-13 02:50:52.508  INFO 23488 --- [restartedMain] liquibase.lockservice                    : Successfully released change log lock
+2022-09-13 02:50:52.529  INFO 23488 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-09-13 02:50:52.535  INFO 23488 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2022-09-13 02:50:52.635  INFO 23488 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-09-13 02:50:52.637  INFO 23488 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-09-13 02:50:52.853  WARN 23488 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-09-13 02:50:52.914 DEBUG 23488 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : 25 mappings in 'requestMappingHandlerMapping'
+2022-09-13 02:50:52.991  INFO 23488 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-09-13 02:50:52.994 DEBUG 23488 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2022-09-13 02:50:52.997  INFO 23488 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2022-09-13 02:50:52.999 DEBUG 23488 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/swagger-ui/] in 'viewControllerHandlerMapping'
+2022-09-13 02:50:53.010 DEBUG 23488 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**, /swagger-ui/**] in 'resourceHandlerMapping'
+2022-09-13 02:50:53.018 DEBUG 23488 --- [restartedMain] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
+2022-09-13 02:50:53.173  INFO 23488 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-09-13 02:50:53.307  INFO 23488 --- [restartedMain] com.bootest.BootestApplication           : Started BootestApplication in 1.413 seconds (JVM running for 311.473)
+2022-09-13 02:50:53.314  INFO 23488 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2022-09-13 02:50:57.436  INFO 32484 --- [restartedMain] com.bootest.BootestApplication           : Starting BootestApplication using Java 11.0.14 on Kyungeun with PID 32484 (C:\dev\Project2022\target\classes started by az2282 in C:\dev\Project2022)
+2022-09-13 02:50:57.436  INFO 32484 --- [restartedMain] com.bootest.BootestApplication           : The following 2 profiles are active: "secure", "dev"
+2022-09-13 02:50:57.474  INFO 32484 --- [restartedMain] o.s.b.devtools.restart.ChangeableUrls    : The Class-Path manifest attribute in C:\Users\az228\.m2\repository\org\liquibase\liquibase-core\4.5.0\liquibase-core-4.5.0.jar referenced one or more files that do not exist: file:/C:/Users/az228/.m2/repository/org/liquibase/liquibase-core/4.5.0/snakeyaml-1.27.jar
+2022-09-13 02:50:57.474  INFO 32484 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-09-13 02:50:57.905  INFO 23488 --- [Thread-19] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-09-13 02:50:57.908  INFO 23488 --- [Thread-19] com.zaxxer.hikari.HikariDataSource       : HikariPool-5 - Shutdown initiated...
+2022-09-13 02:50:57.917  INFO 23488 --- [Thread-19] com.zaxxer.hikari.HikariDataSource       : HikariPool-5 - Shutdown completed.
+2022-09-13 02:50:58.047  INFO 23488 --- [restartedMain] com.bootest.BootestApplication           : Starting BootestApplication using Java 11.0.10 on Kyungeun with PID 23488 (C:\dev\Project2022\target\classes started by az2282 in C:\dev\Project2022)
+2022-09-13 02:50:58.048  INFO 23488 --- [restartedMain] com.bootest.BootestApplication           : The following 2 profiles are active: "secure", "dev"
+2022-09-13 02:50:58.186  INFO 32484 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-09-13 02:50:58.238  INFO 32484 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 47 ms. Found 6 JPA repository interfaces.
+2022-09-13 02:50:58.304  INFO 23488 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-09-13 02:50:58.352  INFO 23488 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 43 ms. Found 6 JPA repository interfaces.
+2022-09-13 02:50:58.541  INFO 23488 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-09-13 02:50:58.543  INFO 23488 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-09-13 02:50:58.544  INFO 23488 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.60]
+2022-09-13 02:50:58.623  INFO 23488 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-09-13 02:50:58.628  INFO 23488 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 578 ms
+2022-09-13 02:50:58.662  INFO 23488 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-6 - Starting...
+2022-09-13 02:50:58.677  INFO 23488 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-6 - Start completed.
+2022-09-13 02:50:58.677  INFO 23488 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:mysql://localhost:3306/project2022?serverTimezone=UTC&characterEncoding=UTF-8&serverTimezone=Asia/Seoul&zeroDateTimeBehavior=convertToNull'
+2022-09-13 02:50:58.687 DEBUG 23488 --- [restartedMain] o.s.b.w.s.ServletContextInitializerBeans : Mapping filters: characterEncodingFilter urls=[/*] order=-2147483648, formContentFilter urls=[/*] order=-9900, requestContextFilter urls=[/*] order=-105
+2022-09-13 02:50:58.688 DEBUG 23488 --- [restartedMain] o.s.b.w.s.ServletContextInitializerBeans : Mapping servlets: dispatcherServlet urls=[/], webServlet urls=[/h2-console/*]
+2022-09-13 02:50:58.728  INFO 23488 --- [restartedMain] liquibase.lockservice                    : Successfully acquired change log lock
+2022-09-13 02:50:58.734  INFO 23488 --- [restartedMain] liquibase.lockservice                    : Successfully released change log lock
+2022-09-13 02:50:58.739  WARN 23488 --- [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'liquibase' defined in class path resource [org/springframework/boot/autoconfigure/liquibase/LiquibaseAutoConfiguration$LiquibaseConfiguration.class]: Invocation of init method failed; nested exception is liquibase.exception.ChangeLogParseException: classpath:/db/changelog/db.changelog-master.yaml does not exist
+2022-09-13 02:50:58.739  INFO 23488 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-6 - Shutdown initiated...
+2022-09-13 02:50:58.744  INFO 23488 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-6 - Shutdown completed.
+2022-09-13 02:50:58.748  INFO 23488 --- [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2022-09-13 02:50:58.765  INFO 23488 --- [restartedMain] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2022-09-13 02:50:58.805 ERROR 23488 --- [restartedMain] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Liquibase failed to start because no changelog could be found at 'classpath:/db/changelog/db.changelog-master.yaml'.
+
+Action:
+
+Make sure a Liquibase changelog is present at the configured path.
+
+2022-09-13 02:50:59.338  INFO 32484 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-09-13 02:50:59.346  INFO 32484 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-09-13 02:50:59.346  INFO 32484 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.60]
+2022-09-13 02:50:59.414  INFO 32484 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-09-13 02:50:59.414  INFO 32484 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1940 ms
+2022-09-13 02:50:59.453  INFO 32484 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-09-13 02:50:59.642  INFO 32484 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-09-13 02:50:59.649  INFO 32484 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:mysql://localhost:3306/project2022?serverTimezone=UTC&characterEncoding=UTF-8&serverTimezone=Asia/Seoul&zeroDateTimeBehavior=convertToNull'
+2022-09-13 02:50:59.688 DEBUG 32484 --- [restartedMain] o.s.b.w.s.ServletContextInitializerBeans : Mapping filters: characterEncodingFilter urls=[/*] order=-2147483648, formContentFilter urls=[/*] order=-9900, requestContextFilter urls=[/*] order=-105
+2022-09-13 02:50:59.689 DEBUG 32484 --- [restartedMain] o.s.b.w.s.ServletContextInitializerBeans : Mapping servlets: dispatcherServlet urls=[/], webServlet urls=[/h2-console/*]
+2022-09-13 02:50:59.904  INFO 32484 --- [restartedMain] liquibase.lockservice                    : Successfully acquired change log lock
+2022-09-13 02:50:59.920  INFO 32484 --- [restartedMain] liquibase.lockservice                    : Successfully released change log lock
+2022-09-13 02:50:59.936  WARN 32484 --- [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'liquibase' defined in class path resource [org/springframework/boot/autoconfigure/liquibase/LiquibaseAutoConfiguration$LiquibaseConfiguration.class]: Invocation of init method failed; nested exception is liquibase.exception.ChangeLogParseException: classpath:/db/changelog/db.changelog-master.yaml does not exist
+2022-09-13 02:50:59.936  INFO 32484 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-09-13 02:50:59.947  INFO 32484 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-09-13 02:50:59.947  INFO 32484 --- [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2022-09-13 02:50:59.947  INFO 32484 --- [restartedMain] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2022-09-13 02:50:59.963 ERROR 32484 --- [restartedMain] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Liquibase failed to start because no changelog could be found at 'classpath:/db/changelog/db.changelog-master.yaml'.
+
+Action:
+
+Make sure a Liquibase changelog is present at the configured path.
+
+2022-09-13 02:51:14.749  INFO 6100 --- [restartedMain] com.bootest.BootestApplication           : Starting BootestApplication using Java 11.0.10 on Kyungeun with PID 6100 (C:\dev\Project2022\target\classes started by az2282 in C:\dev\Project2022)
+2022-09-13 02:51:14.756  INFO 6100 --- [restartedMain] com.bootest.BootestApplication           : The following 2 profiles are active: "secure", "dev"
+2022-09-13 02:51:14.846  INFO 6100 --- [restartedMain] o.s.b.devtools.restart.ChangeableUrls    : The Class-Path manifest attribute in C:\Users\az228\.m2\repository\org\liquibase\liquibase-core\4.5.0\liquibase-core-4.5.0.jar referenced one or more files that do not exist: file:/C:/Users/az228/.m2/repository/org/liquibase/liquibase-core/4.5.0/snakeyaml-1.27.jar
+2022-09-13 02:51:14.848  INFO 6100 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-09-13 02:51:15.643  INFO 6100 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-09-13 02:51:15.767  INFO 6100 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 95 ms. Found 6 JPA repository interfaces.
+2022-09-13 02:51:16.762  INFO 6100 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-09-13 02:51:16.781  INFO 6100 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-09-13 02:51:16.782  INFO 6100 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.60]
+2022-09-13 02:51:16.930  INFO 6100 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-09-13 02:51:16.930  INFO 6100 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2081 ms
+2022-09-13 02:51:17.024  INFO 6100 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-09-13 02:51:17.293  INFO 6100 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-09-13 02:51:17.310  INFO 6100 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:mysql://localhost:3306/project2022?serverTimezone=UTC&characterEncoding=UTF-8&serverTimezone=Asia/Seoul&zeroDateTimeBehavior=convertToNull'
+2022-09-13 02:51:17.416 DEBUG 6100 --- [restartedMain] o.s.b.w.s.ServletContextInitializerBeans : Mapping filters: characterEncodingFilter urls=[/*] order=-2147483648, formContentFilter urls=[/*] order=-9900, requestContextFilter urls=[/*] order=-105
+2022-09-13 02:51:17.418 DEBUG 6100 --- [restartedMain] o.s.b.w.s.ServletContextInitializerBeans : Mapping servlets: dispatcherServlet urls=[/], webServlet urls=[/h2-console/*]
+2022-09-13 02:51:17.841  INFO 6100 --- [restartedMain] liquibase.lockservice                    : Successfully acquired change log lock
+2022-09-13 02:51:17.865  INFO 6100 --- [restartedMain] liquibase.lockservice                    : Successfully released change log lock
+2022-09-13 02:51:17.884  WARN 6100 --- [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'liquibase' defined in class path resource [org/springframework/boot/autoconfigure/liquibase/LiquibaseAutoConfiguration$LiquibaseConfiguration.class]: Invocation of init method failed; nested exception is liquibase.exception.ChangeLogParseException: classpath:/db/changelog/db.changelog-master.yaml does not exist
+2022-09-13 02:51:17.885  INFO 6100 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-09-13 02:51:17.912  INFO 6100 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-09-13 02:51:17.921  INFO 6100 --- [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2022-09-13 02:51:17.950  INFO 6100 --- [restartedMain] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2022-09-13 02:51:17.970 ERROR 6100 --- [restartedMain] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Liquibase failed to start because no changelog could be found at 'classpath:/db/changelog/db.changelog-master.yaml'.
+
+Action:
+
+Make sure a Liquibase changelog is present at the configured path.
+
+2022-09-13 02:51:38.284  INFO 33836 --- [restartedMain] com.bootest.BootestApplication           : Starting BootestApplication using Java 11.0.10 on Kyungeun with PID 33836 (C:\dev\Project2022\target\classes started by az2282 in C:\dev\Project2022)
+2022-09-13 02:51:38.287  INFO 33836 --- [restartedMain] com.bootest.BootestApplication           : The following 2 profiles are active: "secure", "dev"
+2022-09-13 02:51:38.353  INFO 33836 --- [restartedMain] o.s.b.devtools.restart.ChangeableUrls    : The Class-Path manifest attribute in C:\Users\az228\.m2\repository\org\liquibase\liquibase-core\4.5.0\liquibase-core-4.5.0.jar referenced one or more files that do not exist: file:/C:/Users/az228/.m2/repository/org/liquibase/liquibase-core/4.5.0/snakeyaml-1.27.jar
+2022-09-13 02:51:38.354  INFO 33836 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-09-13 02:51:39.132  INFO 33836 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-09-13 02:51:39.244  INFO 33836 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 103 ms. Found 6 JPA repository interfaces.
+2022-09-13 02:51:40.237  INFO 33836 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-09-13 02:51:40.254  INFO 33836 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-09-13 02:51:40.255  INFO 33836 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.60]
+2022-09-13 02:51:40.408  INFO 33836 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-09-13 02:51:40.409  INFO 33836 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2054 ms
+2022-09-13 02:51:40.498  INFO 33836 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-09-13 02:51:40.754  INFO 33836 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-09-13 02:51:40.766  INFO 33836 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:mysql://localhost:3306/project2022?serverTimezone=UTC&characterEncoding=UTF-8&serverTimezone=Asia/Seoul&zeroDateTimeBehavior=convertToNull'
+2022-09-13 02:51:40.843 DEBUG 33836 --- [restartedMain] o.s.b.w.s.ServletContextInitializerBeans : Mapping filters: characterEncodingFilter urls=[/*] order=-2147483648, formContentFilter urls=[/*] order=-9900, requestContextFilter urls=[/*] order=-105
+2022-09-13 02:51:40.844 DEBUG 33836 --- [restartedMain] o.s.b.w.s.ServletContextInitializerBeans : Mapping servlets: dispatcherServlet urls=[/], webServlet urls=[/h2-console/*]
+2022-09-13 02:51:41.257  INFO 33836 --- [restartedMain] liquibase.lockservice                    : Successfully acquired change log lock
+2022-09-13 02:51:41.498  INFO 33836 --- [restartedMain] liquibase.changelog                      : Reading from project2022.DATABASECHANGELOG
+2022-09-13 02:51:41.575  INFO 33836 --- [restartedMain] liquibase.lockservice                    : Successfully released change log lock
+2022-09-13 02:51:41.681  INFO 33836 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-09-13 02:51:41.747  INFO 33836 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.7.Final
+2022-09-13 02:51:41.891  INFO 33836 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-09-13 02:51:41.980  INFO 33836 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2022-09-13 02:51:42.455  INFO 33836 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-09-13 02:51:42.463  INFO 33836 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-09-13 02:51:43.533  WARN 33836 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-09-13 02:51:43.838 DEBUG 33836 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : 25 mappings in 'requestMappingHandlerMapping'
+2022-09-13 02:51:44.207  INFO 33836 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-09-13 02:51:44.221 DEBUG 33836 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2022-09-13 02:51:44.277  INFO 33836 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2022-09-13 02:51:44.306 DEBUG 33836 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/swagger-ui/] in 'viewControllerHandlerMapping'
+2022-09-13 02:51:44.341 DEBUG 33836 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**, /swagger-ui/**] in 'resourceHandlerMapping'
+2022-09-13 02:51:44.379 DEBUG 33836 --- [restartedMain] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
+2022-09-13 02:51:45.071  INFO 33836 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-09-13 02:51:45.367  INFO 33836 --- [restartedMain] com.bootest.BootestApplication           : Started BootestApplication in 7.498 seconds (JVM running for 7.993)
+2022-09-13 02:53:47.930  INFO 4228 --- [restartedMain] com.bootest.BootestApplication           : Starting BootestApplication using Java 11.0.14 on Kyungeun with PID 4228 (C:\dev\Project2022\target\classes started by az2282 in C:\dev\Project2022)
+2022-09-13 02:53:47.930  INFO 4228 --- [restartedMain] com.bootest.BootestApplication           : The following 2 profiles are active: "secure", "dev"
+2022-09-13 02:53:47.961  INFO 4228 --- [restartedMain] o.s.b.devtools.restart.ChangeableUrls    : The Class-Path manifest attribute in C:\Users\az228\.m2\repository\org\liquibase\liquibase-core\4.5.0\liquibase-core-4.5.0.jar referenced one or more files that do not exist: file:/C:/Users/az228/.m2/repository/org/liquibase/liquibase-core/4.5.0/snakeyaml-1.27.jar
+2022-09-13 02:53:47.961  INFO 4228 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-09-13 02:53:48.529  INFO 4228 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-09-13 02:53:48.577  INFO 4228 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 37 ms. Found 6 JPA repository interfaces.
+2022-09-13 02:53:49.010  INFO 4228 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-09-13 02:53:49.010  INFO 4228 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-09-13 02:53:49.010  INFO 4228 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.60]
+2022-09-13 02:53:49.074  INFO 4228 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-09-13 02:53:49.074  INFO 4228 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1113 ms
+2022-09-13 02:53:49.089  INFO 4228 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-09-13 02:53:49.246  INFO 4228 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-09-13 02:53:49.262  INFO 4228 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:mysql://localhost:3306/project2022?serverTimezone=UTC&characterEncoding=UTF-8&serverTimezone=Asia/Seoul&zeroDateTimeBehavior=convertToNull'
+2022-09-13 02:53:49.293 DEBUG 4228 --- [restartedMain] o.s.b.w.s.ServletContextInitializerBeans : Mapping filters: characterEncodingFilter urls=[/*] order=-2147483648, formContentFilter urls=[/*] order=-9900, requestContextFilter urls=[/*] order=-105
+2022-09-13 02:53:49.309 DEBUG 4228 --- [restartedMain] o.s.b.w.s.ServletContextInitializerBeans : Mapping servlets: dispatcherServlet urls=[/], webServlet urls=[/h2-console/*]
+2022-09-13 02:53:49.532  INFO 4228 --- [restartedMain] liquibase.lockservice                    : Successfully acquired change log lock
+2022-09-13 02:53:49.547  INFO 4228 --- [restartedMain] liquibase.lockservice                    : Successfully released change log lock
+2022-09-13 02:53:49.547  WARN 4228 --- [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'liquibase' defined in class path resource [org/springframework/boot/autoconfigure/liquibase/LiquibaseAutoConfiguration$LiquibaseConfiguration.class]: Invocation of init method failed; nested exception is liquibase.exception.ChangeLogParseException: classpath:/db/changelog/db.changelog-master.yaml does not exist
+2022-09-13 02:53:49.547  INFO 4228 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-09-13 02:53:49.564  INFO 4228 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-09-13 02:53:49.564  INFO 4228 --- [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2022-09-13 02:53:49.580  INFO 4228 --- [restartedMain] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2022-09-13 02:53:49.596 ERROR 4228 --- [restartedMain] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Liquibase failed to start because no changelog could be found at 'classpath:/db/changelog/db.changelog-master.yaml'.
+
+Action:
+
+Make sure a Liquibase changelog is present at the configured path.
+
+2022-09-13 02:54:06.824  INFO 25116 --- [restartedMain] com.bootest.BootestApplication           : Starting BootestApplication using Java 11.0.14 on Kyungeun with PID 25116 (C:\dev\Project2022\target\classes started by az2282 in C:\dev\Project2022)
+2022-09-13 02:54:06.824  INFO 25116 --- [restartedMain] com.bootest.BootestApplication           : The following 2 profiles are active: "secure", "dev"
+2022-09-13 02:54:06.840  INFO 25116 --- [restartedMain] o.s.b.devtools.restart.ChangeableUrls    : The Class-Path manifest attribute in C:\Users\az228\.m2\repository\org\liquibase\liquibase-core\4.5.0\liquibase-core-4.5.0.jar referenced one or more files that do not exist: file:/C:/Users/az228/.m2/repository/org/liquibase/liquibase-core/4.5.0/snakeyaml-1.27.jar
+2022-09-13 02:54:06.856  INFO 25116 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-09-13 02:54:07.438  INFO 25116 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-09-13 02:54:07.470  INFO 25116 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 39 ms. Found 6 JPA repository interfaces.
+2022-09-13 02:54:07.910  INFO 25116 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-09-13 02:54:07.910  INFO 25116 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-09-13 02:54:07.910  INFO 25116 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.60]
+2022-09-13 02:54:07.974  INFO 25116 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-09-13 02:54:07.974  INFO 25116 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1118 ms
+2022-09-13 02:54:08.006  INFO 25116 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-09-13 02:54:08.147  INFO 25116 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-09-13 02:54:08.163  INFO 25116 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:mysql://localhost:3306/project2022?serverTimezone=UTC&characterEncoding=UTF-8&serverTimezone=Asia/Seoul&zeroDateTimeBehavior=convertToNull'
+2022-09-13 02:54:08.210 DEBUG 25116 --- [restartedMain] o.s.b.w.s.ServletContextInitializerBeans : Mapping filters: characterEncodingFilter urls=[/*] order=-2147483648, formContentFilter urls=[/*] order=-9900, requestContextFilter urls=[/*] order=-105
+2022-09-13 02:54:08.210 DEBUG 25116 --- [restartedMain] o.s.b.w.s.ServletContextInitializerBeans : Mapping servlets: dispatcherServlet urls=[/], webServlet urls=[/h2-console/*]
+2022-09-13 02:54:08.440  INFO 25116 --- [restartedMain] liquibase.lockservice                    : Successfully acquired change log lock
+2022-09-13 02:54:08.440  INFO 25116 --- [restartedMain] liquibase.lockservice                    : Successfully released change log lock
+2022-09-13 02:54:08.456  WARN 25116 --- [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'liquibase' defined in class path resource [org/springframework/boot/autoconfigure/liquibase/LiquibaseAutoConfiguration$LiquibaseConfiguration.class]: Invocation of init method failed; nested exception is liquibase.exception.ChangeLogParseException: classpath:/db/changelog/db.changelog-master.yaml does not exist
+2022-09-13 02:54:08.456  INFO 25116 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-09-13 02:54:08.456  INFO 25116 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-09-13 02:54:08.472  INFO 25116 --- [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2022-09-13 02:54:08.472  INFO 25116 --- [restartedMain] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2022-09-13 02:54:08.488 ERROR 25116 --- [restartedMain] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Liquibase failed to start because no changelog could be found at 'classpath:/db/changelog/db.changelog-master.yaml'.
+
+Action:
+
+Make sure a Liquibase changelog is present at the configured path.
+
+2022-09-13 02:54:14.859  INFO 2772 --- [restartedMain] com.bootest.BootestApplication           : Starting BootestApplication using Java 11.0.14 on Kyungeun with PID 2772 (C:\dev\Project2022\target\classes started by az2282 in C:\dev\Project2022)
+2022-09-13 02:54:14.859  INFO 2772 --- [restartedMain] com.bootest.BootestApplication           : The following 2 profiles are active: "secure", "dev"
+2022-09-13 02:54:14.876  INFO 2772 --- [restartedMain] o.s.b.devtools.restart.ChangeableUrls    : The Class-Path manifest attribute in C:\Users\az228\.m2\repository\org\liquibase\liquibase-core\4.5.0\liquibase-core-4.5.0.jar referenced one or more files that do not exist: file:/C:/Users/az228/.m2/repository/org/liquibase/liquibase-core/4.5.0/snakeyaml-1.27.jar
+2022-09-13 02:54:14.876  INFO 2772 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-09-13 02:54:15.445  INFO 2772 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-09-13 02:54:15.493  INFO 2772 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 37 ms. Found 6 JPA repository interfaces.
+2022-09-13 02:54:15.922  INFO 2772 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-09-13 02:54:15.922  INFO 2772 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-09-13 02:54:15.922  INFO 2772 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.60]
+2022-09-13 02:54:15.970  INFO 2772 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-09-13 02:54:15.970  INFO 2772 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1094 ms
+2022-09-13 02:54:16.002  INFO 2772 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-09-13 02:54:16.161  INFO 2772 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-09-13 02:54:16.167  INFO 2772 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:mysql://localhost:3306/project2022?serverTimezone=UTC&characterEncoding=UTF-8&serverTimezone=Asia/Seoul&zeroDateTimeBehavior=convertToNull'
+2022-09-13 02:54:16.208 DEBUG 2772 --- [restartedMain] o.s.b.w.s.ServletContextInitializerBeans : Mapping filters: characterEncodingFilter urls=[/*] order=-2147483648, formContentFilter urls=[/*] order=-9900, requestContextFilter urls=[/*] order=-105
+2022-09-13 02:54:16.208 DEBUG 2772 --- [restartedMain] o.s.b.w.s.ServletContextInitializerBeans : Mapping servlets: dispatcherServlet urls=[/], webServlet urls=[/h2-console/*]
+2022-09-13 02:54:16.450  INFO 2772 --- [restartedMain] liquibase.lockservice                    : Successfully acquired change log lock
+2022-09-13 02:54:16.450  INFO 2772 --- [restartedMain] liquibase.lockservice                    : Successfully released change log lock
+2022-09-13 02:54:16.467  WARN 2772 --- [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'liquibase' defined in class path resource [org/springframework/boot/autoconfigure/liquibase/LiquibaseAutoConfiguration$LiquibaseConfiguration.class]: Invocation of init method failed; nested exception is liquibase.exception.ChangeLogParseException: classpath:/db/changelog/db.changelog-master.yaml does not exist
+2022-09-13 02:54:16.467  INFO 2772 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-09-13 02:54:16.467  INFO 2772 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-09-13 02:54:16.467  INFO 2772 --- [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2022-09-13 02:54:16.482  INFO 2772 --- [restartedMain] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2022-09-13 02:54:16.498 ERROR 2772 --- [restartedMain] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Liquibase failed to start because no changelog could be found at 'classpath:/db/changelog/db.changelog-master.yaml'.
+
+Action:
+
+Make sure a Liquibase changelog is present at the configured path.
+
+2022-09-13 02:54:32.862  INFO 9752 --- [restartedMain] com.bootest.BootestApplication           : Starting BootestApplication using Java 11.0.14 on Kyungeun with PID 9752 (C:\dev\Project2022\target\classes started by az2282 in C:\dev\Project2022)
+2022-09-13 02:54:32.862  INFO 9752 --- [restartedMain] com.bootest.BootestApplication           : The following 2 profiles are active: "secure", "dev"
+2022-09-13 02:54:32.878  INFO 9752 --- [restartedMain] o.s.b.devtools.restart.ChangeableUrls    : The Class-Path manifest attribute in C:\Users\az228\.m2\repository\org\liquibase\liquibase-core\4.5.0\liquibase-core-4.5.0.jar referenced one or more files that do not exist: file:/C:/Users/az228/.m2/repository/org/liquibase/liquibase-core/4.5.0/snakeyaml-1.27.jar
+2022-09-13 02:54:32.878  INFO 9752 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-09-13 02:54:33.630  INFO 9752 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-09-13 02:54:33.701  INFO 9752 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 61 ms. Found 6 JPA repository interfaces.
+2022-09-13 02:54:34.267  INFO 9752 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-09-13 02:54:34.283  INFO 9752 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-09-13 02:54:34.283  INFO 9752 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.60]
+2022-09-13 02:54:34.353  INFO 9752 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-09-13 02:54:34.353  INFO 9752 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1475 ms
+2022-09-13 02:54:34.385  INFO 9752 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-09-13 02:54:34.588  INFO 9752 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-09-13 02:54:34.603  INFO 9752 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:mysql://localhost:3306/project2022?serverTimezone=UTC&characterEncoding=UTF-8&serverTimezone=Asia/Seoul&zeroDateTimeBehavior=convertToNull'
+2022-09-13 02:54:34.635 DEBUG 9752 --- [restartedMain] o.s.b.w.s.ServletContextInitializerBeans : Mapping filters: characterEncodingFilter urls=[/*] order=-2147483648, formContentFilter urls=[/*] order=-9900, requestContextFilter urls=[/*] order=-105
+2022-09-13 02:54:34.635 DEBUG 9752 --- [restartedMain] o.s.b.w.s.ServletContextInitializerBeans : Mapping servlets: dispatcherServlet urls=[/], webServlet urls=[/h2-console/*]
+2022-09-13 02:54:34.925  INFO 9752 --- [restartedMain] liquibase.lockservice                    : Successfully acquired change log lock
+2022-09-13 02:54:34.925  INFO 9752 --- [restartedMain] liquibase.lockservice                    : Successfully released change log lock
+2022-09-13 02:54:34.942  WARN 9752 --- [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'liquibase' defined in class path resource [org/springframework/boot/autoconfigure/liquibase/LiquibaseAutoConfiguration$LiquibaseConfiguration.class]: Invocation of init method failed; nested exception is liquibase.exception.ChangeLogParseException: classpath:/db/changelog/db.changelog-master.yaml does not exist
+2022-09-13 02:54:34.942  INFO 9752 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-09-13 02:54:34.942  INFO 9752 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-09-13 02:54:34.942  INFO 9752 --- [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2022-09-13 02:54:34.957  INFO 9752 --- [restartedMain] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2022-09-13 02:54:34.973 ERROR 9752 --- [restartedMain] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Liquibase failed to start because no changelog could be found at 'classpath:/db/changelog/db.changelog-master.yaml'.
+
+Action:
+
+Make sure a Liquibase changelog is present at the configured path.
+
+2022-09-13 02:54:50.750  INFO 23776 --- [restartedMain] com.bootest.BootestApplication           : Starting BootestApplication using Java 11.0.14 on Kyungeun with PID 23776 (C:\dev\Project2022\target\classes started by az2282 in C:\dev\Project2022)
+2022-09-13 02:54:50.750  INFO 23776 --- [restartedMain] com.bootest.BootestApplication           : The following 2 profiles are active: "secure", "dev"
+2022-09-13 02:54:50.766  INFO 23776 --- [restartedMain] o.s.b.devtools.restart.ChangeableUrls    : The Class-Path manifest attribute in C:\Users\az228\.m2\repository\org\liquibase\liquibase-core\4.5.0\liquibase-core-4.5.0.jar referenced one or more files that do not exist: file:/C:/Users/az228/.m2/repository/org/liquibase/liquibase-core/4.5.0/snakeyaml-1.27.jar
+2022-09-13 02:54:50.766  INFO 23776 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-09-13 02:54:51.353  INFO 23776 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-09-13 02:54:51.400  INFO 23776 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 42 ms. Found 6 JPA repository interfaces.
+2022-09-13 02:54:51.882  INFO 23776 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-09-13 02:54:51.882  INFO 23776 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-09-13 02:54:51.882  INFO 23776 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.60]
+2022-09-13 02:54:51.945  INFO 23776 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-09-13 02:54:51.945  INFO 23776 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1179 ms
+2022-09-13 02:54:51.976  INFO 23776 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-09-13 02:54:52.118  INFO 23776 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-09-13 02:54:52.134  INFO 23776 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:mysql://localhost:3306/project2022?serverTimezone=UTC&characterEncoding=UTF-8&serverTimezone=Asia/Seoul&zeroDateTimeBehavior=convertToNull'
+2022-09-13 02:54:52.165 DEBUG 23776 --- [restartedMain] o.s.b.w.s.ServletContextInitializerBeans : Mapping filters: characterEncodingFilter urls=[/*] order=-2147483648, formContentFilter urls=[/*] order=-9900, requestContextFilter urls=[/*] order=-105
+2022-09-13 02:54:52.165 DEBUG 23776 --- [restartedMain] o.s.b.w.s.ServletContextInitializerBeans : Mapping servlets: dispatcherServlet urls=[/], webServlet urls=[/h2-console/*]
+2022-09-13 02:54:52.421  INFO 23776 --- [restartedMain] liquibase.lockservice                    : Successfully acquired change log lock
+2022-09-13 02:54:52.431  INFO 23776 --- [restartedMain] liquibase.lockservice                    : Successfully released change log lock
+2022-09-13 02:54:52.438  WARN 23776 --- [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'liquibase' defined in class path resource [org/springframework/boot/autoconfigure/liquibase/LiquibaseAutoConfiguration$LiquibaseConfiguration.class]: Invocation of init method failed; nested exception is liquibase.exception.ChangeLogParseException: classpath:/db/changelog/db.changelog-master.yaml does not exist
+2022-09-13 02:54:52.438  INFO 23776 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-09-13 02:54:52.453  INFO 23776 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-09-13 02:54:52.453  INFO 23776 --- [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2022-09-13 02:54:52.458  INFO 23776 --- [restartedMain] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2022-09-13 02:54:52.469 ERROR 23776 --- [restartedMain] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Liquibase failed to start because no changelog could be found at 'classpath:/db/changelog/db.changelog-master.yaml'.
+
+Action:
+
+Make sure a Liquibase changelog is present at the configured path.
+
+2022-09-13 02:54:57.732  INFO 1092 --- [restartedMain] com.bootest.BootestApplication           : Starting BootestApplication using Java 11.0.14 on Kyungeun with PID 1092 (C:\dev\Project2022\target\classes started by az2282 in C:\dev\Project2022)
+2022-09-13 02:54:57.732  INFO 1092 --- [restartedMain] com.bootest.BootestApplication           : The following 2 profiles are active: "secure", "dev"
+2022-09-13 02:54:57.747  INFO 1092 --- [restartedMain] o.s.b.devtools.restart.ChangeableUrls    : The Class-Path manifest attribute in C:\Users\az228\.m2\repository\org\liquibase\liquibase-core\4.5.0\liquibase-core-4.5.0.jar referenced one or more files that do not exist: file:/C:/Users/az228/.m2/repository/org/liquibase/liquibase-core/4.5.0/snakeyaml-1.27.jar
+2022-09-13 02:54:57.763  INFO 1092 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-09-13 02:54:58.374  INFO 1092 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-09-13 02:54:58.422  INFO 1092 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 42 ms. Found 6 JPA repository interfaces.
+2022-09-13 02:54:58.847  INFO 1092 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-09-13 02:54:58.847  INFO 1092 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-09-13 02:54:58.847  INFO 1092 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.60]
+2022-09-13 02:54:58.911  INFO 1092 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-09-13 02:54:58.911  INFO 1092 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1148 ms
+2022-09-13 02:54:58.954  INFO 1092 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-09-13 02:54:59.126  INFO 1092 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-09-13 02:54:59.126  INFO 1092 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:mysql://localhost:3306/project2022?serverTimezone=UTC&characterEncoding=UTF-8&serverTimezone=Asia/Seoul&zeroDateTimeBehavior=convertToNull'
+2022-09-13 02:54:59.158 DEBUG 1092 --- [restartedMain] o.s.b.w.s.ServletContextInitializerBeans : Mapping filters: characterEncodingFilter urls=[/*] order=-2147483648, formContentFilter urls=[/*] order=-9900, requestContextFilter urls=[/*] order=-105
+2022-09-13 02:54:59.158 DEBUG 1092 --- [restartedMain] o.s.b.w.s.ServletContextInitializerBeans : Mapping servlets: dispatcherServlet urls=[/], webServlet urls=[/h2-console/*]
+2022-09-13 02:54:59.427  INFO 1092 --- [restartedMain] liquibase.lockservice                    : Successfully acquired change log lock
+2022-09-13 02:54:59.443  INFO 1092 --- [restartedMain] liquibase.lockservice                    : Successfully released change log lock
+2022-09-13 02:54:59.443  WARN 1092 --- [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'liquibase' defined in class path resource [org/springframework/boot/autoconfigure/liquibase/LiquibaseAutoConfiguration$LiquibaseConfiguration.class]: Invocation of init method failed; nested exception is liquibase.exception.ChangeLogParseException: classpath:/db/changelog/db.changelog-master.yaml does not exist
+2022-09-13 02:54:59.443  INFO 1092 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-09-13 02:54:59.459  INFO 1092 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-09-13 02:54:59.459  INFO 1092 --- [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2022-09-13 02:54:59.459  INFO 1092 --- [restartedMain] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2022-09-13 02:54:59.475 ERROR 1092 --- [restartedMain] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Liquibase failed to start because no changelog could be found at 'classpath:/db/changelog/db.changelog-master.yaml'.
+
+Action:
+
+Make sure a Liquibase changelog is present at the configured path.
+
+2022-09-13 02:55:35.480  INFO 27416 --- [restartedMain] com.bootest.BootestApplication           : Starting BootestApplication using Java 11.0.14 on Kyungeun with PID 27416 (C:\dev\Project2022\target\classes started by az2282 in C:\dev\Project2022)
+2022-09-13 02:55:35.482  INFO 27416 --- [restartedMain] com.bootest.BootestApplication           : The following 2 profiles are active: "secure", "dev"
+2022-09-13 02:55:35.506  INFO 27416 --- [restartedMain] o.s.b.devtools.restart.ChangeableUrls    : The Class-Path manifest attribute in C:\Users\az228\.m2\repository\org\liquibase\liquibase-core\4.5.0\liquibase-core-4.5.0.jar referenced one or more files that do not exist: file:/C:/Users/az228/.m2/repository/org/liquibase/liquibase-core/4.5.0/snakeyaml-1.27.jar
+2022-09-13 02:55:35.506  INFO 27416 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-09-13 02:55:36.334  INFO 27416 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-09-13 02:55:36.392  INFO 27416 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 51 ms. Found 6 JPA repository interfaces.
+2022-09-13 02:55:36.884  INFO 27416 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-09-13 02:55:36.890  INFO 27416 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-09-13 02:55:36.890  INFO 27416 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.60]
+2022-09-13 02:55:36.952  INFO 27416 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-09-13 02:55:36.952  INFO 27416 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1445 ms
+2022-09-13 02:55:36.989  INFO 27416 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-09-13 02:55:37.187  INFO 27416 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-09-13 02:55:37.195  INFO 27416 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:mysql://localhost:3306/project2022?serverTimezone=UTC&characterEncoding=UTF-8&serverTimezone=Asia/Seoul&zeroDateTimeBehavior=convertToNull'
+2022-09-13 02:55:37.235 DEBUG 27416 --- [restartedMain] o.s.b.w.s.ServletContextInitializerBeans : Mapping filters: characterEncodingFilter urls=[/*] order=-2147483648, formContentFilter urls=[/*] order=-9900, requestContextFilter urls=[/*] order=-105
+2022-09-13 02:55:37.235 DEBUG 27416 --- [restartedMain] o.s.b.w.s.ServletContextInitializerBeans : Mapping servlets: dispatcherServlet urls=[/], webServlet urls=[/h2-console/*]
+2022-09-13 02:55:37.521  INFO 27416 --- [restartedMain] liquibase.lockservice                    : Successfully acquired change log lock
+2022-09-13 02:55:37.539  INFO 27416 --- [restartedMain] liquibase.lockservice                    : Successfully released change log lock
+2022-09-13 02:55:37.550  WARN 27416 --- [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'liquibase' defined in class path resource [org/springframework/boot/autoconfigure/liquibase/LiquibaseAutoConfiguration$LiquibaseConfiguration.class]: Invocation of init method failed; nested exception is liquibase.exception.ChangeLogParseException: classpath:/db/changelog/db.changelog-master.yaml does not exist
+2022-09-13 02:55:37.551  INFO 27416 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-09-13 02:55:37.568  INFO 27416 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-09-13 02:55:37.573  INFO 27416 --- [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2022-09-13 02:55:37.588  INFO 27416 --- [restartedMain] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2022-09-13 02:55:37.607 ERROR 27416 --- [restartedMain] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Liquibase failed to start because no changelog could be found at 'classpath:/db/changelog/db.changelog-master.yaml'.
+
+Action:
+
+Make sure a Liquibase changelog is present at the configured path.
+
+2022-09-13 03:37:54.456  INFO 24668 --- [restartedMain] com.bootest.BootestApplication           : Starting BootestApplication using Java 11.0.14 on Kyungeun with PID 24668 (C:\dev\Project2022\target\classes started by az2282 in C:\dev\Project2022)
+2022-09-13 03:37:54.461  INFO 24668 --- [restartedMain] com.bootest.BootestApplication           : The following 2 profiles are active: "secure", "dev"
+2022-09-13 03:37:54.521  INFO 24668 --- [restartedMain] o.s.b.devtools.restart.ChangeableUrls    : The Class-Path manifest attribute in C:\Users\az228\.m2\repository\org\liquibase\liquibase-core\4.5.0\liquibase-core-4.5.0.jar referenced one or more files that do not exist: file:/C:/Users/az228/.m2/repository/org/liquibase/liquibase-core/4.5.0/snakeyaml-1.27.jar
+2022-09-13 03:37:54.523  INFO 24668 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-09-13 03:37:55.747  INFO 24668 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-09-13 03:37:55.829  INFO 24668 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 71 ms. Found 6 JPA repository interfaces.
+2022-09-13 03:37:56.701  INFO 24668 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-09-13 03:37:56.719  INFO 24668 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-09-13 03:37:56.720  INFO 24668 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.60]
+2022-09-13 03:37:56.908  INFO 24668 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-09-13 03:37:56.909  INFO 24668 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2386 ms
+2022-09-13 03:37:56.963  INFO 24668 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-09-13 03:37:57.375  INFO 24668 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-09-13 03:37:57.388  INFO 24668 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:mysql://localhost:3306/project2022?serverTimezone=UTC&characterEncoding=UTF-8&serverTimezone=Asia/Seoul&zeroDateTimeBehavior=convertToNull'
+2022-09-13 03:37:57.447 DEBUG 24668 --- [restartedMain] o.s.b.w.s.ServletContextInitializerBeans : Mapping filters: characterEncodingFilter urls=[/*] order=-2147483648, formContentFilter urls=[/*] order=-9900, requestContextFilter urls=[/*] order=-105
+2022-09-13 03:37:57.447 DEBUG 24668 --- [restartedMain] o.s.b.w.s.ServletContextInitializerBeans : Mapping servlets: dispatcherServlet urls=[/], webServlet urls=[/h2-console/*]
+2022-09-13 03:37:57.973  INFO 24668 --- [restartedMain] liquibase.lockservice                    : Successfully acquired change log lock
+2022-09-13 03:37:57.994  INFO 24668 --- [restartedMain] liquibase.lockservice                    : Successfully released change log lock
+2022-09-13 03:37:58.006  WARN 24668 --- [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'liquibase' defined in class path resource [org/springframework/boot/autoconfigure/liquibase/LiquibaseAutoConfiguration$LiquibaseConfiguration.class]: Invocation of init method failed; nested exception is liquibase.exception.ChangeLogParseException: classpath:/db/changelog/db.changelog-master.yaml does not exist
+2022-09-13 03:37:58.007  INFO 24668 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-09-13 03:37:58.061  INFO 24668 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-09-13 03:37:58.065  INFO 24668 --- [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2022-09-13 03:37:58.081  INFO 24668 --- [restartedMain] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2022-09-13 03:37:58.107 ERROR 24668 --- [restartedMain] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Liquibase failed to start because no changelog could be found at 'classpath:/db/changelog/db.changelog-master.yaml'.
+
+Action:
+
+Make sure a Liquibase changelog is present at the configured path.
+
+2022-09-13 03:38:44.697  INFO 20152 --- [restartedMain] com.bootest.BootestApplication           : Starting BootestApplication using Java 11.0.14 on Kyungeun with PID 20152 (C:\dev\Project2022\target\classes started by az2282 in C:\dev\Project2022)
+2022-09-13 03:38:44.700  INFO 20152 --- [restartedMain] com.bootest.BootestApplication           : The following 2 profiles are active: "secure", "dev"
+2022-09-13 03:38:44.741  INFO 20152 --- [restartedMain] o.s.b.devtools.restart.ChangeableUrls    : The Class-Path manifest attribute in C:\Users\az228\.m2\repository\org\liquibase\liquibase-core\4.5.0\liquibase-core-4.5.0.jar referenced one or more files that do not exist: file:/C:/Users/az228/.m2/repository/org/liquibase/liquibase-core/4.5.0/snakeyaml-1.27.jar
+2022-09-13 03:38:44.742  INFO 20152 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-09-13 03:38:46.066  INFO 20152 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-09-13 03:38:46.174  INFO 20152 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 94 ms. Found 6 JPA repository interfaces.
+2022-09-13 03:38:46.960  INFO 20152 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-09-13 03:38:46.979  INFO 20152 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-09-13 03:38:46.980  INFO 20152 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.60]
+2022-09-13 03:38:47.102  INFO 20152 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-09-13 03:38:47.103  INFO 20152 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2360 ms
+2022-09-13 03:38:47.161  INFO 20152 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-09-13 03:38:47.472  INFO 20152 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-09-13 03:38:47.498  INFO 20152 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:mysql://localhost:3306/project2022?serverTimezone=UTC&characterEncoding=UTF-8&serverTimezone=Asia/Seoul&zeroDateTimeBehavior=convertToNull'
+2022-09-13 03:38:47.582 DEBUG 20152 --- [restartedMain] o.s.b.w.s.ServletContextInitializerBeans : Mapping filters: characterEncodingFilter urls=[/*] order=-2147483648, formContentFilter urls=[/*] order=-9900, requestContextFilter urls=[/*] order=-105
+2022-09-13 03:38:47.583 DEBUG 20152 --- [restartedMain] o.s.b.w.s.ServletContextInitializerBeans : Mapping servlets: dispatcherServlet urls=[/], webServlet urls=[/h2-console/*]
+2022-09-13 03:38:47.938  INFO 20152 --- [restartedMain] liquibase.lockservice                    : Successfully acquired change log lock
+2022-09-13 03:38:47.953  INFO 20152 --- [restartedMain] liquibase.lockservice                    : Successfully released change log lock
+2022-09-13 03:38:47.961  WARN 20152 --- [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'liquibase' defined in class path resource [org/springframework/boot/autoconfigure/liquibase/LiquibaseAutoConfiguration$LiquibaseConfiguration.class]: Invocation of init method failed; nested exception is liquibase.exception.ChangeLogParseException: classpath:/db/changelog/db.changelog-master.yaml does not exist
+2022-09-13 03:38:47.962  INFO 20152 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-09-13 03:38:47.983  INFO 20152 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-09-13 03:38:47.986  INFO 20152 --- [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2022-09-13 03:38:47.999  INFO 20152 --- [restartedMain] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2022-09-13 03:38:48.017 ERROR 20152 --- [restartedMain] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Liquibase failed to start because no changelog could be found at 'classpath:/db/changelog/db.changelog-master.yaml'.
+
+Action:
+
+Make sure a Liquibase changelog is present at the configured path.
+
+2022-09-13 03:39:26.327  INFO 29024 --- [restartedMain] com.bootest.BootestApplication           : Starting BootestApplication using Java 11.0.14 on Kyungeun with PID 29024 (C:\dev\Project2022\target\classes started by az2282 in C:\dev\Project2022)
+2022-09-13 03:39:26.330  INFO 29024 --- [restartedMain] com.bootest.BootestApplication           : The following 2 profiles are active: "secure", "dev"
+2022-09-13 03:39:26.390  INFO 29024 --- [restartedMain] o.s.b.devtools.restart.ChangeableUrls    : The Class-Path manifest attribute in C:\Users\az228\.m2\repository\org\liquibase\liquibase-core\4.5.0\liquibase-core-4.5.0.jar referenced one or more files that do not exist: file:/C:/Users/az228/.m2/repository/org/liquibase/liquibase-core/4.5.0/snakeyaml-1.27.jar
+2022-09-13 03:39:26.391  INFO 29024 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-09-13 03:39:27.663  INFO 29024 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-09-13 03:39:27.782  INFO 29024 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 106 ms. Found 6 JPA repository interfaces.
+2022-09-13 03:39:28.632  INFO 29024 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-09-13 03:39:28.643  INFO 29024 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-09-13 03:39:28.644  INFO 29024 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.60]
+2022-09-13 03:39:28.838  INFO 29024 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-09-13 03:39:28.839  INFO 29024 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2447 ms
+2022-09-13 03:39:28.950  INFO 29024 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-09-13 03:39:29.260  INFO 29024 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-09-13 03:39:29.273  INFO 29024 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:mysql://localhost:3306/project2022?serverTimezone=UTC&characterEncoding=UTF-8&serverTimezone=Asia/Seoul&zeroDateTimeBehavior=convertToNull'
+2022-09-13 03:39:29.348 DEBUG 29024 --- [restartedMain] o.s.b.w.s.ServletContextInitializerBeans : Mapping filters: characterEncodingFilter urls=[/*] order=-2147483648, formContentFilter urls=[/*] order=-9900, requestContextFilter urls=[/*] order=-105
+2022-09-13 03:39:29.348 DEBUG 29024 --- [restartedMain] o.s.b.w.s.ServletContextInitializerBeans : Mapping servlets: dispatcherServlet urls=[/], webServlet urls=[/h2-console/*]
+2022-09-13 03:39:29.863  INFO 29024 --- [restartedMain] liquibase.lockservice                    : Successfully acquired change log lock
+2022-09-13 03:39:29.884  INFO 29024 --- [restartedMain] liquibase.lockservice                    : Successfully released change log lock
+2022-09-13 03:39:29.898  WARN 29024 --- [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'liquibase' defined in class path resource [org/springframework/boot/autoconfigure/liquibase/LiquibaseAutoConfiguration$LiquibaseConfiguration.class]: Invocation of init method failed; nested exception is liquibase.exception.ChangeLogParseException: classpath:/db/changelog/db.changelog-master.yaml does not exist
+2022-09-13 03:39:29.899  INFO 29024 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-09-13 03:39:29.927  INFO 29024 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-09-13 03:39:29.930  INFO 29024 --- [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2022-09-13 03:39:29.945  INFO 29024 --- [restartedMain] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2022-09-13 03:39:29.963 ERROR 29024 --- [restartedMain] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Liquibase failed to start because no changelog could be found at 'classpath:/db/changelog/db.changelog-master.yaml'.
+
+Action:
+
+Make sure a Liquibase changelog is present at the configured path.
+
+2022-09-13 03:39:50.845  INFO 26968 --- [restartedMain] com.bootest.BootestApplication           : Starting BootestApplication using Java 11.0.14 on Kyungeun with PID 26968 (C:\dev\Project2022\target\classes started by az2282 in C:\dev\Project2022)
+2022-09-13 03:39:50.848  INFO 26968 --- [restartedMain] com.bootest.BootestApplication           : The following 2 profiles are active: "secure", "dev"
+2022-09-13 03:39:50.889  INFO 26968 --- [restartedMain] o.s.b.devtools.restart.ChangeableUrls    : The Class-Path manifest attribute in C:\Users\az228\.m2\repository\org\liquibase\liquibase-core\4.5.0\liquibase-core-4.5.0.jar referenced one or more files that do not exist: file:/C:/Users/az228/.m2/repository/org/liquibase/liquibase-core/4.5.0/snakeyaml-1.27.jar
+2022-09-13 03:39:50.889  INFO 26968 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-09-13 03:39:52.012  INFO 26968 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-09-13 03:39:52.147  INFO 26968 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 116 ms. Found 6 JPA repository interfaces.
+2022-09-13 03:39:53.095  INFO 26968 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-09-13 03:39:53.108  INFO 26968 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-09-13 03:39:53.109  INFO 26968 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.60]
+2022-09-13 03:39:53.262  INFO 26968 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-09-13 03:39:53.263  INFO 26968 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2373 ms
+2022-09-13 03:39:53.323  INFO 26968 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-09-13 03:39:53.682  INFO 26968 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-09-13 03:39:53.695  INFO 26968 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:mysql://localhost:3306/project2022?serverTimezone=UTC&characterEncoding=UTF-8&serverTimezone=Asia/Seoul&zeroDateTimeBehavior=convertToNull'
+2022-09-13 03:39:53.798 DEBUG 26968 --- [restartedMain] o.s.b.w.s.ServletContextInitializerBeans : Mapping filters: characterEncodingFilter urls=[/*] order=-2147483648, formContentFilter urls=[/*] order=-9900, requestContextFilter urls=[/*] order=-105
+2022-09-13 03:39:53.799 DEBUG 26968 --- [restartedMain] o.s.b.w.s.ServletContextInitializerBeans : Mapping servlets: dispatcherServlet urls=[/], webServlet urls=[/h2-console/*]
+2022-09-13 03:39:54.275  INFO 26968 --- [restartedMain] liquibase.lockservice                    : Successfully acquired change log lock
+2022-09-13 03:39:54.299  INFO 26968 --- [restartedMain] liquibase.lockservice                    : Successfully released change log lock
+2022-09-13 03:39:54.314  WARN 26968 --- [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'liquibase' defined in class path resource [org/springframework/boot/autoconfigure/liquibase/LiquibaseAutoConfiguration$LiquibaseConfiguration.class]: Invocation of init method failed; nested exception is liquibase.exception.ChangeLogParseException: classpath:/db/changelog/db.changelog-master.yaml does not exist
+2022-09-13 03:39:54.315  INFO 26968 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-09-13 03:39:54.354  INFO 26968 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-09-13 03:39:54.359  INFO 26968 --- [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2022-09-13 03:39:54.388  INFO 26968 --- [restartedMain] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2022-09-13 03:39:54.410 ERROR 26968 --- [restartedMain] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Liquibase failed to start because no changelog could be found at 'classpath:/db/changelog/db.changelog-master.yaml'.
+
+Action:
+
+Make sure a Liquibase changelog is present at the configured path.
+
+2022-09-13 03:40:54.370  INFO 21808 --- [restartedMain] com.bootest.BootestApplication           : Starting BootestApplication using Java 11.0.10 on Kyungeun with PID 21808 (C:\dev\Project2022\target\classes started by az2282 in C:\dev\Project2022)
+2022-09-13 03:40:54.376  INFO 21808 --- [restartedMain] com.bootest.BootestApplication           : The following 2 profiles are active: "secure", "dev"
+2022-09-13 03:40:54.444  INFO 21808 --- [restartedMain] o.s.b.devtools.restart.ChangeableUrls    : The Class-Path manifest attribute in C:\Users\az228\.m2\repository\org\liquibase\liquibase-core\4.5.0\liquibase-core-4.5.0.jar referenced one or more files that do not exist: file:/C:/Users/az228/.m2/repository/org/liquibase/liquibase-core/4.5.0/snakeyaml-1.27.jar
+2022-09-13 03:40:54.450  INFO 21808 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-09-13 03:40:55.523  INFO 21808 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-09-13 03:40:55.645  INFO 21808 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 101 ms. Found 6 JPA repository interfaces.
+2022-09-13 03:40:57.218  INFO 21808 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-09-13 03:40:57.270  INFO 21808 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-09-13 03:40:57.275  INFO 21808 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.60]
+2022-09-13 03:40:57.534  INFO 21808 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-09-13 03:40:57.536  INFO 21808 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3086 ms
+2022-09-13 03:40:57.724  INFO 21808 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-09-13 03:40:58.343  INFO 21808 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-09-13 03:40:58.358  INFO 21808 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:mysql://localhost:3306/project2022?serverTimezone=UTC&characterEncoding=UTF-8&serverTimezone=Asia/Seoul&zeroDateTimeBehavior=convertToNull'
+2022-09-13 03:40:58.423 DEBUG 21808 --- [restartedMain] o.s.b.w.s.ServletContextInitializerBeans : Mapping filters: characterEncodingFilter urls=[/*] order=-2147483648, formContentFilter urls=[/*] order=-9900, requestContextFilter urls=[/*] order=-105
+2022-09-13 03:40:58.425 DEBUG 21808 --- [restartedMain] o.s.b.w.s.ServletContextInitializerBeans : Mapping servlets: dispatcherServlet urls=[/], webServlet urls=[/h2-console/*]
+2022-09-13 03:40:59.428  INFO 21808 --- [restartedMain] liquibase.lockservice                    : Successfully acquired change log lock
+2022-09-13 03:40:59.771  INFO 21808 --- [restartedMain] liquibase.changelog                      : Reading from project2022.DATABASECHANGELOG
+2022-09-13 03:40:59.841  INFO 21808 --- [restartedMain] liquibase.lockservice                    : Successfully released change log lock
+2022-09-13 03:41:00.145  INFO 21808 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-09-13 03:41:00.476  INFO 21808 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.7.Final
+2022-09-13 03:41:00.900  INFO 21808 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-09-13 03:41:01.314  INFO 21808 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2022-09-13 03:41:03.408  INFO 21808 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-09-13 03:41:03.441  INFO 21808 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-09-13 03:41:06.893  WARN 21808 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-09-13 03:41:07.951 DEBUG 21808 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : 24 mappings in 'requestMappingHandlerMapping'
+2022-09-13 03:41:09.276  INFO 21808 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-09-13 03:41:09.314 DEBUG 21808 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2022-09-13 03:41:09.411  INFO 21808 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2022-09-13 03:41:09.511 DEBUG 21808 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/swagger-ui/] in 'viewControllerHandlerMapping'
+2022-09-13 03:41:09.613 DEBUG 21808 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**, /swagger-ui/**] in 'resourceHandlerMapping'
+2022-09-13 03:41:09.669 DEBUG 21808 --- [restartedMain] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
+2022-09-13 03:41:12.434  INFO 21808 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-09-13 03:41:13.811  INFO 21808 --- [restartedMain] com.bootest.BootestApplication           : Started BootestApplication in 20.016 seconds (JVM running for 20.746)
+2022-09-13 03:41:22.041  INFO 21808 --- [Thread-4] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-09-13 03:41:22.053  INFO 21808 --- [Thread-4] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-09-13 03:41:22.083  INFO 21808 --- [Thread-4] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-09-13 03:41:22.239  INFO 21808 --- [restartedMain] com.bootest.BootestApplication           : Starting BootestApplication using Java 11.0.10 on Kyungeun with PID 21808 (C:\dev\Project2022\target\classes started by az2282 in C:\dev\Project2022)
+2022-09-13 03:41:22.241  INFO 21808 --- [restartedMain] com.bootest.BootestApplication           : The following 2 profiles are active: "secure", "dev"
+2022-09-13 03:41:22.664  INFO 21808 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-09-13 03:41:22.727  INFO 21808 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 52 ms. Found 6 JPA repository interfaces.
+2022-09-13 03:41:22.876  INFO 21808 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-09-13 03:41:22.876  INFO 21808 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-09-13 03:41:22.885  INFO 21808 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.60]
+2022-09-13 03:41:22.918  INFO 21808 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-09-13 03:41:22.918  INFO 21808 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 675 ms
+2022-09-13 03:41:22.950  INFO 21808 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2022-09-13 03:41:22.974  INFO 21808 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2022-09-13 03:41:22.975  INFO 21808 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:mysql://localhost:3306/project2022?serverTimezone=UTC&characterEncoding=UTF-8&serverTimezone=Asia/Seoul&zeroDateTimeBehavior=convertToNull'
+2022-09-13 03:41:22.984 DEBUG 21808 --- [restartedMain] o.s.b.w.s.ServletContextInitializerBeans : Mapping filters: characterEncodingFilter urls=[/*] order=-2147483648, formContentFilter urls=[/*] order=-9900, requestContextFilter urls=[/*] order=-105
+2022-09-13 03:41:22.984 DEBUG 21808 --- [restartedMain] o.s.b.w.s.ServletContextInitializerBeans : Mapping servlets: dispatcherServlet urls=[/], webServlet urls=[/h2-console/*]
+2022-09-13 03:41:23.026  INFO 21808 --- [restartedMain] liquibase.lockservice                    : Successfully acquired change log lock
+2022-09-13 03:41:23.127  INFO 21808 --- [restartedMain] liquibase.changelog                      : Reading from project2022.DATABASECHANGELOG
+2022-09-13 03:41:23.147  INFO 21808 --- [restartedMain] liquibase.lockservice                    : Successfully released change log lock
+2022-09-13 03:41:23.190  INFO 21808 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-09-13 03:41:23.204  INFO 21808 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2022-09-13 03:41:23.354  INFO 21808 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-09-13 03:41:23.355  INFO 21808 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-09-13 03:41:23.656  WARN 21808 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-09-13 03:41:23.734 DEBUG 21808 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : 25 mappings in 'requestMappingHandlerMapping'
+2022-09-13 03:41:23.828  INFO 21808 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-09-13 03:41:23.834 DEBUG 21808 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2022-09-13 03:41:23.837  INFO 21808 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2022-09-13 03:41:23.848 DEBUG 21808 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/swagger-ui/] in 'viewControllerHandlerMapping'
+2022-09-13 03:41:23.857 DEBUG 21808 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**, /swagger-ui/**] in 'resourceHandlerMapping'
+2022-09-13 03:41:23.871 DEBUG 21808 --- [restartedMain] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
+2022-09-13 03:41:24.014  INFO 21808 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-09-13 03:41:24.234  INFO 21808 --- [restartedMain] com.bootest.BootestApplication           : Started BootestApplication in 2.052 seconds (JVM running for 31.17)
+2022-09-13 03:41:24.240  INFO 21808 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2022-09-13 03:41:43.529  INFO 21808 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-09-13 03:41:43.530  INFO 21808 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-09-13 03:41:43.531 DEBUG 21808 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected StandardServletMultipartResolver
+2022-09-13 03:41:43.532 DEBUG 21808 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected AcceptHeaderLocaleResolver
+2022-09-13 03:41:43.533 DEBUG 21808 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected FixedThemeResolver
+2022-09-13 03:41:43.534 DEBUG 21808 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@781e9531
+2022-09-13 03:41:43.535 DEBUG 21808 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.support.SessionFlashMapManager@113b50f6
+2022-09-13 03:41:43.536 DEBUG 21808 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2022-09-13 03:41:43.537  INFO 21808 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 6 ms
+2022-09-13 03:41:43.552 DEBUG 21808 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : GET "/", parameters={}
+2022-09-13 03:41:43.562 DEBUG 21808 --- [http-nio-8080-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.bootest.web.HomeController#home(User, Model, Account)
+2022-09-13 03:41:43.621 DEBUG 21808 --- [http-nio-8080-exec-1] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, application/signed-exchange;v=b3;q=0.9, */*;q=0.8]
+2022-09-13 03:41:44.007 DEBUG 21808 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2022-09-13 03:41:44.043 DEBUG 21808 --- [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : GET "/css/bootstrap.min.css", parameters={}
+2022-09-13 03:41:44.059 DEBUG 21808 --- [http-nio-8080-exec-5] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2022-09-13 03:41:44.063 DEBUG 21808 --- [http-nio-8080-exec-5] o.s.w.s.r.ResourceHttpRequestHandler     : Resource not found
+2022-09-13 03:41:44.068 DEBUG 21808 --- [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : Completed 404 NOT_FOUND
+2022-09-13 03:41:44.073 DEBUG 21808 --- [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : "ERROR" dispatch for GET "/error", parameters={}
+2022-09-13 03:41:44.076 DEBUG 21808 --- [http-nio-8080-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#error(HttpServletRequest)
+2022-09-13 03:41:44.091 DEBUG 21808 --- [http-nio-8080-exec-5] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json;q=0.1', given [text/css, */*;q=0.1] and supported [application/json, application/*+json, application/json, application/*+json]
+2022-09-13 03:41:44.100 DEBUG 21808 --- [http-nio-8080-exec-5] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [{timestamp=Tue Sep 13 03:41:44 KST 2022, status=404, error=Not Found, message=No message available,  (truncated)...]
+2022-09-13 03:41:44.135 DEBUG 21808 --- [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : Exiting from "ERROR" dispatch, status 404
+2022-09-13 03:41:44.200 DEBUG 21808 --- [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : GET "/favicon.ico", parameters={}
+2022-09-13 03:41:44.203 DEBUG 21808 --- [http-nio-8080-exec-4] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2022-09-13 03:41:44.207 DEBUG 21808 --- [http-nio-8080-exec-4] o.s.w.s.r.ResourceHttpRequestHandler     : Resource not found
+2022-09-13 03:41:44.209 DEBUG 21808 --- [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : Completed 404 NOT_FOUND
+2022-09-13 03:41:44.210 DEBUG 21808 --- [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : "ERROR" dispatch for GET "/error", parameters={}
+2022-09-13 03:41:44.212 DEBUG 21808 --- [http-nio-8080-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#error(HttpServletRequest)
+2022-09-13 03:41:44.214 DEBUG 21808 --- [http-nio-8080-exec-4] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json;q=0.8', given [image/avif, image/webp, image/apng, image/svg+xml, image/*, */*;q=0.8] and supported [application/json, application/*+json, application/json, application/*+json]
+2022-09-13 03:41:44.215 DEBUG 21808 --- [http-nio-8080-exec-4] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [{timestamp=Tue Sep 13 03:41:44 KST 2022, status=404, error=Not Found, message=No message available,  (truncated)...]
+2022-09-13 03:41:44.233 DEBUG 21808 --- [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : Exiting from "ERROR" dispatch, status 404
+2022-09-13 03:41:45.058 DEBUG 21808 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : GET "/login", parameters={}
+2022-09-13 03:41:45.059 DEBUG 21808 --- [http-nio-8080-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.bootest.web.login.LoginController#loginForm(Model)
+2022-09-13 03:41:45.063 DEBUG 21808 --- [http-nio-8080-exec-2] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, application/signed-exchange;v=b3;q=0.9, */*;q=0.8]
+2022-09-13 03:41:45.148 DEBUG 21808 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2022-09-13 03:41:45.174 DEBUG 21808 --- [http-nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : GET "/static/vendor/fontawesome-free/css/all.min.css", parameters={}
+2022-09-13 03:41:45.175 DEBUG 21808 --- [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : GET "/css/sb-admin-2.min.css", parameters={}
+2022-09-13 03:41:45.177 DEBUG 21808 --- [http-nio-8080-exec-6] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2022-09-13 03:41:45.178 DEBUG 21808 --- [http-nio-8080-exec-3] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2022-09-13 03:41:45.183 DEBUG 21808 --- [http-nio-8080-exec-6] o.s.w.s.r.ResourceHttpRequestHandler     : Resource not found
+2022-09-13 03:41:45.184 DEBUG 21808 --- [http-nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : Completed 404 NOT_FOUND
+2022-09-13 03:41:45.185 DEBUG 21808 --- [http-nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : "ERROR" dispatch for GET "/error", parameters={}
+2022-09-13 03:41:45.186 DEBUG 21808 --- [http-nio-8080-exec-6] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#error(HttpServletRequest)
+2022-09-13 03:41:45.188 DEBUG 21808 --- [http-nio-8080-exec-6] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json;q=0.1', given [text/css, */*;q=0.1] and supported [application/json, application/*+json, application/json, application/*+json]
+2022-09-13 03:41:45.189 DEBUG 21808 --- [http-nio-8080-exec-6] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [{timestamp=Tue Sep 13 03:41:45 KST 2022, status=404, error=Not Found, message=No message available,  (truncated)...]
+2022-09-13 03:41:45.190 DEBUG 21808 --- [http-nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : Exiting from "ERROR" dispatch, status 404
+2022-09-13 03:41:45.198 DEBUG 21808 --- [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2022-09-13 03:41:45.874 DEBUG 21808 --- [http-nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : POST "/login", parameters={masked}
+2022-09-13 03:41:45.875 DEBUG 21808 --- [http-nio-8080-exec-7] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.bootest.web.login.LoginController#login(LoginForm, BindingResult, HttpServletRequest, Model)
+2022-09-13 03:41:46.109 DEBUG 21808 --- [http-nio-8080-exec-7] org.hibernate.SQL                        : select user0_.id as id1_5_, user0_.created as created2_5_, user0_.email as email3_5_, user0_.name as name4_5_, user0_.passwd as passwd5_5_, user0_.updated as updated6_5_, user0_.user_id as user_id7_5_ from user user0_ where user0_.user_id=?
+2022-09-13 03:41:46.546  WARN 21808 --- [http-nio-8080-exec-7] o.a.c.util.SessionIdGeneratorBase        : Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [388] milliseconds.
+2022-09-13 03:41:46.546 DEBUG 21808 --- [http-nio-8080-exec-7] o.s.web.servlet.view.RedirectView        : View name 'redirect:', model {}
+2022-09-13 03:41:46.554 DEBUG 21808 --- [http-nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : Completed 302 FOUND
+2022-09-13 03:41:46.562 DEBUG 21808 --- [http-nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : GET "/", parameters={}
+2022-09-13 03:41:46.563 DEBUG 21808 --- [http-nio-8080-exec-8] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.bootest.web.HomeController#home(User, Model, Account)
+2022-09-13 03:41:46.572 DEBUG 21808 --- [http-nio-8080-exec-8] org.hibernate.SQL                        : select recovolume0_.id as id1_2_, recovolume0_.attachments as attachme2_2_, recovolume0_.availability_zone as availabi3_2_, recovolume0_.create_time as create_t4_2_, recovolume0_.encrypted as encrypte5_2_, recovolume0_.instance_id as instance6_2_, recovolume0_.registered_date as register7_2_, recovolume0_.size as size8_2_, recovolume0_.snapshot_id as snapshot9_2_, recovolume0_.state as state10_2_, recovolume0_.updated as updated11_2_, recovolume0_.volume_id as volume_12_2_, recovolume0_.volume_type as volume_13_2_ from reco_volume recovolume0_ where recovolume0_.volume_id is null
+2022-09-13 03:41:46.593 DEBUG 21808 --- [http-nio-8080-exec-8] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, application/signed-exchange;v=b3;q=0.9, */*;q=0.8]
+2022-09-13 03:41:46.702 DEBUG 21808 --- [http-nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : GET "/vendor/fontawesome-free/css/all.min.css", parameters={}
+2022-09-13 03:41:46.703 DEBUG 21808 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : GET "/js/aws.js", parameters={}
+2022-09-13 03:41:46.705 DEBUG 21808 --- [http-nio-8080-exec-9] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2022-09-13 03:41:46.709 DEBUG 21808 --- [http-nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2022-09-13 03:41:46.708 DEBUG 21808 --- [http-nio-8080-exec-1] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2022-09-13 03:41:46.710 DEBUG 21808 --- [http-nio-8080-exec-10] o.s.web.servlet.DispatcherServlet        : GET "/css/sb-admin-2.min.css", parameters={}
+2022-09-13 03:41:46.713 DEBUG 21808 --- [http-nio-8080-exec-10] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2022-09-13 03:41:46.718 DEBUG 21808 --- [http-nio-8080-exec-10] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2022-09-13 03:41:46.720 DEBUG 21808 --- [http-nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2022-09-13 03:41:46.730 DEBUG 21808 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2022-09-13 03:41:46.741 DEBUG 21808 --- [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : GET "/static/vendor/jquery/jquery.min.js", parameters={}
+2022-09-13 03:41:46.745 DEBUG 21808 --- [http-nio-8080-exec-5] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2022-09-13 03:41:46.748 DEBUG 21808 --- [http-nio-8080-exec-5] o.s.w.s.r.ResourceHttpRequestHandler     : Resource not found
+2022-09-13 03:41:46.750 DEBUG 21808 --- [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : Completed 404 NOT_FOUND
+2022-09-13 03:41:46.750 DEBUG 21808 --- [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : "ERROR" dispatch for GET "/error", parameters={}
+2022-09-13 03:41:46.752 DEBUG 21808 --- [http-nio-8080-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#error(HttpServletRequest)
+2022-09-13 03:41:46.753 DEBUG 21808 --- [http-nio-8080-exec-5] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2022-09-13 03:41:46.754 DEBUG 21808 --- [http-nio-8080-exec-5] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [{timestamp=Tue Sep 13 03:41:46 KST 2022, status=404, error=Not Found, message=No message available,  (truncated)...]
+2022-09-13 03:41:46.757 DEBUG 21808 --- [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : Exiting from "ERROR" dispatch, status 404
+2022-09-13 03:41:46.781 DEBUG 21808 --- [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : GET "/static/vendor/bootstrap/js/bootstrap.bundle.min.js", parameters={}
+2022-09-13 03:41:46.783 DEBUG 21808 --- [http-nio-8080-exec-4] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2022-09-13 03:41:46.788 DEBUG 21808 --- [http-nio-8080-exec-4] o.s.w.s.r.ResourceHttpRequestHandler     : Resource not found
+2022-09-13 03:41:46.788 DEBUG 21808 --- [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : Completed 404 NOT_FOUND
+2022-09-13 03:41:46.791 DEBUG 21808 --- [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : "ERROR" dispatch for GET "/error", parameters={}
+2022-09-13 03:41:46.794 DEBUG 21808 --- [http-nio-8080-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#error(HttpServletRequest)
+2022-09-13 03:41:46.796 DEBUG 21808 --- [http-nio-8080-exec-4] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2022-09-13 03:41:46.797 DEBUG 21808 --- [http-nio-8080-exec-4] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [{timestamp=Tue Sep 13 03:41:46 KST 2022, status=404, error=Not Found, message=No message available,  (truncated)...]
+2022-09-13 03:41:46.799 DEBUG 21808 --- [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : Exiting from "ERROR" dispatch, status 404
+2022-09-13 03:41:46.825 DEBUG 21808 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : GET "/static/vendor/jquery-easing/jquery.easing.min.js", parameters={}
+2022-09-13 03:41:46.829 DEBUG 21808 --- [http-nio-8080-exec-2] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2022-09-13 03:41:46.830 DEBUG 21808 --- [http-nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : GET "/static/js/sb-admin-2.min.js", parameters={}
+2022-09-13 03:41:46.830 DEBUG 21808 --- [http-nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : GET "/static/js/demo/chart-area-demo.js", parameters={}
+2022-09-13 03:41:46.830 DEBUG 21808 --- [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : GET "/static/vendor/chart.js/Chart.min.js", parameters={}
+2022-09-13 03:41:46.832 DEBUG 21808 --- [http-nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : GET "/static/js/demo/chart-pie-demo.js", parameters={}
+2022-09-13 03:41:46.833 DEBUG 21808 --- [http-nio-8080-exec-7] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2022-09-13 03:41:46.833 DEBUG 21808 --- [http-nio-8080-exec-6] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2022-09-13 03:41:46.833 DEBUG 21808 --- [http-nio-8080-exec-2] o.s.w.s.r.ResourceHttpRequestHandler     : Resource not found
+2022-09-13 03:41:46.833 DEBUG 21808 --- [http-nio-8080-exec-3] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2022-09-13 03:41:46.834 DEBUG 21808 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 404 NOT_FOUND
+2022-09-13 03:41:46.833 DEBUG 21808 --- [http-nio-8080-exec-8] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2022-09-13 03:41:46.835 DEBUG 21808 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : "ERROR" dispatch for GET "/error", parameters={}
+2022-09-13 03:41:46.834 DEBUG 21808 --- [http-nio-8080-exec-10] o.s.web.servlet.DispatcherServlet        : GET "/static/img/undraw_profile_1.svg", parameters={}
+2022-09-13 03:41:46.836 DEBUG 21808 --- [http-nio-8080-exec-7] o.s.w.s.r.ResourceHttpRequestHandler     : Resource not found
+2022-09-13 03:41:46.836 DEBUG 21808 --- [http-nio-8080-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#error(HttpServletRequest)
+2022-09-13 03:41:46.838 DEBUG 21808 --- [http-nio-8080-exec-10] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2022-09-13 03:41:46.837 DEBUG 21808 --- [http-nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : Completed 404 NOT_FOUND
+2022-09-13 03:41:46.838 DEBUG 21808 --- [http-nio-8080-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2022-09-13 03:41:46.838 DEBUG 21808 --- [http-nio-8080-exec-8] o.s.w.s.r.ResourceHttpRequestHandler     : Resource not found
+2022-09-13 03:41:46.840 DEBUG 21808 --- [http-nio-8080-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [{timestamp=Tue Sep 13 03:41:46 KST 2022, status=404, error=Not Found, message=No message available,  (truncated)...]
+2022-09-13 03:41:46.838 DEBUG 21808 --- [http-nio-8080-exec-3] o.s.w.s.r.ResourceHttpRequestHandler     : Resource not found
+2022-09-13 03:41:46.839 DEBUG 21808 --- [http-nio-8080-exec-6] o.s.w.s.r.ResourceHttpRequestHandler     : Resource not found
+2022-09-13 03:41:46.841 DEBUG 21808 --- [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 404 NOT_FOUND
+2022-09-13 03:41:46.839 DEBUG 21808 --- [http-nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : "ERROR" dispatch for GET "/error", parameters={}
+2022-09-13 03:41:46.840 DEBUG 21808 --- [http-nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : Completed 404 NOT_FOUND
+2022-09-13 03:41:46.842 DEBUG 21808 --- [http-nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : Completed 404 NOT_FOUND
+2022-09-13 03:41:46.842 DEBUG 21808 --- [http-nio-8080-exec-7] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#error(HttpServletRequest)
+2022-09-13 03:41:46.842 DEBUG 21808 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Exiting from "ERROR" dispatch, status 404
+2022-09-13 03:41:46.842 DEBUG 21808 --- [http-nio-8080-exec-10] o.s.w.s.r.ResourceHttpRequestHandler     : Resource not found
+2022-09-13 03:41:46.842 DEBUG 21808 --- [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : "ERROR" dispatch for GET "/error", parameters={}
+2022-09-13 03:41:46.843 DEBUG 21808 --- [http-nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : "ERROR" dispatch for GET "/error", parameters={}
+2022-09-13 03:41:46.843 DEBUG 21808 --- [http-nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : "ERROR" dispatch for GET "/error", parameters={}
+2022-09-13 03:41:46.844 DEBUG 21808 --- [http-nio-8080-exec-7] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2022-09-13 03:41:46.845 DEBUG 21808 --- [http-nio-8080-exec-8] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#error(HttpServletRequest)
+2022-09-13 03:41:46.845 DEBUG 21808 --- [http-nio-8080-exec-7] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [{timestamp=Tue Sep 13 03:41:46 KST 2022, status=404, error=Not Found, message=No message available,  (truncated)...]
+2022-09-13 03:41:46.844 DEBUG 21808 --- [http-nio-8080-exec-10] o.s.web.servlet.DispatcherServlet        : Completed 404 NOT_FOUND
+2022-09-13 03:41:46.844 DEBUG 21808 --- [http-nio-8080-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#error(HttpServletRequest)
+2022-09-13 03:41:46.847 DEBUG 21808 --- [http-nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : Exiting from "ERROR" dispatch, status 404
+2022-09-13 03:41:46.845 DEBUG 21808 --- [http-nio-8080-exec-6] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#error(HttpServletRequest)
+2022-09-13 03:41:46.846 DEBUG 21808 --- [http-nio-8080-exec-8] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2022-09-13 03:41:46.846 DEBUG 21808 --- [http-nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : GET "/static/img/undraw_profile_2.svg", parameters={}
+2022-09-13 03:41:46.847 DEBUG 21808 --- [http-nio-8080-exec-10] o.s.web.servlet.DispatcherServlet        : "ERROR" dispatch for GET "/error", parameters={}
+2022-09-13 03:41:46.848 DEBUG 21808 --- [http-nio-8080-exec-3] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2022-09-13 03:41:46.849 DEBUG 21808 --- [http-nio-8080-exec-8] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [{timestamp=Tue Sep 13 03:41:46 KST 2022, status=404, error=Not Found, message=No message available,  (truncated)...]
+2022-09-13 03:41:46.850 DEBUG 21808 --- [http-nio-8080-exec-6] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2022-09-13 03:41:46.851 DEBUG 21808 --- [http-nio-8080-exec-9] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2022-09-13 03:41:46.850 DEBUG 21808 --- [http-nio-8080-exec-10] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#error(HttpServletRequest)
+2022-09-13 03:41:46.853 DEBUG 21808 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : GET "/static/img/undraw_profile_3.svg", parameters={}
+2022-09-13 03:41:46.851 DEBUG 21808 --- [http-nio-8080-exec-3] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [{timestamp=Tue Sep 13 03:41:46 KST 2022, status=404, error=Not Found, message=No message available,  (truncated)...]
+2022-09-13 03:41:46.851 DEBUG 21808 --- [http-nio-8080-exec-6] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [{timestamp=Tue Sep 13 03:41:46 KST 2022, status=404, error=Not Found, message=No message available,  (truncated)...]
+2022-09-13 03:41:46.855 DEBUG 21808 --- [http-nio-8080-exec-1] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2022-09-13 03:41:46.852 DEBUG 21808 --- [http-nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : Exiting from "ERROR" dispatch, status 404
+2022-09-13 03:41:46.854 DEBUG 21808 --- [http-nio-8080-exec-10] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json;q=0.8', given [image/avif, image/webp, image/apng, image/svg+xml, image/*, */*;q=0.8] and supported [application/json, application/*+json, application/json, application/*+json]
+2022-09-13 03:41:46.854 DEBUG 21808 --- [http-nio-8080-exec-9] o.s.w.s.r.ResourceHttpRequestHandler     : Resource not found
+2022-09-13 03:41:46.855 DEBUG 21808 --- [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Exiting from "ERROR" dispatch, status 404
+2022-09-13 03:41:46.855 DEBUG 21808 --- [http-nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : Exiting from "ERROR" dispatch, status 404
+2022-09-13 03:41:46.858 DEBUG 21808 --- [http-nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : Completed 404 NOT_FOUND
+2022-09-13 03:41:46.858 DEBUG 21808 --- [http-nio-8080-exec-10] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [{timestamp=Tue Sep 13 03:41:46 KST 2022, status=404, error=Not Found, message=No message available,  (truncated)...]
+2022-09-13 03:41:46.860 DEBUG 21808 --- [http-nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : "ERROR" dispatch for GET "/error", parameters={}
+2022-09-13 03:41:46.861 DEBUG 21808 --- [http-nio-8080-exec-9] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#error(HttpServletRequest)
+2022-09-13 03:41:46.861 DEBUG 21808 --- [http-nio-8080-exec-1] o.s.w.s.r.ResourceHttpRequestHandler     : Resource not found
+2022-09-13 03:41:46.861 DEBUG 21808 --- [http-nio-8080-exec-10] o.s.web.servlet.DispatcherServlet        : Exiting from "ERROR" dispatch, status 404
+2022-09-13 03:41:46.862 DEBUG 21808 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 404 NOT_FOUND
+2022-09-13 03:41:46.863 DEBUG 21808 --- [http-nio-8080-exec-9] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json;q=0.8', given [image/avif, image/webp, image/apng, image/svg+xml, image/*, */*;q=0.8] and supported [application/json, application/*+json, application/json, application/*+json]
+2022-09-13 03:41:46.863 DEBUG 21808 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : "ERROR" dispatch for GET "/error", parameters={}
+2022-09-13 03:41:46.863 DEBUG 21808 --- [http-nio-8080-exec-9] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [{timestamp=Tue Sep 13 03:41:46 KST 2022, status=404, error=Not Found, message=No message available,  (truncated)...]
+2022-09-13 03:41:46.864 DEBUG 21808 --- [http-nio-8080-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#error(HttpServletRequest)
+2022-09-13 03:41:46.865 DEBUG 21808 --- [http-nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : Exiting from "ERROR" dispatch, status 404
+2022-09-13 03:41:46.865 DEBUG 21808 --- [http-nio-8080-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json;q=0.8', given [image/avif, image/webp, image/apng, image/svg+xml, image/*, */*;q=0.8] and supported [application/json, application/*+json, application/json, application/*+json]
+2022-09-13 03:41:46.866 DEBUG 21808 --- [http-nio-8080-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [{timestamp=Tue Sep 13 03:41:46 KST 2022, status=404, error=Not Found, message=No message available,  (truncated)...]
+2022-09-13 03:41:46.868 DEBUG 21808 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Exiting from "ERROR" dispatch, status 404
+2022-09-13 03:41:46.873 DEBUG 21808 --- [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : GET "/vendor/fontawesome-free/webfonts/fa-solid-900.woff2", parameters={}
+2022-09-13 03:41:46.881 DEBUG 21808 --- [http-nio-8080-exec-5] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2022-09-13 03:41:46.894 DEBUG 21808 --- [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2022-09-13 03:41:46.991 DEBUG 21808 --- [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : GET "/volume", parameters={}
+2022-09-13 03:41:46.991 DEBUG 21808 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : GET "/instance", parameters={}
+2022-09-13 03:41:46.992 DEBUG 21808 --- [http-nio-8080-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.bootest.controller.VolumeController#findAll(String)
+2022-09-13 03:41:46.992 DEBUG 21808 --- [http-nio-8080-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.bootest.controller.InstanceController#findAll(String)
+2022-09-13 03:41:47.027 DEBUG 21808 --- [http-nio-8080-exec-2] org.hibernate.SQL                        : select instancere0_.id as id1_1_, instancere0_.availability_zone as availabi2_1_, instancere0_.instance_id as instance3_1_, instancere0_.instance_life_cycle as instance4_1_, instancere0_.instance_name as instance5_1_, instancere0_.instance_state as instance6_1_, instancere0_.instance_type as instance7_1_, instancere0_.launch_time as launch_t8_1_, instancere0_.modified as modified9_1_, instancere0_.os as os10_1_, instancere0_.registered as registe11_1_ from reco_instance instancere0_
+2022-09-13 03:41:47.027 DEBUG 21808 --- [http-nio-8080-exec-4] org.hibernate.SQL                        : select recovolume0_.id as id1_2_, recovolume0_.attachments as attachme2_2_, recovolume0_.availability_zone as availabi3_2_, recovolume0_.create_time as create_t4_2_, recovolume0_.encrypted as encrypte5_2_, recovolume0_.instance_id as instance6_2_, recovolume0_.registered_date as register7_2_, recovolume0_.size as size8_2_, recovolume0_.snapshot_id as snapshot9_2_, recovolume0_.state as state10_2_, recovolume0_.updated as updated11_2_, recovolume0_.volume_id as volume_12_2_, recovolume0_.volume_type as volume_13_2_ from reco_volume recovolume0_
+2022-09-13 03:41:47.040 DEBUG 21808 --- [http-nio-8080-exec-2] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [application/json, text/javascript, */*;q=0.01] and supported [application/json, application/*+json, application/json, application/*+json]
+2022-09-13 03:41:47.040 DEBUG 21808 --- [http-nio-8080-exec-4] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [application/json, text/javascript, */*;q=0.01] and supported [application/json, application/*+json, application/json, application/*+json]
+2022-09-13 03:41:47.050 DEBUG 21808 --- [http-nio-8080-exec-2] m.m.a.RequestResponseBodyMethodProcessor : Writing [[InstanceReco(id=a8ff1654-f87b-4f5f-91b7-058f99e0c0fa, instanceId=i-002058881ea0ae130, instanceName= (truncated)...]
+2022-09-13 03:41:47.050 DEBUG 21808 --- [http-nio-8080-exec-4] m.m.a.RequestResponseBodyMethodProcessor : Writing [[RecoVolume(id=4ad47170-ff8d-49ab-94df-ed727f9b38f3, volumeId=vol-089330d5f0fd565a9, instanceId=null (truncated)...]
+2022-09-13 03:41:47.085 DEBUG 21808 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2022-09-13 03:41:47.085 DEBUG 21808 --- [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2022-09-13 03:41:50.914 DEBUG 21808 --- [http-nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : GET "/test", parameters={}
+2022-09-13 03:41:50.914 DEBUG 21808 --- [http-nio-8080-exec-7] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.bootest.controller.TaskTesterController#runTest()
+2022-09-13 03:41:50.914  INFO 21808 --- [http-nio-8080-exec-7] com.bootest.task.InstanceTask            : Update Resource Usage Request Start
+2022-09-13 03:41:50.930 DEBUG 21808 --- [http-nio-8080-exec-7] org.hibernate.SQL                        : select account0_.id as id1_0_, account0_.access_key as access_k2_0_, account0_.account_id as account_3_0_, account0_.created as created4_0_, account0_.name as name5_0_, account0_.regions as regions6_0_, account0_.secret_key as secret_k7_0_, account0_.updated as updated8_0_, account0_.user_id as user_id9_0_ from account account0_
+2022-09-13 03:41:53.250  INFO 21808 --- [http-nio-8080-exec-7] com.bootest.aws.Ec2ClientManager         : Ec2Clients: [515313355389]
+2022-09-13 03:41:56.170 DEBUG 21808 --- [http-nio-8080-exec-7] org.hibernate.SQL                        : select resourceus0_.id as id1_3_, resourceus0_.account_id as account_2_3_, resourceus0_.account_name as account_3_3_, resourceus0_.annually as annually4_3_, resourceus0_.average as average5_3_, resourceus0_.data_type as data_typ6_3_, resourceus0_.image_id as image_id7_3_, resourceus0_.instance_type as instance8_3_, resourceus0_.life_cycle as life_cyc9_3_, resourceus0_.maximum as maximum10_3_, resourceus0_.minimum as minimum11_3_, resourceus0_.modified as modifie12_3_, resourceus0_.monthly as monthly13_3_, resourceus0_.os as os14_3_, resourceus0_.region as region15_3_, resourceus0_.registered as registe16_3_, resourceus0_.resource_id as resourc17_3_, resourceus0_.resource_name as resourc18_3_, resourceus0_.resource_state as resourc19_3_ from resource_usage resourceus0_ where resourceus0_.account_id=? and resourceus0_.region=? and resourceus0_.resource_id=? and resourceus0_.annually=? and resourceus0_.monthly=? and resourceus0_.data_type=?
+2022-09-13 03:41:56.274 DEBUG 21808 --- [http-nio-8080-exec-7] org.hibernate.SQL                        : select resourceus0_.id as id1_3_, resourceus0_.account_id as account_2_3_, resourceus0_.account_name as account_3_3_, resourceus0_.annually as annually4_3_, resourceus0_.average as average5_3_, resourceus0_.data_type as data_typ6_3_, resourceus0_.image_id as image_id7_3_, resourceus0_.instance_type as instance8_3_, resourceus0_.life_cycle as life_cyc9_3_, resourceus0_.maximum as maximum10_3_, resourceus0_.minimum as minimum11_3_, resourceus0_.modified as modifie12_3_, resourceus0_.monthly as monthly13_3_, resourceus0_.os as os14_3_, resourceus0_.region as region15_3_, resourceus0_.registered as registe16_3_, resourceus0_.resource_id as resourc17_3_, resourceus0_.resource_name as resourc18_3_, resourceus0_.resource_state as resourc19_3_ from resource_usage resourceus0_ where resourceus0_.account_id=? and resourceus0_.region=? and resourceus0_.resource_id=? and resourceus0_.annually=? and resourceus0_.monthly=? and resourceus0_.data_type=?
+2022-09-13 03:41:56.287 DEBUG 21808 --- [http-nio-8080-exec-7] org.hibernate.SQL                        : select resourceus0_.id as id1_3_, resourceus0_.account_id as account_2_3_, resourceus0_.account_name as account_3_3_, resourceus0_.annually as annually4_3_, resourceus0_.average as average5_3_, resourceus0_.data_type as data_typ6_3_, resourceus0_.image_id as image_id7_3_, resourceus0_.instance_type as instance8_3_, resourceus0_.life_cycle as life_cyc9_3_, resourceus0_.maximum as maximum10_3_, resourceus0_.minimum as minimum11_3_, resourceus0_.modified as modifie12_3_, resourceus0_.monthly as monthly13_3_, resourceus0_.os as os14_3_, resourceus0_.region as region15_3_, resourceus0_.registered as registe16_3_, resourceus0_.resource_id as resourc17_3_, resourceus0_.resource_name as resourc18_3_, resourceus0_.resource_state as resourc19_3_ from resource_usage resourceus0_ where resourceus0_.account_id=? and resourceus0_.region=? and resourceus0_.resource_id=? and resourceus0_.annually=? and resourceus0_.monthly=? and resourceus0_.data_type=?
+2022-09-13 03:41:56.307 DEBUG 21808 --- [http-nio-8080-exec-7] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2022-09-13 03:41:56.309 DEBUG 21808 --- [http-nio-8080-exec-7] m.m.a.RequestResponseBodyMethodProcessor : Nothing to write: null body
+2022-09-13 03:41:56.310 DEBUG 21808 --- [http-nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2022-09-13 03:42:20.762  INFO 21808 --- [Thread-7] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-09-13 03:42:20.766  INFO 21808 --- [Thread-7] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown initiated...
+2022-09-13 03:42:20.796  INFO 21808 --- [Thread-7] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown completed.
+2022-09-13 03:42:21.145  INFO 21808 --- [restartedMain] com.bootest.BootestApplication           : Starting BootestApplication using Java 11.0.10 on Kyungeun with PID 21808 (C:\dev\Project2022\target\classes started by az2282 in C:\dev\Project2022)
+2022-09-13 03:42:21.147  INFO 21808 --- [restartedMain] com.bootest.BootestApplication           : The following 2 profiles are active: "secure", "dev"
+2022-09-13 03:42:22.230  INFO 21808 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-09-13 03:42:22.346  INFO 21808 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 112 ms. Found 6 JPA repository interfaces.
+2022-09-13 03:42:22.707  INFO 21808 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-09-13 03:42:22.710  INFO 21808 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-09-13 03:42:22.711  INFO 21808 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.60]
+2022-09-13 03:42:22.840  INFO 21808 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-09-13 03:42:22.841  INFO 21808 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1685 ms
+2022-09-13 03:42:22.880  INFO 21808 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Starting...
+2022-09-13 03:42:22.925  INFO 21808 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Start completed.
+2022-09-13 03:42:22.927  INFO 21808 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:mysql://localhost:3306/project2022?serverTimezone=UTC&characterEncoding=UTF-8&serverTimezone=Asia/Seoul&zeroDateTimeBehavior=convertToNull'
+2022-09-13 03:42:22.951 DEBUG 21808 --- [restartedMain] o.s.b.w.s.ServletContextInitializerBeans : Mapping filters: characterEncodingFilter urls=[/*] order=-2147483648, formContentFilter urls=[/*] order=-9900, requestContextFilter urls=[/*] order=-105
+2022-09-13 03:42:22.953 DEBUG 21808 --- [restartedMain] o.s.b.w.s.ServletContextInitializerBeans : Mapping servlets: dispatcherServlet urls=[/], webServlet urls=[/h2-console/*]
+2022-09-13 03:42:23.081  INFO 21808 --- [restartedMain] liquibase.lockservice                    : Successfully acquired change log lock
+2022-09-13 03:42:23.216  INFO 21808 --- [restartedMain] liquibase.changelog                      : Reading from project2022.DATABASECHANGELOG
+2022-09-13 03:42:23.256  INFO 21808 --- [restartedMain] liquibase.lockservice                    : Successfully released change log lock
+2022-09-13 03:42:23.325  INFO 21808 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-09-13 03:42:23.345  INFO 21808 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2022-09-13 03:42:23.623  INFO 21808 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-09-13 03:42:23.625  INFO 21808 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-09-13 03:42:24.405  WARN 21808 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-09-13 03:42:24.573 DEBUG 21808 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : 25 mappings in 'requestMappingHandlerMapping'
+2022-09-13 03:42:24.723  INFO 21808 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-09-13 03:42:24.735 DEBUG 21808 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2022-09-13 03:42:24.749  INFO 21808 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2022-09-13 03:42:24.764 DEBUG 21808 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/swagger-ui/] in 'viewControllerHandlerMapping'
+2022-09-13 03:42:24.782 DEBUG 21808 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**, /swagger-ui/**] in 'resourceHandlerMapping'
+2022-09-13 03:42:24.800 DEBUG 21808 --- [restartedMain] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
+2022-09-13 03:42:25.067  INFO 21808 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-09-13 03:42:25.389  INFO 21808 --- [restartedMain] com.bootest.BootestApplication           : Started BootestApplication in 4.4 seconds (JVM running for 92.323)
+2022-09-13 03:42:25.393  INFO 21808 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
