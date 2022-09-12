@@ -6608,47 +6608,218 @@ java.lang.IllegalStateException: No primary or single unique constructor found f
 2022-09-13 02:10:28.993  INFO 33396 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
 2022-09-13 02:10:29.131  INFO 33396 --- [restartedMain] com.bootest.BootestApplication           : Started BootestApplication in 1.668 seconds (JVM running for 291.013)
 2022-09-13 02:10:29.133  INFO 33396 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
-2022-09-13 02:24:53.032  INFO 33396 --- [Thread-11] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2022-09-13 02:24:53.037  INFO 33396 --- [Thread-11] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Shutdown initiated...
-2022-09-13 02:24:53.046  INFO 33396 --- [Thread-11] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Shutdown completed.
-2022-09-13 02:24:53.164  INFO 33396 --- [restartedMain] com.bootest.BootestApplication           : Starting BootestApplication using Java 11.0.10 on Kyungeun with PID 33396 (C:\dev\Project2022\target\classes started by az2282 in C:\dev\Project2022)
-2022-09-13 02:24:53.166  INFO 33396 --- [restartedMain] com.bootest.BootestApplication           : The following 2 profiles are active: "secure", "dev"
-2022-09-13 02:24:53.493  INFO 33396 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2022-09-13 02:24:53.548  INFO 33396 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 46 ms. Found 6 JPA repository interfaces.
-2022-09-13 02:24:53.705  INFO 33396 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2022-09-13 02:24:53.705  INFO 33396 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2022-09-13 02:24:53.705  INFO 33396 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.60]
-2022-09-13 02:24:53.746  INFO 33396 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2022-09-13 02:24:53.748  INFO 33396 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 580 ms
-2022-09-13 02:24:53.764  INFO 33396 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Starting...
-2022-09-13 02:24:53.783  INFO 33396 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Start completed.
-2022-09-13 02:24:53.784  INFO 33396 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:mysql://localhost:3306/project2022?serverTimezone=UTC&characterEncoding=UTF-8&serverTimezone=Asia/Seoul&zeroDateTimeBehavior=convertToNull'
-2022-09-13 02:24:53.798 DEBUG 33396 --- [restartedMain] o.s.b.w.s.ServletContextInitializerBeans : Mapping filters: characterEncodingFilter urls=[/*] order=-2147483648, formContentFilter urls=[/*] order=-9900, requestContextFilter urls=[/*] order=-105
-2022-09-13 02:24:53.800 DEBUG 33396 --- [restartedMain] o.s.b.w.s.ServletContextInitializerBeans : Mapping servlets: dispatcherServlet urls=[/], webServlet urls=[/h2-console/*]
-2022-09-13 02:24:53.832  INFO 33396 --- [restartedMain] liquibase.lockservice                    : Successfully acquired change log lock
-2022-09-13 02:24:53.931  INFO 33396 --- [restartedMain] liquibase.changelog                      : Reading from project2022.DATABASECHANGELOG
-2022-09-13 02:24:53.959  INFO 33396 --- [restartedMain] liquibase.lockservice                    : Successfully released change log lock
-2022-09-13 02:24:53.968  WARN 33396 --- [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'liquibase' defined in class path resource [org/springframework/boot/autoconfigure/liquibase/LiquibaseAutoConfiguration$LiquibaseConfiguration.class]: Invocation of init method failed; nested exception is liquibase.exception.ValidationFailedException: Validation Failed:
-     4 change sets check sum
-          classpath:/db/changelog/db.changelog-master.yaml::1::ky was: 8:3cfc434721f748502163fa099bb3ed9b but is now: 8:bdae094b9489ec390668d0a660132f9c
-          classpath:/db/changelog/db.changelog-master.yaml::2::ky was: 8:366330dffc9410e56ec5b400a4449f6c but is now: 8:432595cc45a2b477bce8bd66a5bab819
-          classpath:/db/changelog/db.changelog-master.yaml::3::ky was: 8:7140e4eebd02b3354c86d1c8872961b9 but is now: 8:fe1fe3446c544a89da0edc9fee51a808
-          classpath:/db/changelog/db.changelog-master.yaml::4::ky was: 8:ee2b014bd823362bb4d7effcd75c4573 but is now: 8:efb16711a50db7d23c598c93faf78623
-
-2022-09-13 02:24:53.970  INFO 33396 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Shutdown initiated...
-2022-09-13 02:24:53.991  INFO 33396 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Shutdown completed.
-2022-09-13 02:24:53.993  INFO 33396 --- [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
-2022-09-13 02:24:53.997  INFO 33396 --- [restartedMain] ConditionEvaluationReportLoggingListener : 
+2022-09-13 02:16:32.503  INFO 8656 --- [restartedMain] com.bootest.BootestApplication           : Starting BootestApplication using Java 18.0.2 on hangyeong-eun-ui-MacBookPro.local with PID 8656 (/Users/hangyeong-eun/Documents/dev/Project2022/target/classes started by hangyeong-eun in /Users/hangyeong-eun/Documents/dev/Project2022)
+2022-09-13 02:16:32.504  INFO 8656 --- [restartedMain] com.bootest.BootestApplication           : The following 2 profiles are active: "secure", "dev"
+2022-09-13 02:16:32.526  INFO 8656 --- [restartedMain] o.s.b.devtools.restart.ChangeableUrls    : The Class-Path manifest attribute in /Users/hangyeong-eun/.m2/repository/org/liquibase/liquibase-core/4.5.0/liquibase-core-4.5.0.jar referenced one or more files that do not exist: file:/Users/hangyeong-eun/.m2/repository/org/liquibase/liquibase-core/4.5.0/snakeyaml-1.27.jar
+2022-09-13 02:16:32.526  INFO 8656 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-09-13 02:16:32.939  INFO 8656 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-09-13 02:16:32.965  INFO 8656 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 22 ms. Found 6 JPA repository interfaces.
+2022-09-13 02:16:33.335  INFO 8656 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-09-13 02:16:33.340  INFO 8656 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-09-13 02:16:33.340  INFO 8656 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.60]
+2022-09-13 02:16:33.369  INFO 8656 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-09-13 02:16:33.369  INFO 8656 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 843 ms
+2022-09-13 02:16:33.390  INFO 8656 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-09-13 02:16:33.604  INFO 8656 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-09-13 02:16:33.609  INFO 8656 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:mysql://localhost:3306/project2022?serverTimezone=UTC&characterEncoding=UTF-8&serverTimezone=Asia/Seoul&zeroDateTimeBehavior=convertToNull'
+2022-09-13 02:16:33.634 DEBUG 8656 --- [restartedMain] o.s.b.w.s.ServletContextInitializerBeans : Mapping filters: characterEncodingFilter urls=[/*] order=-2147483648, formContentFilter urls=[/*] order=-9900, requestContextFilter urls=[/*] order=-105
+2022-09-13 02:16:33.634 DEBUG 8656 --- [restartedMain] o.s.b.w.s.ServletContextInitializerBeans : Mapping servlets: dispatcherServlet urls=[/], webServlet urls=[/h2-console/*]
+2022-09-13 02:16:33.884  INFO 8656 --- [restartedMain] liquibase.lockservice                    : Successfully acquired change log lock
+2022-09-13 02:16:33.892  INFO 8656 --- [restartedMain] liquibase.lockservice                    : Successfully released change log lock
+2022-09-13 02:16:33.895  WARN 8656 --- [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'liquibase' defined in class path resource [org/springframework/boot/autoconfigure/liquibase/LiquibaseAutoConfiguration$LiquibaseConfiguration.class]: Invocation of init method failed; nested exception is liquibase.exception.ChangeLogParseException: Empty file classpath:/db/changelog/db.changelog-master.yaml
+2022-09-13 02:16:33.895  INFO 8656 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-09-13 02:16:33.898  INFO 8656 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-09-13 02:16:33.899  INFO 8656 --- [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2022-09-13 02:16:33.905  INFO 8656 --- [restartedMain] ConditionEvaluationReportLoggingListener : 
 
 Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
-2022-09-13 02:24:54.020 ERROR 33396 --- [restartedMain] o.s.boot.SpringApplication               : Application run failed
+2022-09-13 02:16:33.913 ERROR 8656 --- [restartedMain] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'liquibase' defined in class path resource [org/springframework/boot/autoconfigure/liquibase/LiquibaseAutoConfiguration$LiquibaseConfiguration.class]: Invocation of init method failed; nested exception is liquibase.exception.ChangeLogParseException: Empty file classpath:/db/changelog/db.changelog-master.yaml
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1804) ~[spring-beans-5.3.18.jar:5.3.18]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:620) ~[spring-beans-5.3.18.jar:5.3.18]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542) ~[spring-beans-5.3.18.jar:5.3.18]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335) ~[spring-beans-5.3.18.jar:5.3.18]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-5.3.18.jar:5.3.18]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333) ~[spring-beans-5.3.18.jar:5.3.18]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208) ~[spring-beans-5.3.18.jar:5.3.18]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:322) ~[spring-beans-5.3.18.jar:5.3.18]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208) ~[spring-beans-5.3.18.jar:5.3.18]
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1154) ~[spring-context-5.3.18.jar:5.3.18]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:908) ~[spring-context-5.3.18.jar:5.3.18]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583) ~[spring-context-5.3.18.jar:5.3.18]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:145) ~[spring-boot-2.6.6.jar:2.6.6]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:740) ~[spring-boot-2.6.6.jar:2.6.6]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:415) ~[spring-boot-2.6.6.jar:2.6.6]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:303) ~[spring-boot-2.6.6.jar:2.6.6]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1312) ~[spring-boot-2.6.6.jar:2.6.6]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1301) ~[spring-boot-2.6.6.jar:2.6.6]
+	at com.bootest.BootestApplication.main(BootestApplication.java:11) ~[classes/:na]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:577) ~[na:na]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49) ~[spring-boot-devtools-2.6.6.jar:2.6.6]
+Caused by: liquibase.exception.ChangeLogParseException: Empty file classpath:/db/changelog/db.changelog-master.yaml
+	at liquibase.parser.core.yaml.YamlChangeLogParser.parse(YamlChangeLogParser.java:33) ~[liquibase-core-4.5.0.jar:na]
+	at liquibase.Liquibase.getDatabaseChangeLog(Liquibase.java:369) ~[liquibase-core-4.5.0.jar:na]
+	at liquibase.Liquibase.lambda$update$1(Liquibase.java:224) ~[liquibase-core-4.5.0.jar:na]
+	at liquibase.Scope.lambda$child$0(Scope.java:177) ~[liquibase-core-4.5.0.jar:na]
+	at liquibase.Scope.child(Scope.java:186) ~[liquibase-core-4.5.0.jar:na]
+	at liquibase.Scope.child(Scope.java:176) ~[liquibase-core-4.5.0.jar:na]
+	at liquibase.Scope.child(Scope.java:155) ~[liquibase-core-4.5.0.jar:na]
+	at liquibase.Liquibase.runInScope(Liquibase.java:2404) ~[liquibase-core-4.5.0.jar:na]
+	at liquibase.Liquibase.update(Liquibase.java:211) ~[liquibase-core-4.5.0.jar:na]
+	at liquibase.Liquibase.update(Liquibase.java:197) ~[liquibase-core-4.5.0.jar:na]
+	at liquibase.integration.spring.SpringLiquibase.performUpdate(SpringLiquibase.java:314) ~[liquibase-core-4.5.0.jar:na]
+	at liquibase.integration.spring.SpringLiquibase.afterPropertiesSet(SpringLiquibase.java:269) ~[liquibase-core-4.5.0.jar:na]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1863) ~[spring-beans-5.3.18.jar:5.3.18]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1800) ~[spring-beans-5.3.18.jar:5.3.18]
+	... 21 common frames omitted
+
+2022-09-13 02:16:55.421  INFO 8672 --- [restartedMain] com.bootest.BootestApplication           : Starting BootestApplication using Java 18.0.2 on hangyeong-eun-ui-MacBookPro.local with PID 8672 (/Users/hangyeong-eun/Documents/dev/Project2022/target/classes started by hangyeong-eun in /Users/hangyeong-eun/Documents/dev/Project2022)
+2022-09-13 02:16:55.422  INFO 8672 --- [restartedMain] com.bootest.BootestApplication           : The following 2 profiles are active: "secure", "dev"
+2022-09-13 02:16:55.443  INFO 8672 --- [restartedMain] o.s.b.devtools.restart.ChangeableUrls    : The Class-Path manifest attribute in /Users/hangyeong-eun/.m2/repository/org/liquibase/liquibase-core/4.5.0/liquibase-core-4.5.0.jar referenced one or more files that do not exist: file:/Users/hangyeong-eun/.m2/repository/org/liquibase/liquibase-core/4.5.0/snakeyaml-1.27.jar
+2022-09-13 02:16:55.443  INFO 8672 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-09-13 02:16:55.828  INFO 8672 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-09-13 02:16:55.854  INFO 8672 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 21 ms. Found 6 JPA repository interfaces.
+2022-09-13 02:16:56.185  INFO 8672 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-09-13 02:16:56.190  INFO 8672 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-09-13 02:16:56.190  INFO 8672 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.60]
+2022-09-13 02:16:56.220  INFO 8672 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-09-13 02:16:56.220  INFO 8672 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 777 ms
+2022-09-13 02:16:56.241  INFO 8672 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-09-13 02:16:56.384  INFO 8672 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-09-13 02:16:56.389  INFO 8672 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:mysql://localhost:3306/project2022?serverTimezone=UTC&characterEncoding=UTF-8&serverTimezone=Asia/Seoul&zeroDateTimeBehavior=convertToNull'
+2022-09-13 02:16:56.420 DEBUG 8672 --- [restartedMain] o.s.b.w.s.ServletContextInitializerBeans : Mapping filters: characterEncodingFilter urls=[/*] order=-2147483648, formContentFilter urls=[/*] order=-9900, requestContextFilter urls=[/*] order=-105
+2022-09-13 02:16:56.420 DEBUG 8672 --- [restartedMain] o.s.b.w.s.ServletContextInitializerBeans : Mapping servlets: dispatcherServlet urls=[/], webServlet urls=[/h2-console/*]
+2022-09-13 02:16:56.644  INFO 8672 --- [restartedMain] liquibase.lockservice                    : Successfully acquired change log lock
+2022-09-13 02:16:56.726  INFO 8672 --- [restartedMain] liquibase.changelog                      : Reading from project2022.DATABASECHANGELOG
+2022-09-13 02:16:56.740  INFO 8672 --- [restartedMain] liquibase.changelog                      : ChangeSet classpath:/db/changelog/db.changelog-master.yaml::null::null ran successfully in 1ms
+2022-09-13 02:16:56.751  INFO 8672 --- [restartedMain] liquibase.lockservice                    : Successfully released change log lock
+2022-09-13 02:16:56.752  WARN 8672 --- [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'liquibase' defined in class path resource [org/springframework/boot/autoconfigure/liquibase/LiquibaseAutoConfiguration$LiquibaseConfiguration.class]: Invocation of init method failed; nested exception is liquibase.exception.LiquibaseException: liquibase.exception.DatabaseException: Column 'ID' cannot be null [Failed SQL: (1048) INSERT INTO project2022.DATABASECHANGELOG (ID, AUTHOR, FILENAME, DATEEXECUTED, ORDEREXECUTED, MD5SUM, `DESCRIPTION`, COMMENTS, EXECTYPE, CONTEXTS, LABELS, LIQUIBASE, DEPLOYMENT_ID) VALUES (NULL, NULL, 'classpath:/db/changelog/db.changelog-master.yaml', NOW(), 6, '8:d41d8cd98f00b204e9800998ecf8427e', 'empty', '', 'EXECUTED', NULL, NULL, '4.5.0', '3003016727')]
+2022-09-13 02:16:56.753  INFO 8672 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-09-13 02:16:56.756  INFO 8672 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-09-13 02:16:56.758  INFO 8672 --- [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2022-09-13 02:16:56.764  INFO 8672 --- [restartedMain] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2022-09-13 02:16:56.773 ERROR 8672 --- [restartedMain] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'liquibase' defined in class path resource [org/springframework/boot/autoconfigure/liquibase/LiquibaseAutoConfiguration$LiquibaseConfiguration.class]: Invocation of init method failed; nested exception is liquibase.exception.LiquibaseException: liquibase.exception.DatabaseException: Column 'ID' cannot be null [Failed SQL: (1048) INSERT INTO project2022.DATABASECHANGELOG (ID, AUTHOR, FILENAME, DATEEXECUTED, ORDEREXECUTED, MD5SUM, `DESCRIPTION`, COMMENTS, EXECTYPE, CONTEXTS, LABELS, LIQUIBASE, DEPLOYMENT_ID) VALUES (NULL, NULL, 'classpath:/db/changelog/db.changelog-master.yaml', NOW(), 6, '8:d41d8cd98f00b204e9800998ecf8427e', 'empty', '', 'EXECUTED', NULL, NULL, '4.5.0', '3003016727')]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1804) ~[spring-beans-5.3.18.jar:5.3.18]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:620) ~[spring-beans-5.3.18.jar:5.3.18]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542) ~[spring-beans-5.3.18.jar:5.3.18]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335) ~[spring-beans-5.3.18.jar:5.3.18]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-5.3.18.jar:5.3.18]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333) ~[spring-beans-5.3.18.jar:5.3.18]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208) ~[spring-beans-5.3.18.jar:5.3.18]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:322) ~[spring-beans-5.3.18.jar:5.3.18]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208) ~[spring-beans-5.3.18.jar:5.3.18]
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1154) ~[spring-context-5.3.18.jar:5.3.18]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:908) ~[spring-context-5.3.18.jar:5.3.18]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583) ~[spring-context-5.3.18.jar:5.3.18]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:145) ~[spring-boot-2.6.6.jar:2.6.6]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:740) ~[spring-boot-2.6.6.jar:2.6.6]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:415) ~[spring-boot-2.6.6.jar:2.6.6]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:303) ~[spring-boot-2.6.6.jar:2.6.6]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1312) ~[spring-boot-2.6.6.jar:2.6.6]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1301) ~[spring-boot-2.6.6.jar:2.6.6]
+	at com.bootest.BootestApplication.main(BootestApplication.java:11) ~[classes/:na]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:577) ~[na:na]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49) ~[spring-boot-devtools-2.6.6.jar:2.6.6]
+Caused by: liquibase.exception.LiquibaseException: liquibase.exception.DatabaseException: Column 'ID' cannot be null [Failed SQL: (1048) INSERT INTO project2022.DATABASECHANGELOG (ID, AUTHOR, FILENAME, DATEEXECUTED, ORDEREXECUTED, MD5SUM, `DESCRIPTION`, COMMENTS, EXECTYPE, CONTEXTS, LABELS, LIQUIBASE, DEPLOYMENT_ID) VALUES (NULL, NULL, 'classpath:/db/changelog/db.changelog-master.yaml', NOW(), 6, '8:d41d8cd98f00b204e9800998ecf8427e', 'empty', '', 'EXECUTED', NULL, NULL, '4.5.0', '3003016727')]
+	at liquibase.changelog.ChangeLogIterator.run(ChangeLogIterator.java:124) ~[liquibase-core-4.5.0.jar:na]
+	at liquibase.Liquibase.lambda$null$0(Liquibase.java:265) ~[liquibase-core-4.5.0.jar:na]
+	at liquibase.Scope.lambda$child$0(Scope.java:177) ~[liquibase-core-4.5.0.jar:na]
+	at liquibase.Scope.child(Scope.java:186) ~[liquibase-core-4.5.0.jar:na]
+	at liquibase.Scope.child(Scope.java:176) ~[liquibase-core-4.5.0.jar:na]
+	at liquibase.Scope.child(Scope.java:155) ~[liquibase-core-4.5.0.jar:na]
+	at liquibase.Scope.child(Scope.java:239) ~[liquibase-core-4.5.0.jar:na]
+	at liquibase.Liquibase.lambda$update$1(Liquibase.java:264) ~[liquibase-core-4.5.0.jar:na]
+	at liquibase.Scope.lambda$child$0(Scope.java:177) ~[liquibase-core-4.5.0.jar:na]
+	at liquibase.Scope.child(Scope.java:186) ~[liquibase-core-4.5.0.jar:na]
+	at liquibase.Scope.child(Scope.java:176) ~[liquibase-core-4.5.0.jar:na]
+	at liquibase.Scope.child(Scope.java:155) ~[liquibase-core-4.5.0.jar:na]
+	at liquibase.Liquibase.runInScope(Liquibase.java:2404) ~[liquibase-core-4.5.0.jar:na]
+	at liquibase.Liquibase.update(Liquibase.java:211) ~[liquibase-core-4.5.0.jar:na]
+	at liquibase.Liquibase.update(Liquibase.java:197) ~[liquibase-core-4.5.0.jar:na]
+	at liquibase.integration.spring.SpringLiquibase.performUpdate(SpringLiquibase.java:314) ~[liquibase-core-4.5.0.jar:na]
+	at liquibase.integration.spring.SpringLiquibase.afterPropertiesSet(SpringLiquibase.java:269) ~[liquibase-core-4.5.0.jar:na]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1863) ~[spring-beans-5.3.18.jar:5.3.18]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1800) ~[spring-beans-5.3.18.jar:5.3.18]
+	... 21 common frames omitted
+Caused by: liquibase.exception.DatabaseException: Column 'ID' cannot be null [Failed SQL: (1048) INSERT INTO project2022.DATABASECHANGELOG (ID, AUTHOR, FILENAME, DATEEXECUTED, ORDEREXECUTED, MD5SUM, `DESCRIPTION`, COMMENTS, EXECTYPE, CONTEXTS, LABELS, LIQUIBASE, DEPLOYMENT_ID) VALUES (NULL, NULL, 'classpath:/db/changelog/db.changelog-master.yaml', NOW(), 6, '8:d41d8cd98f00b204e9800998ecf8427e', 'empty', '', 'EXECUTED', NULL, NULL, '4.5.0', '3003016727')]
+	at liquibase.executor.jvm.JdbcExecutor$ExecuteStatementCallback.doInStatement(JdbcExecutor.java:393) ~[liquibase-core-4.5.0.jar:na]
+	at liquibase.executor.jvm.JdbcExecutor.execute(JdbcExecutor.java:82) ~[liquibase-core-4.5.0.jar:na]
+	at liquibase.executor.jvm.JdbcExecutor.execute(JdbcExecutor.java:150) ~[liquibase-core-4.5.0.jar:na]
+	at liquibase.executor.jvm.JdbcExecutor.execute(JdbcExecutor.java:134) ~[liquibase-core-4.5.0.jar:na]
+	at liquibase.changelog.StandardChangeLogHistoryService.setExecType(StandardChangeLogHistoryService.java:391) ~[liquibase-core-4.5.0.jar:na]
+	at liquibase.database.AbstractJdbcDatabase.markChangeSetExecStatus(AbstractJdbcDatabase.java:1136) ~[liquibase-core-4.5.0.jar:na]
+	at liquibase.changelog.visitor.UpdateVisitor.visit(UpdateVisitor.java:60) ~[liquibase-core-4.5.0.jar:na]
+	at liquibase.changelog.ChangeLogIterator$2.lambda$null$0(ChangeLogIterator.java:111) ~[liquibase-core-4.5.0.jar:na]
+	at liquibase.Scope.lambda$child$0(Scope.java:177) ~[liquibase-core-4.5.0.jar:na]
+	at liquibase.Scope.child(Scope.java:186) ~[liquibase-core-4.5.0.jar:na]
+	at liquibase.Scope.child(Scope.java:176) ~[liquibase-core-4.5.0.jar:na]
+	at liquibase.Scope.child(Scope.java:155) ~[liquibase-core-4.5.0.jar:na]
+	at liquibase.changelog.ChangeLogIterator$2.lambda$run$1(ChangeLogIterator.java:110) ~[liquibase-core-4.5.0.jar:na]
+	at liquibase.Scope.lambda$child$0(Scope.java:177) ~[liquibase-core-4.5.0.jar:na]
+	at liquibase.Scope.child(Scope.java:186) ~[liquibase-core-4.5.0.jar:na]
+	at liquibase.Scope.child(Scope.java:176) ~[liquibase-core-4.5.0.jar:na]
+	at liquibase.Scope.child(Scope.java:155) ~[liquibase-core-4.5.0.jar:na]
+	at liquibase.Scope.child(Scope.java:239) ~[liquibase-core-4.5.0.jar:na]
+	at liquibase.changelog.ChangeLogIterator$2.run(ChangeLogIterator.java:94) ~[liquibase-core-4.5.0.jar:na]
+	at liquibase.Scope.lambda$child$0(Scope.java:177) ~[liquibase-core-4.5.0.jar:na]
+	at liquibase.Scope.child(Scope.java:186) ~[liquibase-core-4.5.0.jar:na]
+	at liquibase.Scope.child(Scope.java:176) ~[liquibase-core-4.5.0.jar:na]
+	at liquibase.Scope.child(Scope.java:155) ~[liquibase-core-4.5.0.jar:na]
+	at liquibase.Scope.child(Scope.java:239) ~[liquibase-core-4.5.0.jar:na]
+	at liquibase.Scope.child(Scope.java:243) ~[liquibase-core-4.5.0.jar:na]
+	at liquibase.changelog.ChangeLogIterator.run(ChangeLogIterator.java:66) ~[liquibase-core-4.5.0.jar:na]
+	... 39 common frames omitted
+Caused by: java.sql.SQLIntegrityConstraintViolationException: Column 'ID' cannot be null
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:117) ~[mysql-connector-java-8.0.28.jar:8.0.28]
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122) ~[mysql-connector-java-8.0.28.jar:8.0.28]
+	at com.mysql.cj.jdbc.StatementImpl.executeInternal(StatementImpl.java:763) ~[mysql-connector-java-8.0.28.jar:8.0.28]
+	at com.mysql.cj.jdbc.StatementImpl.execute(StatementImpl.java:648) ~[mysql-connector-java-8.0.28.jar:8.0.28]
+	at com.zaxxer.hikari.pool.ProxyStatement.execute(ProxyStatement.java:94) ~[HikariCP-4.0.3.jar:na]
+	at com.zaxxer.hikari.pool.HikariProxyStatement.execute(HikariProxyStatement.java) ~[HikariCP-4.0.3.jar:na]
+	at liquibase.executor.jvm.JdbcExecutor$ExecuteStatementCallback.doInStatement(JdbcExecutor.java:389) ~[liquibase-core-4.5.0.jar:na]
+	... 64 common frames omitted
+
+2022-09-13 02:19:17.611  INFO 8717 --- [restartedMain] com.bootest.BootestApplication           : Starting BootestApplication using Java 18.0.2 on hangyeong-eun-ui-MacBookPro.local with PID 8717 (/Users/hangyeong-eun/Documents/dev/Project2022/target/classes started by hangyeong-eun in /Users/hangyeong-eun/Documents/dev/Project2022)
+2022-09-13 02:19:17.612  INFO 8717 --- [restartedMain] com.bootest.BootestApplication           : The following 2 profiles are active: "secure", "dev"
+2022-09-13 02:19:17.633  INFO 8717 --- [restartedMain] o.s.b.devtools.restart.ChangeableUrls    : The Class-Path manifest attribute in /Users/hangyeong-eun/.m2/repository/org/liquibase/liquibase-core/4.5.0/liquibase-core-4.5.0.jar referenced one or more files that do not exist: file:/Users/hangyeong-eun/.m2/repository/org/liquibase/liquibase-core/4.5.0/snakeyaml-1.27.jar
+2022-09-13 02:19:17.633  INFO 8717 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-09-13 02:19:18.018  INFO 8717 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-09-13 02:19:18.047  INFO 8717 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 25 ms. Found 6 JPA repository interfaces.
+2022-09-13 02:19:18.381  INFO 8717 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-09-13 02:19:18.386  INFO 8717 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-09-13 02:19:18.386  INFO 8717 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.60]
+2022-09-13 02:19:18.420  INFO 8717 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-09-13 02:19:18.421  INFO 8717 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 788 ms
+2022-09-13 02:19:18.443  INFO 8717 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-09-13 02:19:18.594  INFO 8717 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-09-13 02:19:18.600  INFO 8717 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:mysql://localhost:3306/project2022?serverTimezone=UTC&characterEncoding=UTF-8&serverTimezone=Asia/Seoul&zeroDateTimeBehavior=convertToNull'
+2022-09-13 02:19:18.630 DEBUG 8717 --- [restartedMain] o.s.b.w.s.ServletContextInitializerBeans : Mapping filters: characterEncodingFilter urls=[/*] order=-2147483648, formContentFilter urls=[/*] order=-9900, requestContextFilter urls=[/*] order=-105
+2022-09-13 02:19:18.630 DEBUG 8717 --- [restartedMain] o.s.b.w.s.ServletContextInitializerBeans : Mapping servlets: dispatcherServlet urls=[/], webServlet urls=[/h2-console/*]
+2022-09-13 02:19:18.842  INFO 8717 --- [restartedMain] liquibase.lockservice                    : Successfully acquired change log lock
+2022-09-13 02:19:18.981  INFO 8717 --- [restartedMain] liquibase.changelog                      : Reading from project2022.DATABASECHANGELOG
+2022-09-13 02:19:19.000  INFO 8717 --- [restartedMain] liquibase.lockservice                    : Successfully released change log lock
+2022-09-13 02:19:19.002  WARN 8717 --- [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'liquibase' defined in class path resource [org/springframework/boot/autoconfigure/liquibase/LiquibaseAutoConfiguration$LiquibaseConfiguration.class]: Invocation of init method failed; nested exception is liquibase.exception.ValidationFailedException: Validation Failed:
+     1 change sets check sum
+          classpath:/db/changelog/db.changelog-master.yaml::3::ky was: 8:fe1fe3446c544a89da0edc9fee51a808 but is now: 8:5f7e26b66802907c0ada7367ee7a18be
+
+2022-09-13 02:19:19.002  INFO 8717 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-09-13 02:19:19.006  INFO 8717 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-09-13 02:19:19.007  INFO 8717 --- [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2022-09-13 02:19:19.012  INFO 8717 --- [restartedMain] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2022-09-13 02:19:19.022 ERROR 8717 --- [restartedMain] o.s.boot.SpringApplication               : Application run failed
 
 org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'liquibase' defined in class path resource [org/springframework/boot/autoconfigure/liquibase/LiquibaseAutoConfiguration$LiquibaseConfiguration.class]: Invocation of init method failed; nested exception is liquibase.exception.ValidationFailedException: Validation Failed:
-     4 change sets check sum
-          classpath:/db/changelog/db.changelog-master.yaml::1::ky was: 8:3cfc434721f748502163fa099bb3ed9b but is now: 8:bdae094b9489ec390668d0a660132f9c
-          classpath:/db/changelog/db.changelog-master.yaml::2::ky was: 8:366330dffc9410e56ec5b400a4449f6c but is now: 8:432595cc45a2b477bce8bd66a5bab819
-          classpath:/db/changelog/db.changelog-master.yaml::3::ky was: 8:7140e4eebd02b3354c86d1c8872961b9 but is now: 8:fe1fe3446c544a89da0edc9fee51a808
-          classpath:/db/changelog/db.changelog-master.yaml::4::ky was: 8:ee2b014bd823362bb4d7effcd75c4573 but is now: 8:efb16711a50db7d23c598c93faf78623
+     1 change sets check sum
+          classpath:/db/changelog/db.changelog-master.yaml::3::ky was: 8:fe1fe3446c544a89da0edc9fee51a808 but is now: 8:5f7e26b66802907c0ada7367ee7a18be
 
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1804) ~[spring-beans-5.3.18.jar:5.3.18]
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:620) ~[spring-beans-5.3.18.jar:5.3.18]
@@ -6669,17 +6840,12 @@ org.springframework.beans.factory.BeanCreationException: Error creating bean wit
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1312) ~[spring-boot-2.6.6.jar:2.6.6]
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1301) ~[spring-boot-2.6.6.jar:2.6.6]
 	at com.bootest.BootestApplication.main(BootestApplication.java:11) ~[classes/:na]
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:na]
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
-	at java.base/java.lang.reflect.Method.invoke(Method.java:566) ~[na:na]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:577) ~[na:na]
 	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49) ~[spring-boot-devtools-2.6.6.jar:2.6.6]
 Caused by: liquibase.exception.ValidationFailedException: Validation Failed:
-     4 change sets check sum
-          classpath:/db/changelog/db.changelog-master.yaml::1::ky was: 8:3cfc434721f748502163fa099bb3ed9b but is now: 8:bdae094b9489ec390668d0a660132f9c
-          classpath:/db/changelog/db.changelog-master.yaml::2::ky was: 8:366330dffc9410e56ec5b400a4449f6c but is now: 8:432595cc45a2b477bce8bd66a5bab819
-          classpath:/db/changelog/db.changelog-master.yaml::3::ky was: 8:7140e4eebd02b3354c86d1c8872961b9 but is now: 8:fe1fe3446c544a89da0edc9fee51a808
-          classpath:/db/changelog/db.changelog-master.yaml::4::ky was: 8:ee2b014bd823362bb4d7effcd75c4573 but is now: 8:efb16711a50db7d23c598c93faf78623
+     1 change sets check sum
+          classpath:/db/changelog/db.changelog-master.yaml::3::ky was: 8:fe1fe3446c544a89da0edc9fee51a808 but is now: 8:5f7e26b66802907c0ada7367ee7a18be
 
 	at liquibase.changelog.DatabaseChangeLog.validate(DatabaseChangeLog.java:299) ~[liquibase-core-4.5.0.jar:na]
 	at liquibase.Liquibase.lambda$update$1(Liquibase.java:231) ~[liquibase-core-4.5.0.jar:na]
@@ -6694,331 +6860,277 @@ Caused by: liquibase.exception.ValidationFailedException: Validation Failed:
 	at liquibase.integration.spring.SpringLiquibase.afterPropertiesSet(SpringLiquibase.java:269) ~[liquibase-core-4.5.0.jar:na]
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1863) ~[spring-beans-5.3.18.jar:5.3.18]
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1800) ~[spring-beans-5.3.18.jar:5.3.18]
-	... 23 common frames omitted
+	... 21 common frames omitted
 
-2022-09-13 02:25:16.493  INFO 31372 --- [restartedMain] com.bootest.BootestApplication           : Starting BootestApplication using Java 11.0.14 on Kyungeun with PID 31372 (C:\dev\Project2022\target\classes started by az2282 in C:\dev\Project2022)
-2022-09-13 02:25:16.493  INFO 31372 --- [restartedMain] com.bootest.BootestApplication           : The following 2 profiles are active: "secure", "dev"
-2022-09-13 02:25:16.527  INFO 31372 --- [restartedMain] o.s.b.devtools.restart.ChangeableUrls    : The Class-Path manifest attribute in C:\Users\az228\.m2\repository\org\liquibase\liquibase-core\4.5.0\liquibase-core-4.5.0.jar referenced one or more files that do not exist: file:/C:/Users/az228/.m2/repository/org/liquibase/liquibase-core/4.5.0/snakeyaml-1.27.jar
-2022-09-13 02:25:16.527  INFO 31372 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2022-09-13 02:25:17.125  INFO 31372 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2022-09-13 02:25:17.173  INFO 31372 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 39 ms. Found 6 JPA repository interfaces.
-2022-09-13 02:25:17.647  INFO 31372 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2022-09-13 02:25:17.647  INFO 31372 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2022-09-13 02:25:17.647  INFO 31372 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.60]
-2022-09-13 02:25:17.728  INFO 31372 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2022-09-13 02:25:17.728  INFO 31372 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1201 ms
-2022-09-13 02:25:17.760  INFO 31372 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2022-09-13 02:25:17.990  INFO 31372 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2022-09-13 02:25:17.990  INFO 31372 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:mysql://localhost:3306/project2022?serverTimezone=UTC&characterEncoding=UTF-8&serverTimezone=Asia/Seoul&zeroDateTimeBehavior=convertToNull'
-2022-09-13 02:25:18.022 DEBUG 31372 --- [restartedMain] o.s.b.w.s.ServletContextInitializerBeans : Mapping filters: characterEncodingFilter urls=[/*] order=-2147483648, formContentFilter urls=[/*] order=-9900, requestContextFilter urls=[/*] order=-105
-2022-09-13 02:25:18.022 DEBUG 31372 --- [restartedMain] o.s.b.w.s.ServletContextInitializerBeans : Mapping servlets: dispatcherServlet urls=[/], webServlet urls=[/h2-console/*]
-2022-09-13 02:25:18.328  INFO 31372 --- [restartedMain] liquibase.lockservice                    : Successfully acquired change log lock
-2022-09-13 02:25:18.334  INFO 31372 --- [restartedMain] liquibase.lockservice                    : Successfully released change log lock
-2022-09-13 02:25:18.350  WARN 31372 --- [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'liquibase' defined in class path resource [org/springframework/boot/autoconfigure/liquibase/LiquibaseAutoConfiguration$LiquibaseConfiguration.class]: Invocation of init method failed; nested exception is liquibase.exception.ChangeLogParseException: classpath:/db/changelog/db.changelog-master.yaml does not exist
-2022-09-13 02:25:18.350  INFO 31372 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2022-09-13 02:25:18.350  INFO 31372 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2022-09-13 02:25:18.350  INFO 31372 --- [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
-2022-09-13 02:25:18.366  INFO 31372 --- [restartedMain] ConditionEvaluationReportLoggingListener : 
+2022-09-13 02:19:53.312  INFO 8730 --- [restartedMain] com.bootest.BootestApplication           : Starting BootestApplication using Java 18.0.2 on hangyeong-eun-ui-MacBookPro.local with PID 8730 (/Users/hangyeong-eun/Documents/dev/Project2022/target/classes started by hangyeong-eun in /Users/hangyeong-eun/Documents/dev/Project2022)
+2022-09-13 02:19:53.313  INFO 8730 --- [restartedMain] com.bootest.BootestApplication           : The following 2 profiles are active: "secure", "dev"
+2022-09-13 02:19:53.346  INFO 8730 --- [restartedMain] o.s.b.devtools.restart.ChangeableUrls    : The Class-Path manifest attribute in /Users/hangyeong-eun/.m2/repository/org/liquibase/liquibase-core/4.5.0/liquibase-core-4.5.0.jar referenced one or more files that do not exist: file:/Users/hangyeong-eun/.m2/repository/org/liquibase/liquibase-core/4.5.0/snakeyaml-1.27.jar
+2022-09-13 02:19:53.347  INFO 8730 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-09-13 02:19:53.741  INFO 8730 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-09-13 02:19:53.769  INFO 8730 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 22 ms. Found 6 JPA repository interfaces.
+2022-09-13 02:19:54.114  INFO 8730 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-09-13 02:19:54.118  INFO 8730 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-09-13 02:19:54.119  INFO 8730 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.60]
+2022-09-13 02:19:54.147  INFO 8730 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-09-13 02:19:54.147  INFO 8730 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 800 ms
+2022-09-13 02:19:54.168  INFO 8730 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-09-13 02:19:54.300  INFO 8730 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-09-13 02:19:54.305  INFO 8730 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:mysql://localhost:3306/project2022?serverTimezone=UTC&characterEncoding=UTF-8&serverTimezone=Asia/Seoul&zeroDateTimeBehavior=convertToNull'
+2022-09-13 02:19:54.331 DEBUG 8730 --- [restartedMain] o.s.b.w.s.ServletContextInitializerBeans : Mapping filters: characterEncodingFilter urls=[/*] order=-2147483648, formContentFilter urls=[/*] order=-9900, requestContextFilter urls=[/*] order=-105
+2022-09-13 02:19:54.331 DEBUG 8730 --- [restartedMain] o.s.b.w.s.ServletContextInitializerBeans : Mapping servlets: dispatcherServlet urls=[/], webServlet urls=[/h2-console/*]
+2022-09-13 02:19:54.555  INFO 8730 --- [restartedMain] liquibase.lockservice                    : Successfully acquired change log lock
+2022-09-13 02:19:54.695  INFO 8730 --- [restartedMain] liquibase.changelog                      : Reading from project2022.DATABASECHANGELOG
+2022-09-13 02:19:54.718  INFO 8730 --- [restartedMain] liquibase.lockservice                    : Successfully released change log lock
+2022-09-13 02:19:54.762  INFO 8730 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-09-13 02:19:54.790  INFO 8730 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.7.Final
+2022-09-13 02:19:54.864  INFO 8730 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-09-13 02:19:54.914  INFO 8730 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2022-09-13 02:19:55.189  INFO 8730 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-09-13 02:19:55.194  INFO 8730 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-09-13 02:19:55.609  WARN 8730 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-09-13 02:19:55.705 DEBUG 8730 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : 24 mappings in 'requestMappingHandlerMapping'
+2022-09-13 02:19:55.849  INFO 8730 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-09-13 02:19:55.854 DEBUG 8730 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2022-09-13 02:19:55.867  INFO 8730 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2022-09-13 02:19:55.879 DEBUG 8730 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/swagger-ui/] in 'viewControllerHandlerMapping'
+2022-09-13 02:19:55.890 DEBUG 8730 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**, /swagger-ui/**] in 'resourceHandlerMapping'
+2022-09-13 02:19:55.897 DEBUG 8730 --- [restartedMain] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
+2022-09-13 02:19:56.125  INFO 8730 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-09-13 02:19:56.241  INFO 8730 --- [restartedMain] com.bootest.BootestApplication           : Started BootestApplication in 3.12 seconds (JVM running for 3.486)
+2022-09-13 02:20:09.254  INFO 8730 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-09-13 02:20:09.254  INFO 8730 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-09-13 02:20:09.254 DEBUG 8730 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected StandardServletMultipartResolver
+2022-09-13 02:20:09.255 DEBUG 8730 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected AcceptHeaderLocaleResolver
+2022-09-13 02:20:09.255 DEBUG 8730 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected FixedThemeResolver
+2022-09-13 02:20:09.263 DEBUG 8730 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@1d404245
+2022-09-13 02:20:09.263 DEBUG 8730 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.support.SessionFlashMapManager@32bfb0ae
+2022-09-13 02:20:09.263 DEBUG 8730 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2022-09-13 02:20:09.263  INFO 8730 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 9 ms
+2022-09-13 02:20:09.270 DEBUG 8730 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : GET "/", parameters={}
+2022-09-13 02:20:09.273 DEBUG 8730 --- [http-nio-8080-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.bootest.web.HomeController#home(User, Model, Account)
+2022-09-13 02:20:09.300 DEBUG 8730 --- [http-nio-8080-exec-1] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, application/signed-exchange;v=b3;q=0.9, */*;q=0.8]
+2022-09-13 02:20:09.424 DEBUG 8730 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2022-09-13 02:20:09.449 DEBUG 8730 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : GET "/css/bootstrap.min.css", parameters={}
+2022-09-13 02:20:09.454 DEBUG 8730 --- [http-nio-8080-exec-2] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2022-09-13 02:20:09.455 DEBUG 8730 --- [http-nio-8080-exec-2] o.s.w.s.r.ResourceHttpRequestHandler     : Resource not found
+2022-09-13 02:20:09.455 DEBUG 8730 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 404 NOT_FOUND
+2022-09-13 02:20:09.456 DEBUG 8730 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : "ERROR" dispatch for GET "/error", parameters={}
+2022-09-13 02:20:09.457 DEBUG 8730 --- [http-nio-8080-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#error(HttpServletRequest)
+2022-09-13 02:20:09.463 DEBUG 8730 --- [http-nio-8080-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json;q=0.1', given [text/css, */*;q=0.1] and supported [application/json, application/*+json, application/json, application/*+json]
+2022-09-13 02:20:09.464 DEBUG 8730 --- [http-nio-8080-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [{timestamp=Tue Sep 13 02:20:09 KST 2022, status=404, error=Not Found, message=No message available,  (truncated)...]
+2022-09-13 02:20:09.477 DEBUG 8730 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Exiting from "ERROR" dispatch, status 404
+2022-09-13 02:20:10.625 DEBUG 8730 --- [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : GET "/login", parameters={}
+2022-09-13 02:20:10.626 DEBUG 8730 --- [http-nio-8080-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.bootest.web.login.LoginController#loginForm(Model)
+2022-09-13 02:20:10.628 DEBUG 8730 --- [http-nio-8080-exec-3] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, application/signed-exchange;v=b3;q=0.9, */*;q=0.8]
+2022-09-13 02:20:10.677 DEBUG 8730 --- [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2022-09-13 02:20:10.697 DEBUG 8730 --- [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : GET "/static/vendor/fontawesome-free/css/all.min.css", parameters={}
+2022-09-13 02:20:10.698 DEBUG 8730 --- [http-nio-8080-exec-4] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2022-09-13 02:20:10.700 DEBUG 8730 --- [http-nio-8080-exec-4] o.s.w.s.r.ResourceHttpRequestHandler     : Resource not found
+2022-09-13 02:20:10.700 DEBUG 8730 --- [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : Completed 404 NOT_FOUND
+2022-09-13 02:20:10.700 DEBUG 8730 --- [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : "ERROR" dispatch for GET "/error", parameters={}
+2022-09-13 02:20:10.701 DEBUG 8730 --- [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : GET "/css/sb-admin-2.min.css", parameters={}
+2022-09-13 02:20:10.701 DEBUG 8730 --- [http-nio-8080-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#error(HttpServletRequest)
+2022-09-13 02:20:10.702 DEBUG 8730 --- [http-nio-8080-exec-4] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json;q=0.1', given [text/css, */*;q=0.1] and supported [application/json, application/*+json, application/json, application/*+json]
+2022-09-13 02:20:10.702 DEBUG 8730 --- [http-nio-8080-exec-5] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2022-09-13 02:20:10.702 DEBUG 8730 --- [http-nio-8080-exec-4] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [{timestamp=Tue Sep 13 02:20:10 KST 2022, status=404, error=Not Found, message=No message available,  (truncated)...]
+2022-09-13 02:20:10.703 DEBUG 8730 --- [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : Exiting from "ERROR" dispatch, status 404
+2022-09-13 02:20:10.706 DEBUG 8730 --- [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2022-09-13 02:20:11.277 DEBUG 8730 --- [http-nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : POST "/login", parameters={masked}
+2022-09-13 02:20:11.278 DEBUG 8730 --- [http-nio-8080-exec-6] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.bootest.web.login.LoginController#login(LoginForm, BindingResult, HttpServletRequest, Model)
+2022-09-13 02:20:11.391 DEBUG 8730 --- [http-nio-8080-exec-6] org.hibernate.SQL                        : select user0_.id as id1_5_, user0_.created as created2_5_, user0_.email as email3_5_, user0_.name as name4_5_, user0_.passwd as passwd5_5_, user0_.updated as updated6_5_, user0_.user_id as user_id7_5_ from user user0_ where user0_.user_id=?
+2022-09-13 02:20:11.407 DEBUG 8730 --- [http-nio-8080-exec-6] o.s.web.servlet.view.RedirectView        : View name 'redirect:', model {}
+2022-09-13 02:20:11.410 DEBUG 8730 --- [http-nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : Completed 302 FOUND
+2022-09-13 02:20:11.414 DEBUG 8730 --- [http-nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : GET "/", parameters={}
+2022-09-13 02:20:11.414 DEBUG 8730 --- [http-nio-8080-exec-7] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.bootest.web.HomeController#home(User, Model, Account)
+2022-09-13 02:20:11.416 DEBUG 8730 --- [http-nio-8080-exec-7] org.hibernate.SQL                        : select recovolume0_.id as id1_2_, recovolume0_.attachments as attachme2_2_, recovolume0_.availability_zone as availabi3_2_, recovolume0_.create_time as create_t4_2_, recovolume0_.encrypted as encrypte5_2_, recovolume0_.instance_id as instance6_2_, recovolume0_.registered_date as register7_2_, recovolume0_.size as size8_2_, recovolume0_.snapshot_id as snapshot9_2_, recovolume0_.state as state10_2_, recovolume0_.updated as updated11_2_, recovolume0_.volume_id as volume_12_2_, recovolume0_.volume_type as volume_13_2_ from reco_volume recovolume0_ where recovolume0_.volume_id is null
+2022-09-13 02:20:11.418 DEBUG 8730 --- [http-nio-8080-exec-7] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, application/signed-exchange;v=b3;q=0.9, */*;q=0.8]
+2022-09-13 02:20:11.431 DEBUG 8730 --- [http-nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2022-09-13 02:20:11.432 DEBUG 8730 --- [http-nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : GET "/vendor/fontawesome-free/css/all.min.css", parameters={}
+2022-09-13 02:20:11.433 DEBUG 8730 --- [http-nio-8080-exec-8] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2022-09-13 02:20:11.434 DEBUG 8730 --- [http-nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : GET "/css/sb-admin-2.min.css", parameters={}
+2022-09-13 02:20:11.435 DEBUG 8730 --- [http-nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2022-09-13 02:20:11.435 DEBUG 8730 --- [http-nio-8080-exec-9] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2022-09-13 02:20:11.435 DEBUG 8730 --- [http-nio-8080-exec-10] o.s.web.servlet.DispatcherServlet        : GET "/js/aws.js", parameters={}
+2022-09-13 02:20:11.436 DEBUG 8730 --- [http-nio-8080-exec-10] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2022-09-13 02:20:11.437 DEBUG 8730 --- [http-nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2022-09-13 02:20:11.437 DEBUG 8730 --- [http-nio-8080-exec-10] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2022-09-13 02:20:11.439 DEBUG 8730 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : GET "/static/vendor/jquery/jquery.min.js", parameters={}
+2022-09-13 02:20:11.440 DEBUG 8730 --- [http-nio-8080-exec-1] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2022-09-13 02:20:11.441 DEBUG 8730 --- [http-nio-8080-exec-1] o.s.w.s.r.ResourceHttpRequestHandler     : Resource not found
+2022-09-13 02:20:11.441 DEBUG 8730 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 404 NOT_FOUND
+2022-09-13 02:20:11.441 DEBUG 8730 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : "ERROR" dispatch for GET "/error", parameters={}
+2022-09-13 02:20:11.442 DEBUG 8730 --- [http-nio-8080-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#error(HttpServletRequest)
+2022-09-13 02:20:11.442 DEBUG 8730 --- [http-nio-8080-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2022-09-13 02:20:11.442 DEBUG 8730 --- [http-nio-8080-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [{timestamp=Tue Sep 13 02:20:11 KST 2022, status=404, error=Not Found, message=No message available,  (truncated)...]
+2022-09-13 02:20:11.442 DEBUG 8730 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Exiting from "ERROR" dispatch, status 404
+2022-09-13 02:20:11.451 DEBUG 8730 --- [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : GET "/static/vendor/jquery-easing/jquery.easing.min.js", parameters={}
+2022-09-13 02:20:11.451 DEBUG 8730 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : GET "/static/vendor/bootstrap/js/bootstrap.bundle.min.js", parameters={}
+2022-09-13 02:20:11.452 DEBUG 8730 --- [http-nio-8080-exec-2] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2022-09-13 02:20:11.452 DEBUG 8730 --- [http-nio-8080-exec-3] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2022-09-13 02:20:11.452 DEBUG 8730 --- [http-nio-8080-exec-3] o.s.w.s.r.ResourceHttpRequestHandler     : Resource not found
+2022-09-13 02:20:11.452 DEBUG 8730 --- [http-nio-8080-exec-2] o.s.w.s.r.ResourceHttpRequestHandler     : Resource not found
+2022-09-13 02:20:11.453 DEBUG 8730 --- [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 404 NOT_FOUND
+2022-09-13 02:20:11.453 DEBUG 8730 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 404 NOT_FOUND
+2022-09-13 02:20:11.453 DEBUG 8730 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : "ERROR" dispatch for GET "/error", parameters={}
+2022-09-13 02:20:11.453 DEBUG 8730 --- [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : "ERROR" dispatch for GET "/error", parameters={}
+2022-09-13 02:20:11.453 DEBUG 8730 --- [http-nio-8080-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#error(HttpServletRequest)
+2022-09-13 02:20:11.453 DEBUG 8730 --- [http-nio-8080-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#error(HttpServletRequest)
+2022-09-13 02:20:11.453 DEBUG 8730 --- [http-nio-8080-exec-3] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2022-09-13 02:20:11.453 DEBUG 8730 --- [http-nio-8080-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2022-09-13 02:20:11.453 DEBUG 8730 --- [http-nio-8080-exec-3] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [{timestamp=Tue Sep 13 02:20:11 KST 2022, status=404, error=Not Found, message=No message available,  (truncated)...]
+2022-09-13 02:20:11.453 DEBUG 8730 --- [http-nio-8080-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [{timestamp=Tue Sep 13 02:20:11 KST 2022, status=404, error=Not Found, message=No message available,  (truncated)...]
+2022-09-13 02:20:11.454 DEBUG 8730 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Exiting from "ERROR" dispatch, status 404
+2022-09-13 02:20:11.454 DEBUG 8730 --- [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Exiting from "ERROR" dispatch, status 404
+2022-09-13 02:20:11.459 DEBUG 8730 --- [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : GET "/static/vendor/chart.js/Chart.min.js", parameters={}
+2022-09-13 02:20:11.459 DEBUG 8730 --- [http-nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : GET "/static/js/demo/chart-area-demo.js", parameters={}
+2022-09-13 02:20:11.459 DEBUG 8730 --- [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : GET "/static/js/sb-admin-2.min.js", parameters={}
+2022-09-13 02:20:11.460 DEBUG 8730 --- [http-nio-8080-exec-4] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2022-09-13 02:20:11.460 DEBUG 8730 --- [http-nio-8080-exec-6] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2022-09-13 02:20:11.460 DEBUG 8730 --- [http-nio-8080-exec-5] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2022-09-13 02:20:11.460 DEBUG 8730 --- [http-nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : GET "/static/js/demo/chart-pie-demo.js", parameters={}
+2022-09-13 02:20:11.461 DEBUG 8730 --- [http-nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : GET "/static/img/undraw_profile_2.svg", parameters={}
+2022-09-13 02:20:11.461 DEBUG 8730 --- [http-nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : GET "/static/img/undraw_profile_1.svg", parameters={}
+2022-09-13 02:20:11.461 DEBUG 8730 --- [http-nio-8080-exec-8] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2022-09-13 02:20:11.461 DEBUG 8730 --- [http-nio-8080-exec-5] o.s.w.s.r.ResourceHttpRequestHandler     : Resource not found
+2022-09-13 02:20:11.461 DEBUG 8730 --- [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : Completed 404 NOT_FOUND
+2022-09-13 02:20:11.461 DEBUG 8730 --- [http-nio-8080-exec-7] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2022-09-13 02:20:11.462 DEBUG 8730 --- [http-nio-8080-exec-9] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2022-09-13 02:20:11.462 DEBUG 8730 --- [http-nio-8080-exec-6] o.s.w.s.r.ResourceHttpRequestHandler     : Resource not found
+2022-09-13 02:20:11.462 DEBUG 8730 --- [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : "ERROR" dispatch for GET "/error", parameters={}
+2022-09-13 02:20:11.462 DEBUG 8730 --- [http-nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : Completed 404 NOT_FOUND
+2022-09-13 02:20:11.462 DEBUG 8730 --- [http-nio-8080-exec-4] o.s.w.s.r.ResourceHttpRequestHandler     : Resource not found
+2022-09-13 02:20:11.462 DEBUG 8730 --- [http-nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : "ERROR" dispatch for GET "/error", parameters={}
+2022-09-13 02:20:11.462 DEBUG 8730 --- [http-nio-8080-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#error(HttpServletRequest)
+2022-09-13 02:20:11.462 DEBUG 8730 --- [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : Completed 404 NOT_FOUND
+2022-09-13 02:20:11.462 DEBUG 8730 --- [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : "ERROR" dispatch for GET "/error", parameters={}
+2022-09-13 02:20:11.463 DEBUG 8730 --- [http-nio-8080-exec-5] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2022-09-13 02:20:11.463 DEBUG 8730 --- [http-nio-8080-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#error(HttpServletRequest)
+2022-09-13 02:20:11.463 DEBUG 8730 --- [http-nio-8080-exec-5] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [{timestamp=Tue Sep 13 02:20:11 KST 2022, status=404, error=Not Found, message=No message available,  (truncated)...]
+2022-09-13 02:20:11.463 DEBUG 8730 --- [http-nio-8080-exec-6] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#error(HttpServletRequest)
+2022-09-13 02:20:11.463 DEBUG 8730 --- [http-nio-8080-exec-4] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2022-09-13 02:20:11.463 DEBUG 8730 --- [http-nio-8080-exec-4] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [{timestamp=Tue Sep 13 02:20:11 KST 2022, status=404, error=Not Found, message=No message available,  (truncated)...]
+2022-09-13 02:20:11.463 DEBUG 8730 --- [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : Exiting from "ERROR" dispatch, status 404
+2022-09-13 02:20:11.463 DEBUG 8730 --- [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : Exiting from "ERROR" dispatch, status 404
+2022-09-13 02:20:11.463 DEBUG 8730 --- [http-nio-8080-exec-8] o.s.w.s.r.ResourceHttpRequestHandler     : Resource not found
+2022-09-13 02:20:11.463 DEBUG 8730 --- [http-nio-8080-exec-9] o.s.w.s.r.ResourceHttpRequestHandler     : Resource not found
+2022-09-13 02:20:11.463 DEBUG 8730 --- [http-nio-8080-exec-6] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2022-09-13 02:20:11.463 DEBUG 8730 --- [http-nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : Completed 404 NOT_FOUND
+2022-09-13 02:20:11.463 DEBUG 8730 --- [http-nio-8080-exec-7] o.s.w.s.r.ResourceHttpRequestHandler     : Resource not found
+2022-09-13 02:20:11.464 DEBUG 8730 --- [http-nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : Completed 404 NOT_FOUND
+2022-09-13 02:20:11.464 DEBUG 8730 --- [http-nio-8080-exec-6] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [{timestamp=Tue Sep 13 02:20:11 KST 2022, status=404, error=Not Found, message=No message available,  (truncated)...]
+2022-09-13 02:20:11.464 DEBUG 8730 --- [http-nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : Completed 404 NOT_FOUND
+2022-09-13 02:20:11.464 DEBUG 8730 --- [http-nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : "ERROR" dispatch for GET "/error", parameters={}
+2022-09-13 02:20:11.464 DEBUG 8730 --- [http-nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : "ERROR" dispatch for GET "/error", parameters={}
+2022-09-13 02:20:11.464 DEBUG 8730 --- [http-nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : "ERROR" dispatch for GET "/error", parameters={}
+2022-09-13 02:20:11.464 DEBUG 8730 --- [http-nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : Exiting from "ERROR" dispatch, status 404
+2022-09-13 02:20:11.464 DEBUG 8730 --- [http-nio-8080-exec-8] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#error(HttpServletRequest)
+2022-09-13 02:20:11.464 DEBUG 8730 --- [http-nio-8080-exec-9] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#error(HttpServletRequest)
+2022-09-13 02:20:11.464 DEBUG 8730 --- [http-nio-8080-exec-7] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#error(HttpServletRequest)
+2022-09-13 02:20:11.465 DEBUG 8730 --- [http-nio-8080-exec-7] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2022-09-13 02:20:11.465 DEBUG 8730 --- [http-nio-8080-exec-7] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [{timestamp=Tue Sep 13 02:20:11 KST 2022, status=404, error=Not Found, message=No message available,  (truncated)...]
+2022-09-13 02:20:11.465 DEBUG 8730 --- [http-nio-8080-exec-8] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json;q=0.8', given [image/avif, image/webp, image/apng, image/svg+xml, image/*, */*;q=0.8] and supported [application/json, application/*+json, application/json, application/*+json]
+2022-09-13 02:20:11.465 DEBUG 8730 --- [http-nio-8080-exec-8] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [{timestamp=Tue Sep 13 02:20:11 KST 2022, status=404, error=Not Found, message=No message available,  (truncated)...]
+2022-09-13 02:20:11.465 DEBUG 8730 --- [http-nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : Exiting from "ERROR" dispatch, status 404
+2022-09-13 02:20:11.465 DEBUG 8730 --- [http-nio-8080-exec-9] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json;q=0.8', given [image/avif, image/webp, image/apng, image/svg+xml, image/*, */*;q=0.8] and supported [application/json, application/*+json, application/json, application/*+json]
+2022-09-13 02:20:11.465 DEBUG 8730 --- [http-nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : Exiting from "ERROR" dispatch, status 404
+2022-09-13 02:20:11.465 DEBUG 8730 --- [http-nio-8080-exec-9] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [{timestamp=Tue Sep 13 02:20:11 KST 2022, status=404, error=Not Found, message=No message available,  (truncated)...]
+2022-09-13 02:20:11.466 DEBUG 8730 --- [http-nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : Exiting from "ERROR" dispatch, status 404
+2022-09-13 02:20:11.466 DEBUG 8730 --- [http-nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : GET "/static/img/undraw_profile_3.svg", parameters={}
+2022-09-13 02:20:11.467 DEBUG 8730 --- [http-nio-8080-exec-8] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2022-09-13 02:20:11.468 DEBUG 8730 --- [http-nio-8080-exec-8] o.s.w.s.r.ResourceHttpRequestHandler     : Resource not found
+2022-09-13 02:20:11.468 DEBUG 8730 --- [http-nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : Completed 404 NOT_FOUND
+2022-09-13 02:20:11.468 DEBUG 8730 --- [http-nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : "ERROR" dispatch for GET "/error", parameters={}
+2022-09-13 02:20:11.468 DEBUG 8730 --- [http-nio-8080-exec-8] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#error(HttpServletRequest)
+2022-09-13 02:20:11.469 DEBUG 8730 --- [http-nio-8080-exec-8] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json;q=0.8', given [image/avif, image/webp, image/apng, image/svg+xml, image/*, */*;q=0.8] and supported [application/json, application/*+json, application/json, application/*+json]
+2022-09-13 02:20:11.469 DEBUG 8730 --- [http-nio-8080-exec-8] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [{timestamp=Tue Sep 13 02:20:11 KST 2022, status=404, error=Not Found, message=No message available,  (truncated)...]
+2022-09-13 02:20:11.470 DEBUG 8730 --- [http-nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : Exiting from "ERROR" dispatch, status 404
+2022-09-13 02:20:11.470 DEBUG 8730 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : GET "/vendor/fontawesome-free/webfonts/fa-solid-900.woff2", parameters={}
+2022-09-13 02:20:11.471 DEBUG 8730 --- [http-nio-8080-exec-1] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2022-09-13 02:20:11.472 DEBUG 8730 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2022-09-13 02:20:11.487 DEBUG 8730 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : GET "/volume", parameters={}
+2022-09-13 02:20:11.487 DEBUG 8730 --- [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : GET "/instance", parameters={}
+2022-09-13 02:20:11.488 DEBUG 8730 --- [http-nio-8080-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.bootest.controller.VolumeController#findAll(String)
+2022-09-13 02:20:11.488 DEBUG 8730 --- [http-nio-8080-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.bootest.controller.InstanceController#findAll(String)
+2022-09-13 02:20:11.503 DEBUG 8730 --- [http-nio-8080-exec-2] org.hibernate.SQL                        : select recovolume0_.id as id1_2_, recovolume0_.attachments as attachme2_2_, recovolume0_.availability_zone as availabi3_2_, recovolume0_.create_time as create_t4_2_, recovolume0_.encrypted as encrypte5_2_, recovolume0_.instance_id as instance6_2_, recovolume0_.registered_date as register7_2_, recovolume0_.size as size8_2_, recovolume0_.snapshot_id as snapshot9_2_, recovolume0_.state as state10_2_, recovolume0_.updated as updated11_2_, recovolume0_.volume_id as volume_12_2_, recovolume0_.volume_type as volume_13_2_ from reco_volume recovolume0_
+2022-09-13 02:20:11.503 DEBUG 8730 --- [http-nio-8080-exec-3] org.hibernate.SQL                        : select instancere0_.id as id1_1_, instancere0_.availability_zone as availabi2_1_, instancere0_.instance_id as instance3_1_, instancere0_.instance_life_cycle as instance4_1_, instancere0_.instance_name as instance5_1_, instancere0_.instance_state as instance6_1_, instancere0_.instance_type as instance7_1_, instancere0_.launch_time as launch_t8_1_, instancere0_.modified as modified9_1_, instancere0_.os as os10_1_, instancere0_.registered as registe11_1_ from reco_instance instancere0_
+2022-09-13 02:20:11.509 DEBUG 8730 --- [http-nio-8080-exec-2] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [application/json, text/javascript, */*;q=0.01] and supported [application/json, application/*+json, application/json, application/*+json]
+2022-09-13 02:20:11.509 DEBUG 8730 --- [http-nio-8080-exec-3] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [application/json, text/javascript, */*;q=0.01] and supported [application/json, application/*+json, application/json, application/*+json]
+2022-09-13 02:20:11.510 DEBUG 8730 --- [http-nio-8080-exec-3] m.m.a.RequestResponseBodyMethodProcessor : Writing [[InstanceReco(id=b264ecf8-6d80-4c1b-b713-4fe7df3479bf, instanceId=i-002058881ea0ae130, instanceName= (truncated)...]
+2022-09-13 02:20:11.510 DEBUG 8730 --- [http-nio-8080-exec-2] m.m.a.RequestResponseBodyMethodProcessor : Writing [[RecoVolume(id=74d5ac19-3804-4693-a125-7d66470a69a5, volumeId=vol-089330d5f0fd565a9, instanceId=null (truncated)...]
+2022-09-13 02:20:11.524 DEBUG 8730 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2022-09-13 02:20:11.524 DEBUG 8730 --- [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2022-09-13 02:20:13.956 DEBUG 8730 --- [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : GET "/test", parameters={}
+2022-09-13 02:20:13.956 DEBUG 8730 --- [http-nio-8080-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.bootest.controller.TaskTesterController#runTest()
+2022-09-13 02:20:13.958  INFO 8730 --- [http-nio-8080-exec-5] com.bootest.task.InstanceTask            : Update Resource Usage Request Start
+2022-09-13 02:20:13.967 DEBUG 8730 --- [http-nio-8080-exec-5] org.hibernate.SQL                        : select account0_.id as id1_0_, account0_.access_key as access_k2_0_, account0_.account_id as account_3_0_, account0_.created as created4_0_, account0_.name as name5_0_, account0_.regions as regions6_0_, account0_.secret_key as secret_k7_0_, account0_.updated as updated8_0_, account0_.user_id as user_id9_0_ from account account0_
+2022-09-13 02:20:14.334  INFO 8730 --- [http-nio-8080-exec-5] com.bootest.aws.Ec2ClientManager         : Ec2Clients: [515313355389]
+2022-09-13 02:20:18.137 DEBUG 8730 --- [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : Failed to complete request: software.amazon.awssdk.core.exception.SdkClientException: Unable to load region from any of the providers in the chain software.amazon.awssdk.regions.providers.DefaultAwsRegionProviderChain@59eefa2e: [software.amazon.awssdk.regions.providers.SystemSettingsRegionProvider@58e1abd1: Unable to load region from system settings. Region must be specified either via environment variable (AWS_REGION) or  system property (aws.region)., software.amazon.awssdk.regions.providers.AwsProfileRegionProvider@5b5beb71: No region provided in profile: default, software.amazon.awssdk.regions.providers.InstanceProfileRegionProvider@7e6a379e: Unable to contact EC2 metadata service.]
+2022-09-13 02:20:18.146 ERROR 8730 --- [http-nio-8080-exec-5] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is software.amazon.awssdk.core.exception.SdkClientException: Unable to load region from any of the providers in the chain software.amazon.awssdk.regions.providers.DefaultAwsRegionProviderChain@59eefa2e: [software.amazon.awssdk.regions.providers.SystemSettingsRegionProvider@58e1abd1: Unable to load region from system settings. Region must be specified either via environment variable (AWS_REGION) or  system property (aws.region)., software.amazon.awssdk.regions.providers.AwsProfileRegionProvider@5b5beb71: No region provided in profile: default, software.amazon.awssdk.regions.providers.InstanceProfileRegionProvider@7e6a379e: Unable to contact EC2 metadata service.]] with root cause
 
-Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
-2022-09-13 02:25:18.381 ERROR 31372 --- [restartedMain] o.s.b.d.LoggingFailureAnalysisReporter   : 
+software.amazon.awssdk.core.exception.SdkClientException: Unable to load region from any of the providers in the chain software.amazon.awssdk.regions.providers.DefaultAwsRegionProviderChain@59eefa2e: [software.amazon.awssdk.regions.providers.SystemSettingsRegionProvider@58e1abd1: Unable to load region from system settings. Region must be specified either via environment variable (AWS_REGION) or  system property (aws.region)., software.amazon.awssdk.regions.providers.AwsProfileRegionProvider@5b5beb71: No region provided in profile: default, software.amazon.awssdk.regions.providers.InstanceProfileRegionProvider@7e6a379e: Unable to contact EC2 metadata service.]
+	at software.amazon.awssdk.core.exception.SdkClientException$BuilderImpl.build(SdkClientException.java:102) ~[sdk-core-2.17.254.jar:na]
+	at software.amazon.awssdk.regions.providers.AwsRegionProviderChain.getRegion(AwsRegionProviderChain.java:70) ~[regions-2.17.254.jar:na]
+	at software.amazon.awssdk.awscore.client.builder.AwsDefaultClientBuilder.regionFromDefaultProvider(AwsDefaultClientBuilder.java:276) ~[aws-core-2.17.254.jar:na]
+	at software.amazon.awssdk.awscore.client.builder.AwsDefaultClientBuilder.resolveRegion(AwsDefaultClientBuilder.java:258) ~[aws-core-2.17.254.jar:na]
+	at software.amazon.awssdk.awscore.client.builder.AwsDefaultClientBuilder.finalizeChildConfiguration(AwsDefaultClientBuilder.java:179) ~[aws-core-2.17.254.jar:na]
+	at software.amazon.awssdk.core.client.builder.SdkDefaultClientBuilder.syncClientConfiguration(SdkDefaultClientBuilder.java:177) ~[sdk-core-2.17.254.jar:na]
+	at software.amazon.awssdk.services.cloudwatch.DefaultCloudWatchClientBuilder.buildClient(DefaultCloudWatchClientBuilder.java:28) ~[cloudwatch-2.17.254.jar:na]
+	at software.amazon.awssdk.services.cloudwatch.DefaultCloudWatchClientBuilder.buildClient(DefaultCloudWatchClientBuilder.java:22) ~[cloudwatch-2.17.254.jar:na]
+	at software.amazon.awssdk.core.client.builder.SdkDefaultClientBuilder.build(SdkDefaultClientBuilder.java:145) ~[sdk-core-2.17.254.jar:na]
+	at com.bootest.aws.CloudWatchClientManager.getCwc(CloudWatchClientManager.java:30) ~[classes/:na]
+	at com.bootest.task.InstanceTask.updateResourceUsage(InstanceTask.java:84) ~[classes/:na]
+	at com.bootest.controller.TaskTesterController.runTest(TaskTesterController.java:36) ~[classes/:na]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:577) ~[na:na]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205) ~[spring-web-5.3.18.jar:5.3.18]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150) ~[spring-web-5.3.18.jar:5.3.18]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117) ~[spring-webmvc-5.3.18.jar:5.3.18]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895) ~[spring-webmvc-5.3.18.jar:5.3.18]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808) ~[spring-webmvc-5.3.18.jar:5.3.18]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-5.3.18.jar:5.3.18]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1067) ~[spring-webmvc-5.3.18.jar:5.3.18]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:963) ~[spring-webmvc-5.3.18.jar:5.3.18]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) ~[spring-webmvc-5.3.18.jar:5.3.18]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898) ~[spring-webmvc-5.3.18.jar:5.3.18]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:655) ~[tomcat-embed-core-9.0.60.jar:4.0.FR]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) ~[spring-webmvc-5.3.18.jar:5.3.18]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764) ~[tomcat-embed-core-9.0.60.jar:4.0.FR]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227) ~[tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-embed-websocket-9.0.60.jar:9.0.60]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-5.3.18.jar:5.3.18]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.18.jar:5.3.18]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-5.3.18.jar:5.3.18]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.18.jar:5.3.18]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-5.3.18.jar:5.3.18]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.18.jar:5.3.18]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197) ~[tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97) ~[tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541) ~[tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135) ~[tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) ~[tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78) ~[tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:360) ~[tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399) ~[tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) ~[tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:889) ~[tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1743) ~[tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) ~[tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191) ~[tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) ~[tomcat-embed-core-9.0.60.jar:9.0.60]
+	at java.base/java.lang.Thread.run(Thread.java:833) ~[na:na]
 
-***************************
-APPLICATION FAILED TO START
-***************************
-
-Description:
-
-Liquibase failed to start because no changelog could be found at 'classpath:/db/changelog/db.changelog-master.yaml'.
-
-Action:
-
-Make sure a Liquibase changelog is present at the configured path.
-
-2022-09-13 02:25:36.902  INFO 33676 --- [restartedMain] com.bootest.BootestApplication           : Starting BootestApplication using Java 11.0.10 on Kyungeun with PID 33676 (C:\dev\Project2022\target\classes started by az2282 in C:\dev\Project2022)
-2022-09-13 02:25:36.912  INFO 33676 --- [restartedMain] com.bootest.BootestApplication           : The following 2 profiles are active: "secure", "dev"
-2022-09-13 02:25:37.004  INFO 33676 --- [restartedMain] o.s.b.devtools.restart.ChangeableUrls    : The Class-Path manifest attribute in C:\Users\az228\.m2\repository\org\liquibase\liquibase-core\4.5.0\liquibase-core-4.5.0.jar referenced one or more files that do not exist: file:/C:/Users/az228/.m2/repository/org/liquibase/liquibase-core/4.5.0/snakeyaml-1.27.jar
-2022-09-13 02:25:37.007  INFO 33676 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2022-09-13 02:25:37.752  INFO 33676 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2022-09-13 02:25:37.884  INFO 33676 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 107 ms. Found 6 JPA repository interfaces.
-2022-09-13 02:25:38.880  INFO 33676 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2022-09-13 02:25:38.902  INFO 33676 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2022-09-13 02:25:38.903  INFO 33676 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.60]
-2022-09-13 02:25:39.086  INFO 33676 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2022-09-13 02:25:39.086  INFO 33676 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2078 ms
-2022-09-13 02:25:39.211  INFO 33676 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2022-09-13 02:25:39.575  INFO 33676 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2022-09-13 02:25:39.593  INFO 33676 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:mysql://localhost:3306/project2022?serverTimezone=UTC&characterEncoding=UTF-8&serverTimezone=Asia/Seoul&zeroDateTimeBehavior=convertToNull'
-2022-09-13 02:25:39.690 DEBUG 33676 --- [restartedMain] o.s.b.w.s.ServletContextInitializerBeans : Mapping filters: characterEncodingFilter urls=[/*] order=-2147483648, formContentFilter urls=[/*] order=-9900, requestContextFilter urls=[/*] order=-105
-2022-09-13 02:25:39.693 DEBUG 33676 --- [restartedMain] o.s.b.w.s.ServletContextInitializerBeans : Mapping servlets: dispatcherServlet urls=[/], webServlet urls=[/h2-console/*]
-2022-09-13 02:25:40.105  INFO 33676 --- [restartedMain] liquibase.lockservice                    : Successfully acquired change log lock
-2022-09-13 02:25:40.142  INFO 33676 --- [restartedMain] liquibase.lockservice                    : Successfully released change log lock
-2022-09-13 02:25:40.170  WARN 33676 --- [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'liquibase' defined in class path resource [org/springframework/boot/autoconfigure/liquibase/LiquibaseAutoConfiguration$LiquibaseConfiguration.class]: Invocation of init method failed; nested exception is liquibase.exception.ChangeLogParseException: classpath:/db/changelog/db.changelog-master.yaml does not exist
-2022-09-13 02:25:40.174  INFO 33676 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2022-09-13 02:25:40.193  INFO 33676 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2022-09-13 02:25:40.200  INFO 33676 --- [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
-2022-09-13 02:25:40.214  INFO 33676 --- [restartedMain] ConditionEvaluationReportLoggingListener : 
-
-Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
-2022-09-13 02:25:40.247 ERROR 33676 --- [restartedMain] o.s.b.d.LoggingFailureAnalysisReporter   : 
-
-***************************
-APPLICATION FAILED TO START
-***************************
-
-Description:
-
-Liquibase failed to start because no changelog could be found at 'classpath:/db/changelog/db.changelog-master.yaml'.
-
-Action:
-
-Make sure a Liquibase changelog is present at the configured path.
-
-2022-09-13 02:25:58.379  INFO 28240 --- [restartedMain] com.bootest.BootestApplication           : Starting BootestApplication using Java 11.0.14 on Kyungeun with PID 28240 (C:\dev\Project2022\target\classes started by az2282 in C:\dev\Project2022)
-2022-09-13 02:25:58.379  INFO 28240 --- [restartedMain] com.bootest.BootestApplication           : The following 2 profiles are active: "secure", "dev"
-2022-09-13 02:25:58.411  INFO 28240 --- [restartedMain] o.s.b.devtools.restart.ChangeableUrls    : The Class-Path manifest attribute in C:\Users\az228\.m2\repository\org\liquibase\liquibase-core\4.5.0\liquibase-core-4.5.0.jar referenced one or more files that do not exist: file:/C:/Users/az228/.m2/repository/org/liquibase/liquibase-core/4.5.0/snakeyaml-1.27.jar
-2022-09-13 02:25:58.411  INFO 28240 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2022-09-13 02:25:58.963  INFO 28240 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2022-09-13 02:25:59.010  INFO 28240 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 39 ms. Found 6 JPA repository interfaces.
-2022-09-13 02:25:59.436  INFO 28240 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2022-09-13 02:25:59.452  INFO 28240 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2022-09-13 02:25:59.452  INFO 28240 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.60]
-2022-09-13 02:25:59.499  INFO 28240 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2022-09-13 02:25:59.499  INFO 28240 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1088 ms
-2022-09-13 02:25:59.531  INFO 28240 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2022-09-13 02:25:59.688  INFO 28240 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2022-09-13 02:25:59.688  INFO 28240 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:mysql://localhost:3306/project2022?serverTimezone=UTC&characterEncoding=UTF-8&serverTimezone=Asia/Seoul&zeroDateTimeBehavior=convertToNull'
-2022-09-13 02:25:59.735 DEBUG 28240 --- [restartedMain] o.s.b.w.s.ServletContextInitializerBeans : Mapping filters: characterEncodingFilter urls=[/*] order=-2147483648, formContentFilter urls=[/*] order=-9900, requestContextFilter urls=[/*] order=-105
-2022-09-13 02:25:59.735 DEBUG 28240 --- [restartedMain] o.s.b.w.s.ServletContextInitializerBeans : Mapping servlets: dispatcherServlet urls=[/], webServlet urls=[/h2-console/*]
-2022-09-13 02:25:59.959  INFO 28240 --- [restartedMain] liquibase.lockservice                    : Successfully acquired change log lock
-2022-09-13 02:25:59.975  INFO 28240 --- [restartedMain] liquibase.lockservice                    : Successfully released change log lock
-2022-09-13 02:25:59.975  WARN 28240 --- [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'liquibase' defined in class path resource [org/springframework/boot/autoconfigure/liquibase/LiquibaseAutoConfiguration$LiquibaseConfiguration.class]: Invocation of init method failed; nested exception is liquibase.exception.ChangeLogParseException: classpath:/db/changelog/db.changelog-master.yaml does not exist
-2022-09-13 02:25:59.975  INFO 28240 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2022-09-13 02:25:59.991  INFO 28240 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2022-09-13 02:25:59.991  INFO 28240 --- [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
-2022-09-13 02:26:00.008  INFO 28240 --- [restartedMain] ConditionEvaluationReportLoggingListener : 
-
-Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
-2022-09-13 02:26:00.008 ERROR 28240 --- [restartedMain] o.s.b.d.LoggingFailureAnalysisReporter   : 
-
-***************************
-APPLICATION FAILED TO START
-***************************
-
-Description:
-
-Liquibase failed to start because no changelog could be found at 'classpath:/db/changelog/db.changelog-master.yaml'.
-
-Action:
-
-Make sure a Liquibase changelog is present at the configured path.
-
-2022-09-13 02:26:10.954  INFO 12224 --- [restartedMain] com.bootest.BootestApplication           : Starting BootestApplication using Java 11.0.10 on Kyungeun with PID 12224 (C:\dev\Project2022\target\classes started by az2282 in C:\dev\Project2022)
-2022-09-13 02:26:10.956  INFO 12224 --- [restartedMain] com.bootest.BootestApplication           : The following 2 profiles are active: "secure", "dev"
-2022-09-13 02:26:11.021  INFO 12224 --- [restartedMain] o.s.b.devtools.restart.ChangeableUrls    : The Class-Path manifest attribute in C:\Users\az228\.m2\repository\org\liquibase\liquibase-core\4.5.0\liquibase-core-4.5.0.jar referenced one or more files that do not exist: file:/C:/Users/az228/.m2/repository/org/liquibase/liquibase-core/4.5.0/snakeyaml-1.27.jar
-2022-09-13 02:26:11.023  INFO 12224 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2022-09-13 02:26:11.841  INFO 12224 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2022-09-13 02:26:12.001  INFO 12224 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 147 ms. Found 6 JPA repository interfaces.
-2022-09-13 02:26:12.977  INFO 12224 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2022-09-13 02:26:12.996  INFO 12224 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2022-09-13 02:26:12.997  INFO 12224 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.60]
-2022-09-13 02:26:13.157  INFO 12224 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2022-09-13 02:26:13.158  INFO 12224 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2134 ms
-2022-09-13 02:26:13.234  INFO 12224 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2022-09-13 02:26:13.533  INFO 12224 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2022-09-13 02:26:13.559  INFO 12224 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:mysql://localhost:3306/project2022?serverTimezone=UTC&characterEncoding=UTF-8&serverTimezone=Asia/Seoul&zeroDateTimeBehavior=convertToNull'
-2022-09-13 02:26:13.653 DEBUG 12224 --- [restartedMain] o.s.b.w.s.ServletContextInitializerBeans : Mapping filters: characterEncodingFilter urls=[/*] order=-2147483648, formContentFilter urls=[/*] order=-9900, requestContextFilter urls=[/*] order=-105
-2022-09-13 02:26:13.654 DEBUG 12224 --- [restartedMain] o.s.b.w.s.ServletContextInitializerBeans : Mapping servlets: dispatcherServlet urls=[/], webServlet urls=[/h2-console/*]
-2022-09-13 02:26:14.137  INFO 12224 --- [restartedMain] liquibase.lockservice                    : Successfully acquired change log lock
-2022-09-13 02:26:14.425  INFO 12224 --- [restartedMain] liquibase.changelog                      : Reading from project2022.DATABASECHANGELOG
-2022-09-13 02:26:14.520  INFO 12224 --- [restartedMain] liquibase.lockservice                    : Successfully released change log lock
-2022-09-13 02:26:14.644  INFO 12224 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2022-09-13 02:26:14.740  INFO 12224 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.7.Final
-2022-09-13 02:26:14.904  INFO 12224 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
-2022-09-13 02:26:15.070  INFO 12224 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
-2022-09-13 02:26:15.628  INFO 12224 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2022-09-13 02:26:15.647  INFO 12224 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2022-09-13 02:26:16.812  WARN 12224 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2022-09-13 02:26:17.107 DEBUG 12224 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : 24 mappings in 'requestMappingHandlerMapping'
-2022-09-13 02:26:17.519  INFO 12224 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2022-09-13 02:26:17.529 DEBUG 12224 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
-2022-09-13 02:26:17.574  INFO 12224 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
-2022-09-13 02:26:17.638 DEBUG 12224 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/swagger-ui/] in 'viewControllerHandlerMapping'
-2022-09-13 02:26:17.701 DEBUG 12224 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**, /swagger-ui/**] in 'resourceHandlerMapping'
-2022-09-13 02:26:17.748 DEBUG 12224 --- [restartedMain] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
-2022-09-13 02:26:18.761  INFO 12224 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
-2022-09-13 02:26:19.236  INFO 12224 --- [restartedMain] com.bootest.BootestApplication           : Started BootestApplication in 8.705 seconds (JVM running for 9.213)
-2022-09-13 02:26:34.386  INFO 12224 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2022-09-13 02:26:34.387  INFO 12224 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2022-09-13 02:26:34.387 DEBUG 12224 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected StandardServletMultipartResolver
-2022-09-13 02:26:34.387 DEBUG 12224 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected AcceptHeaderLocaleResolver
-2022-09-13 02:26:34.388 DEBUG 12224 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected FixedThemeResolver
-2022-09-13 02:26:34.389 DEBUG 12224 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@1d74a5f2
-2022-09-13 02:26:34.390 DEBUG 12224 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.support.SessionFlashMapManager@102b9622
-2022-09-13 02:26:34.390 DEBUG 12224 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
-2022-09-13 02:26:34.390  INFO 12224 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
-2022-09-13 02:26:34.401 DEBUG 12224 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : GET "/", parameters={}
-2022-09-13 02:26:34.410 DEBUG 12224 --- [http-nio-8080-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.bootest.web.HomeController#home(User, Model, Account)
-2022-09-13 02:26:34.463 DEBUG 12224 --- [http-nio-8080-exec-1] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, application/signed-exchange;v=b3;q=0.9, */*;q=0.8]
-2022-09-13 02:26:34.722 DEBUG 12224 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
-2022-09-13 02:26:34.774 DEBUG 12224 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : GET "/css/bootstrap.min.css", parameters={}
-2022-09-13 02:26:34.806 DEBUG 12224 --- [http-nio-8080-exec-2] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
-2022-09-13 02:26:34.817 DEBUG 12224 --- [http-nio-8080-exec-2] o.s.w.s.r.ResourceHttpRequestHandler     : Resource not found
-2022-09-13 02:26:34.818 DEBUG 12224 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 404 NOT_FOUND
-2022-09-13 02:26:34.824 DEBUG 12224 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : "ERROR" dispatch for GET "/error", parameters={}
-2022-09-13 02:26:34.827 DEBUG 12224 --- [http-nio-8080-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#error(HttpServletRequest)
-2022-09-13 02:26:34.863 DEBUG 12224 --- [http-nio-8080-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json;q=0.1', given [text/css, */*;q=0.1] and supported [application/json, application/*+json, application/json, application/*+json]
-2022-09-13 02:26:34.867 DEBUG 12224 --- [http-nio-8080-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [{timestamp=Tue Sep 13 02:26:34 KST 2022, status=404, error=Not Found, message=No message available,  (truncated)...]
-2022-09-13 02:26:34.917 DEBUG 12224 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Exiting from "ERROR" dispatch, status 404
-2022-09-13 02:26:35.748 DEBUG 12224 --- [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : GET "/login", parameters={}
-2022-09-13 02:26:35.749 DEBUG 12224 --- [http-nio-8080-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.bootest.web.login.LoginController#loginForm(Model)
-2022-09-13 02:26:35.751 DEBUG 12224 --- [http-nio-8080-exec-5] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, application/signed-exchange;v=b3;q=0.9, */*;q=0.8]
-2022-09-13 02:26:35.837 DEBUG 12224 --- [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
-2022-09-13 02:26:35.880 DEBUG 12224 --- [http-nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : GET "/css/sb-admin-2.min.css", parameters={}
-2022-09-13 02:26:35.881 DEBUG 12224 --- [http-nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : GET "/static/vendor/fontawesome-free/css/all.min.css", parameters={}
-2022-09-13 02:26:35.884 DEBUG 12224 --- [http-nio-8080-exec-7] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
-2022-09-13 02:26:35.883 DEBUG 12224 --- [http-nio-8080-exec-6] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
-2022-09-13 02:26:35.887 DEBUG 12224 --- [http-nio-8080-exec-7] o.s.w.s.r.ResourceHttpRequestHandler     : Resource not found
-2022-09-13 02:26:35.888 DEBUG 12224 --- [http-nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : Completed 404 NOT_FOUND
-2022-09-13 02:26:35.890 DEBUG 12224 --- [http-nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : "ERROR" dispatch for GET "/error", parameters={}
-2022-09-13 02:26:35.892 DEBUG 12224 --- [http-nio-8080-exec-7] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#error(HttpServletRequest)
-2022-09-13 02:26:35.895 DEBUG 12224 --- [http-nio-8080-exec-7] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json;q=0.1', given [text/css, */*;q=0.1] and supported [application/json, application/*+json, application/json, application/*+json]
-2022-09-13 02:26:35.896 DEBUG 12224 --- [http-nio-8080-exec-7] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [{timestamp=Tue Sep 13 02:26:35 KST 2022, status=404, error=Not Found, message=No message available,  (truncated)...]
-2022-09-13 02:26:35.897 DEBUG 12224 --- [http-nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : Exiting from "ERROR" dispatch, status 404
-2022-09-13 02:26:35.905 DEBUG 12224 --- [http-nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
-2022-09-13 02:26:36.421 DEBUG 12224 --- [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : POST "/login", parameters={masked}
-2022-09-13 02:26:36.422 DEBUG 12224 --- [http-nio-8080-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.bootest.web.login.LoginController#login(LoginForm, BindingResult, HttpServletRequest, Model)
-2022-09-13 02:26:36.643 DEBUG 12224 --- [http-nio-8080-exec-3] org.hibernate.SQL                        : select user0_.id as id1_5_, user0_.created as created2_5_, user0_.email as email3_5_, user0_.name as name4_5_, user0_.passwd as passwd5_5_, user0_.updated as updated6_5_, user0_.user_id as user_id7_5_ from user user0_ where user0_.user_id=?
-2022-09-13 02:26:36.957  WARN 12224 --- [http-nio-8080-exec-3] o.a.c.util.SessionIdGeneratorBase        : Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [282] milliseconds.
-2022-09-13 02:26:36.961 DEBUG 12224 --- [http-nio-8080-exec-3] o.s.web.servlet.view.RedirectView        : View name 'redirect:', model {}
-2022-09-13 02:26:36.964 DEBUG 12224 --- [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 302 FOUND
-2022-09-13 02:26:36.969 DEBUG 12224 --- [http-nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : GET "/", parameters={}
-2022-09-13 02:26:36.971 DEBUG 12224 --- [http-nio-8080-exec-8] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.bootest.web.HomeController#home(User, Model, Account)
-2022-09-13 02:26:36.981 DEBUG 12224 --- [http-nio-8080-exec-8] org.hibernate.SQL                        : select recovolume0_.id as id1_2_, recovolume0_.attachments as attachme2_2_, recovolume0_.availability_zone as availabi3_2_, recovolume0_.create_time as create_t4_2_, recovolume0_.encrypted as encrypte5_2_, recovolume0_.instance_id as instance6_2_, recovolume0_.registered_date as register7_2_, recovolume0_.size as size8_2_, recovolume0_.snapshot_id as snapshot9_2_, recovolume0_.state as state10_2_, recovolume0_.updated as updated11_2_, recovolume0_.volume_id as volume_12_2_, recovolume0_.volume_type as volume_13_2_ from reco_volume recovolume0_ where recovolume0_.volume_id is null
-2022-09-13 02:26:36.995 DEBUG 12224 --- [http-nio-8080-exec-8] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, application/signed-exchange;v=b3;q=0.9, */*;q=0.8]
-2022-09-13 02:26:37.104 DEBUG 12224 --- [http-nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
-2022-09-13 02:26:37.112 DEBUG 12224 --- [http-nio-8080-exec-10] o.s.web.servlet.DispatcherServlet        : GET "/vendor/fontawesome-free/css/all.min.css", parameters={}
-2022-09-13 02:26:37.112 DEBUG 12224 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : GET "/css/sb-admin-2.min.css", parameters={}
-2022-09-13 02:26:37.114 DEBUG 12224 --- [http-nio-8080-exec-1] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
-2022-09-13 02:26:37.114 DEBUG 12224 --- [http-nio-8080-exec-10] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
-2022-09-13 02:26:37.116 DEBUG 12224 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : GET "/js/aws.js", parameters={}
-2022-09-13 02:26:37.117 DEBUG 12224 --- [http-nio-8080-exec-2] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
-2022-09-13 02:26:37.118 DEBUG 12224 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
-2022-09-13 02:26:37.131 DEBUG 12224 --- [http-nio-8080-exec-10] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
-2022-09-13 02:26:37.134 DEBUG 12224 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
-2022-09-13 02:26:37.135 DEBUG 12224 --- [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : GET "/static/vendor/jquery/jquery.min.js", parameters={}
-2022-09-13 02:26:37.136 DEBUG 12224 --- [http-nio-8080-exec-5] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
-2022-09-13 02:26:37.138 DEBUG 12224 --- [http-nio-8080-exec-5] o.s.w.s.r.ResourceHttpRequestHandler     : Resource not found
-2022-09-13 02:26:37.140 DEBUG 12224 --- [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : Completed 404 NOT_FOUND
-2022-09-13 02:26:37.142 DEBUG 12224 --- [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : "ERROR" dispatch for GET "/error", parameters={}
-2022-09-13 02:26:37.143 DEBUG 12224 --- [http-nio-8080-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#error(HttpServletRequest)
-2022-09-13 02:26:37.145 DEBUG 12224 --- [http-nio-8080-exec-5] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
-2022-09-13 02:26:37.146 DEBUG 12224 --- [http-nio-8080-exec-5] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [{timestamp=Tue Sep 13 02:26:37 KST 2022, status=404, error=Not Found, message=No message available,  (truncated)...]
-2022-09-13 02:26:37.149 DEBUG 12224 --- [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : Exiting from "ERROR" dispatch, status 404
-2022-09-13 02:26:37.164 DEBUG 12224 --- [http-nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : GET "/static/vendor/chart.js/Chart.min.js", parameters={}
-2022-09-13 02:26:37.164 DEBUG 12224 --- [http-nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : GET "/static/vendor/bootstrap/js/bootstrap.bundle.min.js", parameters={}
-2022-09-13 02:26:37.164 DEBUG 12224 --- [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : GET "/static/vendor/jquery-easing/jquery.easing.min.js", parameters={}
-2022-09-13 02:26:37.164 DEBUG 12224 --- [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : GET "/static/js/sb-admin-2.min.js", parameters={}
-2022-09-13 02:26:37.164 DEBUG 12224 --- [http-nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : GET "/static/js/demo/chart-area-demo.js", parameters={}
-2022-09-13 02:26:37.164 DEBUG 12224 --- [http-nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : GET "/static/js/demo/chart-pie-demo.js", parameters={}
-2022-09-13 02:26:37.165 DEBUG 12224 --- [http-nio-8080-exec-7] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
-2022-09-13 02:26:37.166 DEBUG 12224 --- [http-nio-8080-exec-9] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
-2022-09-13 02:26:37.166 DEBUG 12224 --- [http-nio-8080-exec-3] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
-2022-09-13 02:26:37.166 DEBUG 12224 --- [http-nio-8080-exec-4] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
-2022-09-13 02:26:37.166 DEBUG 12224 --- [http-nio-8080-exec-8] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
-2022-09-13 02:26:37.166 DEBUG 12224 --- [http-nio-8080-exec-6] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
-2022-09-13 02:26:37.172 DEBUG 12224 --- [http-nio-8080-exec-3] o.s.w.s.r.ResourceHttpRequestHandler     : Resource not found
-2022-09-13 02:26:37.173 DEBUG 12224 --- [http-nio-8080-exec-4] o.s.w.s.r.ResourceHttpRequestHandler     : Resource not found
-2022-09-13 02:26:37.173 DEBUG 12224 --- [http-nio-8080-exec-8] o.s.w.s.r.ResourceHttpRequestHandler     : Resource not found
-2022-09-13 02:26:37.172 DEBUG 12224 --- [http-nio-8080-exec-6] o.s.w.s.r.ResourceHttpRequestHandler     : Resource not found
-2022-09-13 02:26:37.172 DEBUG 12224 --- [http-nio-8080-exec-9] o.s.w.s.r.ResourceHttpRequestHandler     : Resource not found
-2022-09-13 02:26:37.173 DEBUG 12224 --- [http-nio-8080-exec-7] o.s.w.s.r.ResourceHttpRequestHandler     : Resource not found
-2022-09-13 02:26:37.176 DEBUG 12224 --- [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : Completed 404 NOT_FOUND
-2022-09-13 02:26:37.177 DEBUG 12224 --- [http-nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : Completed 404 NOT_FOUND
-2022-09-13 02:26:37.176 DEBUG 12224 --- [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 404 NOT_FOUND
-2022-09-13 02:26:37.176 DEBUG 12224 --- [http-nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : Completed 404 NOT_FOUND
-2022-09-13 02:26:37.177 DEBUG 12224 --- [http-nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : Completed 404 NOT_FOUND
-2022-09-13 02:26:37.177 DEBUG 12224 --- [http-nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : Completed 404 NOT_FOUND
-2022-09-13 02:26:37.178 DEBUG 12224 --- [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : "ERROR" dispatch for GET "/error", parameters={}
-2022-09-13 02:26:37.178 DEBUG 12224 --- [http-nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : "ERROR" dispatch for GET "/error", parameters={}
-2022-09-13 02:26:37.178 DEBUG 12224 --- [http-nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : "ERROR" dispatch for GET "/error", parameters={}
-2022-09-13 02:26:37.178 DEBUG 12224 --- [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : "ERROR" dispatch for GET "/error", parameters={}
-2022-09-13 02:26:37.181 DEBUG 12224 --- [http-nio-8080-exec-8] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#error(HttpServletRequest)
-2022-09-13 02:26:37.181 DEBUG 12224 --- [http-nio-8080-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#error(HttpServletRequest)
-2022-09-13 02:26:37.178 DEBUG 12224 --- [http-nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : "ERROR" dispatch for GET "/error", parameters={}
-2022-09-13 02:26:37.181 DEBUG 12224 --- [http-nio-8080-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#error(HttpServletRequest)
-2022-09-13 02:26:37.181 DEBUG 12224 --- [http-nio-8080-exec-9] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#error(HttpServletRequest)
-2022-09-13 02:26:37.178 DEBUG 12224 --- [http-nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : "ERROR" dispatch for GET "/error", parameters={}
-2022-09-13 02:26:37.183 DEBUG 12224 --- [http-nio-8080-exec-6] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#error(HttpServletRequest)
-2022-09-13 02:26:37.183 DEBUG 12224 --- [http-nio-8080-exec-7] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#error(HttpServletRequest)
-2022-09-13 02:26:37.184 DEBUG 12224 --- [http-nio-8080-exec-9] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
-2022-09-13 02:26:37.184 DEBUG 12224 --- [http-nio-8080-exec-4] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
-2022-09-13 02:26:37.184 DEBUG 12224 --- [http-nio-8080-exec-8] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
-2022-09-13 02:26:37.184 DEBUG 12224 --- [http-nio-8080-exec-9] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [{timestamp=Tue Sep 13 02:26:37 KST 2022, status=404, error=Not Found, message=No message available,  (truncated)...]
-2022-09-13 02:26:37.184 DEBUG 12224 --- [http-nio-8080-exec-3] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
-2022-09-13 02:26:37.184 DEBUG 12224 --- [http-nio-8080-exec-6] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
-2022-09-13 02:26:37.184 DEBUG 12224 --- [http-nio-8080-exec-7] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
-2022-09-13 02:26:37.184 DEBUG 12224 --- [http-nio-8080-exec-4] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [{timestamp=Tue Sep 13 02:26:37 KST 2022, status=404, error=Not Found, message=No message available,  (truncated)...]
-2022-09-13 02:26:37.185 DEBUG 12224 --- [http-nio-8080-exec-8] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [{timestamp=Tue Sep 13 02:26:37 KST 2022, status=404, error=Not Found, message=No message available,  (truncated)...]
-2022-09-13 02:26:37.185 DEBUG 12224 --- [http-nio-8080-exec-3] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [{timestamp=Tue Sep 13 02:26:37 KST 2022, status=404, error=Not Found, message=No message available,  (truncated)...]
-2022-09-13 02:26:37.185 DEBUG 12224 --- [http-nio-8080-exec-6] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [{timestamp=Tue Sep 13 02:26:37 KST 2022, status=404, error=Not Found, message=No message available,  (truncated)...]
-2022-09-13 02:26:37.186 DEBUG 12224 --- [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : Exiting from "ERROR" dispatch, status 404
-2022-09-13 02:26:37.185 DEBUG 12224 --- [http-nio-8080-exec-7] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [{timestamp=Tue Sep 13 02:26:37 KST 2022, status=404, error=Not Found, message=No message available,  (truncated)...]
-2022-09-13 02:26:37.185 DEBUG 12224 --- [http-nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : Exiting from "ERROR" dispatch, status 404
-2022-09-13 02:26:37.186 DEBUG 12224 --- [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Exiting from "ERROR" dispatch, status 404
-2022-09-13 02:26:37.186 DEBUG 12224 --- [http-nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : Exiting from "ERROR" dispatch, status 404
-2022-09-13 02:26:37.188 DEBUG 12224 --- [http-nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : Exiting from "ERROR" dispatch, status 404
-2022-09-13 02:26:37.189 DEBUG 12224 --- [http-nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : Exiting from "ERROR" dispatch, status 404
-2022-09-13 02:26:37.197 DEBUG 12224 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : GET "/static/img/undraw_profile_1.svg", parameters={}
-2022-09-13 02:26:37.197 DEBUG 12224 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : GET "/static/img/undraw_profile_3.svg", parameters={}
-2022-09-13 02:26:37.197 DEBUG 12224 --- [http-nio-8080-exec-10] o.s.web.servlet.DispatcherServlet        : GET "/static/img/undraw_profile_2.svg", parameters={}
-2022-09-13 02:26:37.199 DEBUG 12224 --- [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : GET "/vendor/fontawesome-free/webfonts/fa-solid-900.woff2", parameters={}
-2022-09-13 02:26:37.199 DEBUG 12224 --- [http-nio-8080-exec-2] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
-2022-09-13 02:26:37.199 DEBUG 12224 --- [http-nio-8080-exec-10] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
-2022-09-13 02:26:37.199 DEBUG 12224 --- [http-nio-8080-exec-1] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
-2022-09-13 02:26:37.200 DEBUG 12224 --- [http-nio-8080-exec-5] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
-2022-09-13 02:26:37.202 DEBUG 12224 --- [http-nio-8080-exec-2] o.s.w.s.r.ResourceHttpRequestHandler     : Resource not found
-2022-09-13 02:26:37.202 DEBUG 12224 --- [http-nio-8080-exec-10] o.s.w.s.r.ResourceHttpRequestHandler     : Resource not found
-2022-09-13 02:26:37.202 DEBUG 12224 --- [http-nio-8080-exec-1] o.s.w.s.r.ResourceHttpRequestHandler     : Resource not found
-2022-09-13 02:26:37.202 DEBUG 12224 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 404 NOT_FOUND
-2022-09-13 02:26:37.202 DEBUG 12224 --- [http-nio-8080-exec-10] o.s.web.servlet.DispatcherServlet        : Completed 404 NOT_FOUND
-2022-09-13 02:26:37.203 DEBUG 12224 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 404 NOT_FOUND
-2022-09-13 02:26:37.204 DEBUG 12224 --- [http-nio-8080-exec-10] o.s.web.servlet.DispatcherServlet        : "ERROR" dispatch for GET "/error", parameters={}
-2022-09-13 02:26:37.205 DEBUG 12224 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : "ERROR" dispatch for GET "/error", parameters={}
-2022-09-13 02:26:37.205 DEBUG 12224 --- [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
-2022-09-13 02:26:37.204 DEBUG 12224 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : "ERROR" dispatch for GET "/error", parameters={}
-2022-09-13 02:26:37.206 DEBUG 12224 --- [http-nio-8080-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#error(HttpServletRequest)
-2022-09-13 02:26:37.206 DEBUG 12224 --- [http-nio-8080-exec-10] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#error(HttpServletRequest)
-2022-09-13 02:26:37.210 DEBUG 12224 --- [http-nio-8080-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#error(HttpServletRequest)
-2022-09-13 02:26:37.213 DEBUG 12224 --- [http-nio-8080-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json;q=0.8', given [image/avif, image/webp, image/apng, image/svg+xml, image/*, */*;q=0.8] and supported [application/json, application/*+json, application/json, application/*+json]
-2022-09-13 02:26:37.213 DEBUG 12224 --- [http-nio-8080-exec-10] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json;q=0.8', given [image/avif, image/webp, image/apng, image/svg+xml, image/*, */*;q=0.8] and supported [application/json, application/*+json, application/json, application/*+json]
-2022-09-13 02:26:37.215 DEBUG 12224 --- [http-nio-8080-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [{timestamp=Tue Sep 13 02:26:37 KST 2022, status=404, error=Not Found, message=No message available,  (truncated)...]
-2022-09-13 02:26:37.215 DEBUG 12224 --- [http-nio-8080-exec-10] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [{timestamp=Tue Sep 13 02:26:37 KST 2022, status=404, error=Not Found, message=No message available,  (truncated)...]
-2022-09-13 02:26:37.215 DEBUG 12224 --- [http-nio-8080-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json;q=0.8', given [image/avif, image/webp, image/apng, image/svg+xml, image/*, */*;q=0.8] and supported [application/json, application/*+json, application/json, application/*+json]
-2022-09-13 02:26:37.216 DEBUG 12224 --- [http-nio-8080-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [{timestamp=Tue Sep 13 02:26:37 KST 2022, status=404, error=Not Found, message=No message available,  (truncated)...]
-2022-09-13 02:26:37.218 DEBUG 12224 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Exiting from "ERROR" dispatch, status 404
-2022-09-13 02:26:37.218 DEBUG 12224 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Exiting from "ERROR" dispatch, status 404
-2022-09-13 02:26:37.218 DEBUG 12224 --- [http-nio-8080-exec-10] o.s.web.servlet.DispatcherServlet        : Exiting from "ERROR" dispatch, status 404
-2022-09-13 02:26:37.307 DEBUG 12224 --- [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : GET "/volume", parameters={}
-2022-09-13 02:26:37.307 DEBUG 12224 --- [http-nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : GET "/instance", parameters={}
-2022-09-13 02:26:37.309 DEBUG 12224 --- [http-nio-8080-exec-9] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.bootest.controller.InstanceController#findAll(String)
-2022-09-13 02:26:37.309 DEBUG 12224 --- [http-nio-8080-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.bootest.controller.VolumeController#findAll(String)
-2022-09-13 02:26:37.351 DEBUG 12224 --- [http-nio-8080-exec-9] org.hibernate.SQL                        : select instancere0_.id as id1_1_, instancere0_.availability_zone as availabi2_1_, instancere0_.instance_id as instance3_1_, instancere0_.instance_life_cycle as instance4_1_, instancere0_.instance_name as instance5_1_, instancere0_.instance_state as instance6_1_, instancere0_.instance_type as instance7_1_, instancere0_.launch_time as launch_t8_1_, instancere0_.modified as modified9_1_, instancere0_.os as os10_1_, instancere0_.registered as registe11_1_ from reco_instance instancere0_
-2022-09-13 02:26:37.351 DEBUG 12224 --- [http-nio-8080-exec-4] org.hibernate.SQL                        : select recovolume0_.id as id1_2_, recovolume0_.attachments as attachme2_2_, recovolume0_.availability_zone as availabi3_2_, recovolume0_.create_time as create_t4_2_, recovolume0_.encrypted as encrypte5_2_, recovolume0_.instance_id as instance6_2_, recovolume0_.registered_date as register7_2_, recovolume0_.size as size8_2_, recovolume0_.snapshot_id as snapshot9_2_, recovolume0_.state as state10_2_, recovolume0_.updated as updated11_2_, recovolume0_.volume_id as volume_12_2_, recovolume0_.volume_type as volume_13_2_ from reco_volume recovolume0_
-2022-09-13 02:26:37.370 DEBUG 12224 --- [http-nio-8080-exec-4] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [application/json, text/javascript, */*;q=0.01] and supported [application/json, application/*+json, application/json, application/*+json]
-2022-09-13 02:26:37.370 DEBUG 12224 --- [http-nio-8080-exec-9] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [application/json, text/javascript, */*;q=0.01] and supported [application/json, application/*+json, application/json, application/*+json]
-2022-09-13 02:26:37.373 DEBUG 12224 --- [http-nio-8080-exec-9] m.m.a.RequestResponseBodyMethodProcessor : Writing [[InstanceReco(id=a8ff1654-f87b-4f5f-91b7-058f99e0c0fa, instanceId=i-002058881ea0ae130, instanceName= (truncated)...]
-2022-09-13 02:26:37.373 DEBUG 12224 --- [http-nio-8080-exec-4] m.m.a.RequestResponseBodyMethodProcessor : Writing [[RecoVolume(id=4ad47170-ff8d-49ab-94df-ed727f9b38f3, volumeId=vol-089330d5f0fd565a9, instanceId=null (truncated)...]
-2022-09-13 02:26:37.402 DEBUG 12224 --- [http-nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
-2022-09-13 02:26:37.402 DEBUG 12224 --- [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
-2022-09-13 02:26:47.104 DEBUG 12224 --- [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : GET "/test", parameters={}
-2022-09-13 02:26:47.105 DEBUG 12224 --- [http-nio-8080-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.bootest.controller.TaskTesterController#runTest()
-2022-09-13 02:26:47.106  INFO 12224 --- [http-nio-8080-exec-3] com.bootest.task.InstanceTask            : Update Resource Usage Request Start
-2022-09-13 02:26:47.111 DEBUG 12224 --- [http-nio-8080-exec-3] org.hibernate.SQL                        : select account0_.id as id1_0_, account0_.access_key as access_k2_0_, account0_.account_id as account_3_0_, account0_.created as created4_0_, account0_.name as name5_0_, account0_.regions as regions6_0_, account0_.secret_key as secret_k7_0_, account0_.updated as updated8_0_, account0_.user_id as user_id9_0_ from account account0_
-2022-09-13 02:26:47.955  INFO 12224 --- [http-nio-8080-exec-3] com.bootest.aws.Ec2ClientManager         : Ec2Clients: [515313355389]
-2022-09-13 02:26:49.797 DEBUG 12224 --- [http-nio-8080-exec-3] org.hibernate.SQL                        : select resourceus0_.id as id1_3_, resourceus0_.account_id as account_2_3_, resourceus0_.account_name as account_3_3_, resourceus0_.annually as annually4_3_, resourceus0_.average as average5_3_, resourceus0_.data_type as data_typ6_3_, resourceus0_.image_id as image_id7_3_, resourceus0_.instance_type as instance8_3_, resourceus0_.life_cycle as life_cyc9_3_, resourceus0_.maximum as maximum10_3_, resourceus0_.minimum as minimum11_3_, resourceus0_.modified as modifie12_3_, resourceus0_.monthly as monthly13_3_, resourceus0_.os as os14_3_, resourceus0_.region as region15_3_, resourceus0_.registered as registe16_3_, resourceus0_.resource_id as resourc17_3_, resourceus0_.resource_name as resourc18_3_, resourceus0_.resource_state as resourc19_3_ from resource_usage resourceus0_ where resourceus0_.account_id=? and resourceus0_.region=? and resourceus0_.resource_id=? and resourceus0_.annually=? and resourceus0_.monthly=? and resourceus0_.data_type=?
-2022-09-13 02:26:49.859 DEBUG 12224 --- [http-nio-8080-exec-3] org.hibernate.SQL                        : select resourceus0_.id as id1_3_, resourceus0_.account_id as account_2_3_, resourceus0_.account_name as account_3_3_, resourceus0_.annually as annually4_3_, resourceus0_.average as average5_3_, resourceus0_.data_type as data_typ6_3_, resourceus0_.image_id as image_id7_3_, resourceus0_.instance_type as instance8_3_, resourceus0_.life_cycle as life_cyc9_3_, resourceus0_.maximum as maximum10_3_, resourceus0_.minimum as minimum11_3_, resourceus0_.modified as modifie12_3_, resourceus0_.monthly as monthly13_3_, resourceus0_.os as os14_3_, resourceus0_.region as region15_3_, resourceus0_.registered as registe16_3_, resourceus0_.resource_id as resourc17_3_, resourceus0_.resource_name as resourc18_3_, resourceus0_.resource_state as resourc19_3_ from resource_usage resourceus0_ where resourceus0_.account_id=? and resourceus0_.region=? and resourceus0_.resource_id=? and resourceus0_.annually=? and resourceus0_.monthly=? and resourceus0_.data_type=?
-2022-09-13 02:26:49.871 DEBUG 12224 --- [http-nio-8080-exec-3] org.hibernate.SQL                        : select resourceus0_.id as id1_3_, resourceus0_.account_id as account_2_3_, resourceus0_.account_name as account_3_3_, resourceus0_.annually as annually4_3_, resourceus0_.average as average5_3_, resourceus0_.data_type as data_typ6_3_, resourceus0_.image_id as image_id7_3_, resourceus0_.instance_type as instance8_3_, resourceus0_.life_cycle as life_cyc9_3_, resourceus0_.maximum as maximum10_3_, resourceus0_.minimum as minimum11_3_, resourceus0_.modified as modifie12_3_, resourceus0_.monthly as monthly13_3_, resourceus0_.os as os14_3_, resourceus0_.region as region15_3_, resourceus0_.registered as registe16_3_, resourceus0_.resource_id as resourc17_3_, resourceus0_.resource_name as resourc18_3_, resourceus0_.resource_state as resourc19_3_ from resource_usage resourceus0_ where resourceus0_.account_id=? and resourceus0_.region=? and resourceus0_.resource_id=? and resourceus0_.annually=? and resourceus0_.monthly=? and resourceus0_.data_type=?
-2022-09-13 02:26:49.885 DEBUG 12224 --- [http-nio-8080-exec-3] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
-2022-09-13 02:26:49.886 DEBUG 12224 --- [http-nio-8080-exec-3] m.m.a.RequestResponseBodyMethodProcessor : Nothing to write: null body
-2022-09-13 02:26:49.887 DEBUG 12224 --- [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2022-09-13 02:20:18.148 DEBUG 8730 --- [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : "ERROR" dispatch for GET "/error", parameters={}
+2022-09-13 02:20:18.149 DEBUG 8730 --- [http-nio-8080-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#error(HttpServletRequest)
+2022-09-13 02:20:18.151 DEBUG 8730 --- [http-nio-8080-exec-5] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2022-09-13 02:20:18.151 DEBUG 8730 --- [http-nio-8080-exec-5] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [{timestamp=Tue Sep 13 02:20:18 KST 2022, status=500, error=Internal Server Error, trace=software.ama (truncated)...]
+2022-09-13 02:20:18.153 DEBUG 8730 --- [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : Exiting from "ERROR" dispatch, status 500

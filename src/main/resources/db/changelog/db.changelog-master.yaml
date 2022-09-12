@@ -1,6 +1,86 @@
 databaseChangeLog:
   - changeSet:
-      id: "3"
+      id: "1"
+      author: ky
+      changes:
+        - createTable:
+            tableName: User
+            columns:
+              - column:
+                  name: id
+                  type: VARCHAR(36)
+                  constraints:
+                    primaryKey: true
+              - column:
+                  name: user_id
+                  type: VARCHAR(50)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: passwd
+                  type: VARCHAR(50)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: name
+                  type: VARCHAR(64)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: email
+                  type: VARCHAR(50)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: created
+                  type: TIMESTAMP
+                  constraints:
+                    nullable: false
+              - column:
+                  name: updated
+                  type: TIMESTAMP
+        - createTable:
+            tableName: Account
+            columns:
+              - column:
+                  name: id
+                  type: VARCHAR(36)
+                  constraints:
+                    primaryKey: true
+              - column:
+                  name: user_id
+                  type: VARCHAR(50)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: account_id
+                  type: VARCHAR(20)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: name
+                  type: VARCHAR(64)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: regions
+                  type: VARCHAR(300)
+              - column:
+                  name: accessKey
+                  type: VARCHAR(100)
+              - column:
+                  name: secretKey
+                  type: VARCHAR(100)
+              - column:
+                  name: created
+                  type: TIMESTAMP
+                  constraints:
+                    nullable: false
+              - column:
+                  name: updated
+                  type: TIMESTAMP
+  - changeSet:
+      id: "2"
       author: ky
       changes:
         - createTable:
@@ -12,24 +92,24 @@ databaseChangeLog:
                   constraints:
                     primaryKey: true
               - column:
-                  name: volumeId
+                  name: volume_Id
                   type: VARCHAR(30)
                   constraints:
               - column:
-                  name: instanceId
+                  name: instance_Id
                   type: VARCHAR(30)
               - column:
-                  name: volumeType
+                  name: volume_Type
                   type: VARCHAR(10)
                   constraints:
                     nullable: false
               - column:
-                  name: availabilityZone
+                  name: availability_Zone
                   type: VARCHAR(36)
                   constraints:
                     nullable: false
               - column:
-                  name: createTime
+                  name: create_Time
                   type: VARCHAR(50)
               - column:
                   name: encrypted
@@ -38,7 +118,7 @@ databaseChangeLog:
                   name: size
                   type: SMALLINT
               - column:
-                  name: snapshotId
+                  name: snapshot_Id
                   type: VARCHAR(50)
               - column:
                   name: state
@@ -47,7 +127,7 @@ databaseChangeLog:
                   name: attachments
                   type: TEXT
               - column:
-                  name: registeredDate
+                  name: registered_Date
                   type: TIMESTAMP
                   constraints:
                     nullable: false
@@ -55,11 +135,11 @@ databaseChangeLog:
                   name: updated
                   type: TIMESTAMP
   - changeSet:
-      id: "4"
+      id: "3"
       author: ky
       changes:
         - createTable:
-            tableName: ResourceUsage
+            tableName: resource_usage
             columns:
               - column:
                   name: id
@@ -67,12 +147,12 @@ databaseChangeLog:
                   constraints:
                     primaryKey: true
               - column:
-                  name: accountId
+                  name: account_Id
                   type: VARCHAR(50)
                   constraints:
                     nullable: false
               - column:
-                  name: accountName
+                  name: account_Name
                   type: VARCHAR(64)
                   constraints:
                     nullable: false
@@ -82,25 +162,25 @@ databaseChangeLog:
                   constraints:
                     nullable: false
               - column:
-                  name: resourceId
+                  name: resource_Id
                   type: VARCHAR(50)
                   constraints:
                     nullable: false
               - column:
-                  name: resourceName
+                  name: resource_Name
                   type: VARCHAR(256)
               - column:
-                  name: resourceState
+                  name: resource_State
                   type: VARCHAR(50)
                   constraints:
                     nullable: false
               - column:
-                  name: lifeCycle
+                  name: life_Cycle
                   type: VARCHAR(30)
                   constraints:
                     nullable: false
               - column:
-                  name: imageId
+                  name: image_Id
                   type: VARCHAR(36)
                   constraints:
                     nullable: false
@@ -110,7 +190,7 @@ databaseChangeLog:
                   constraints:
                     nullable: false
               - column:
-                  name: instanceType
+                  name: instance_Type
                   type: VARCHAR(36)
                   constraints:
                     nullable: false
@@ -125,7 +205,7 @@ databaseChangeLog:
                   constraints:
                     nullable: false
               - column:
-                  name: dataType
+                  name: data_Type
                   type: VARCHAR(50)
                   constraints:
                     nullable: false
@@ -147,7 +227,7 @@ databaseChangeLog:
                   name: modified
                   type: TIMESTAMP
   - changeSet:
-      id: "7"
+      id: "4"
       author: ky
       changes:
         - createTable:
@@ -212,7 +292,7 @@ databaseChangeLog:
                   constraints:
                     nullable: false
               - column:
-                  name: volumeId
+                  name: volume_Id
                   type: VARCHAR(30)
                   constraints:
                     nullable: false
