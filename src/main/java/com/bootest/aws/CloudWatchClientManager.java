@@ -27,6 +27,7 @@ public class CloudWatchClientManager {
                         StaticCredentialsProvider.create(
                             AwsBasicCredentials.create(
                                 account.getAccessKey(), account.getSecretKey())))
+                        .region(region)
                     .build());
         }
 
