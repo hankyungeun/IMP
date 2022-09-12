@@ -22,38 +22,40 @@
     <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script>
-        $(function(){
-            volume_list();
-        });
 
-        function volume_list(){
-            $.ajax({
-                url : 'volume',
-                method : 'GET',
-                contentType:'application/json;',
-                dataType:'json',
+    <script src="../js/aws.js"></script>
+<!--    <script>-->
+<!--        $(function(){-->
+<!--            volume_list();-->
+<!--        });-->
 
-                error:function(error,status,msg){
-                    alert("상태코드 " + status + "에러메시지" + msg );
-                },
-                success:user_list_result
-            });
-        }
+<!--        function volume_list(){-->
+<!--            $.ajax({-->
+<!--                url : 'volume',-->
+<!--                method : 'GET',-->
+<!--                contentType:'application/json;',-->
+<!--                dataType:'json',-->
 
-        function user_list_result(list){
-            $(list).each(function(index, item) {
-                $('.list tbody').append('<tr><td>'
-//                    + item.volumeId +'</td><td>'
-                    + item.volumeType + '</td><td>'
-                    + item.availabilityZone + '</td><td>'
-                    + item.size + '</td><td>'
-                    + item.state + '</td><td>'
-                    + item.createTime);
-            });
-        }
+<!--                error:function(error,status,msg){-->
+<!--                    alert("상태코드 " + status + "에러메시지" + msg );-->
+<!--                },-->
+<!--                success:user_list_result-->
+<!--            });-->
+<!--        }-->
 
-    </script>
+<!--        function user_list_result(list){-->
+<!--            $(list).each(function(index, item) {-->
+<!--                $('.list tbody').append('<tr><td>'-->
+<!--//                    + item.volumeId +'</td><td>'-->
+<!--                    + item.volumeType + '</td><td>'-->
+<!--                    + item.availabilityZone + '</td><td>'-->
+<!--                    + item.size + '</td><td>'-->
+<!--                    + item.state + '</td><td>'-->
+<!--                    + item.createTime);-->
+<!--            });-->
+<!--        }-->
+
+<!--    </script>-->
 
 </head>
 
@@ -536,11 +538,22 @@
                                 
                                 <!-- Card Body -->
                                 <div class="card-body">
-                                    <div class="chart-area">
-                                        <canvas id="myAreaChart"></canvas>
-                                        <span th:text="${response}"></span>
-                                        <tr th:each="volume : ${response}">
-                                            <h5 class="card-title type-2" th:text="${response}"></h5>
+                                    <div class="table-responsive">
+                                        <table class="table table-bordered list" style="font-size:100%">
+                                            <thead>
+                                            <tr>
+                                                <!--                                               <th>Volume ID</th>   -->
+                                                <th>Instance Type</th>
+                                                <th>Availability Zone</th>
+                                                <th>OS</th>
+                                                <th>State</th>
+                                                <th>Create Time</th>
+                                            </tr>
+                                            </thead>
+                                            <tbody id="instanceList">
+
+                                            </tbody>
+                                        </table>
                                     </div>
                                 </div>
                             </div>
@@ -585,7 +598,7 @@
                                                 <th>Create Time</th>
                                             </tr>
                                             </thead>
-                                            <tbody>
+                                            <tbody id="volumeList">
     
                                             </tbody>
                                         </table>
