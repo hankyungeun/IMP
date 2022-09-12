@@ -224,5 +224,3 @@ databaseChangeLog:
               - column:
                   name: modified
                   type: TIMESTAMP
-
-
