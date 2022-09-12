@@ -45,8 +45,6 @@ public class InstanceController {
 
         List<InstanceReco> result = instanceRecoRepo.findAll(searchBuilder.build());
 
-//        return volumeRepo.findAll(searchBuilder.build());
-
         return result;
     }
 

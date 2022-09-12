@@ -1,151 +1,151 @@
- databaseChangeLog:
-  - changeSet:
-      id: "3"
-      author: ky
-      changes:
-        - createTable:
-            tableName: recoVolume
-            columns:
-              - column:
-                  name: Id
-                  type: VARCHAR(36)
-                  constraints:
-                    primaryKey: true
-              - column:
-                  name: volumeId
-                  type: VARCHAR(30)
-                  constraints:
-              - column:
-                  name: instanceId
-                  type: VARCHAR(30)
-              - column:
-                  name: volumeType
-                  type: VARCHAR(10)
-                  constraints:
-                    nullable: false
-              - column:
-                  name: availabilityZone
-                  type: VARCHAR(36)
-                  constraints:
-                    nullable: false
-              - column:
-                  name: createTime
-                  type: VARCHAR(50)
-              - column:
-                  name: encrypted
-                  type: BOOLEAN
-              - column:
-                  name: size
-                  type: SMALLINT
-              - column:
-                  name: snapshotId
-                  type: VARCHAR(50)
-              - column:
-                  name: state
-                  type: VARCHAR(30)
-              - column:
-                  name: attachments
-                  type: TEXT
-              - column:
-                  name: registeredDate
-                  type: TIMESTAMP
-                  constraints:
-                    nullable: false
-              - column:
-                  name: updated
-                  type: TIMESTAMP
-  - changeSet:
-      id: "4"
-      author: ky
-      changes:
-        - createTable:
-            tableName: ResourceUsage
-            columns:
-              - column:
-                  name: id
-                  type: VARCHAR(36)
-                  constraints:
-                    primaryKey: true
-              - column:
-                  name: accountId
-                  type: VARCHAR(50)
-                  constraints:
-                    nullable: false
-              - column:
-                  name: accountName
-                  type: VARCHAR(64)
-                  constraints:
-                    nullable: false
-              - column:
-                  name: region
-                  type: VARCHAR(50)
-                  constraints:
-                    nullable: false
-              - column:
-                  name: resourceId
-                  type: VARCHAR(50)
-                  constraints:
-                    nullable: false
-              - column:
-                  name: resourceName
-                  type: VARCHAR(256)
-              - column:
-                  name: resourceState
-                  type: VARCHAR(50)
-                  constraints:
-                    nullable: false
-              - column:
-                  name: lifeCycle
-                  type: VARCHAR(30)
-                  constraints:
-                    nullable: false
-              - column:
-                  name: imageId
-                  type: VARCHAR(36)
-                  constraints:
-                    nullable: false
-              - column:
-                  name: os
-                  type: VARCHAR(36)
-                  constraints:
-                    nullable: false
-              - column:
-                  name: instanceType
-                  type: VARCHAR(36)
-                  constraints:
-                    nullable: false
-              - column:
-                  name: annually
-                  type: SMALLINT
-                  constraints:
-                    nullable: false
-              - column:
-                  name: monthly
-                  type: TINYINT
-                  constraints:
-                    nullable: false
-              - column:
-                  name: dataType
-                  type: VARCHAR(50)
-                  constraints:
-                    nullable: false
-              - column:
-                  name: average
-                  type: MEDIUMTEXT
-              - column:
-                  name: minimum
-                  type: MEDIUMTEXT
-              - column:
-                  name: maximum
-                  type: MEDIUMTEXT
-              - column:
-                  name: registered
-                  type: TIMESTAMP
-                  constraints:
-                    nullable: false
-              - column:
-                  name: modified
-                  type: TIMESTAMP
+databaseChangeLog:
+  # - changeSet:
+  #     id: "3"
+  #     author: ky
+  #     changes:
+  #       - createTable:
+  #           tableName: recoVolume
+  #           columns:
+  #             - column:
+  #                 name: Id
+  #                 type: VARCHAR(36)
+  #                 constraints:
+  #                   primaryKey: true
+  #             - column:
+  #                 name: volumeId
+  #                 type: VARCHAR(30)
+  #                 constraints:
+  #             - column:
+  #                 name: instanceId
+  #                 type: VARCHAR(30)
+  #             - column:
+  #                 name: volumeType
+  #                 type: VARCHAR(10)
+  #                 constraints:
+  #                   nullable: false
+  #             - column:
+  #                 name: availabilityZone
+  #                 type: VARCHAR(36)
+  #                 constraints:
+  #                   nullable: false
+  #             - column:
+  #                 name: createTime
+  #                 type: VARCHAR(50)
+  #             - column:
+  #                 name: encrypted
+  #                 type: BOOLEAN
+  #             - column:
+  #                 name: size
+  #                 type: SMALLINT
+  #             - column:
+  #                 name: snapshotId
+  #                 type: VARCHAR(50)
+  #             - column:
+  #                 name: state
+  #                 type: VARCHAR(30)
+  #             - column:
+  #                 name: attachments
+  #                 type: TEXT
+  #             - column:
+  #                 name: registeredDate
+  #                 type: TIMESTAMP
+  #                 constraints:
+  #                   nullable: false
+  #             - column:
+  #                 name: updated
+  #                 type: TIMESTAMP
+  # - changeSet:
+  #     id: "4"
+  #     author: ky
+  #     changes:
+  #       - createTable:
+  #           tableName: ResourceUsage
+  #           columns:
+  #             - column:
+  #                 name: id
+  #                 type: VARCHAR(36)
+  #                 constraints:
+  #                   primaryKey: true
+  #             - column:
+  #                 name: accountId
+  #                 type: VARCHAR(50)
+  #                 constraints:
+  #                   nullable: false
+  #             - column:
+  #                 name: accountName
+  #                 type: VARCHAR(64)
+  #                 constraints:
+  #                   nullable: false
+  #             - column:
+  #                 name: region
+  #                 type: VARCHAR(50)
+  #                 constraints:
+  #                   nullable: false
+  #             - column:
+  #                 name: resourceId
+  #                 type: VARCHAR(50)
+  #                 constraints:
+  #                   nullable: false
+  #             - column:
+  #                 name: resourceName
+  #                 type: VARCHAR(256)
+  #             - column:
+  #                 name: resourceState
+  #                 type: VARCHAR(50)
+  #                 constraints:
+  #                   nullable: false
+  #             - column:
+  #                 name: lifeCycle
+  #                 type: VARCHAR(30)
+  #                 constraints:
+  #                   nullable: false
+  #             - column:
+  #                 name: imageId
+  #                 type: VARCHAR(36)
+  #                 constraints:
+  #                   nullable: false
+  #             - column:
+  #                 name: os
+  #                 type: VARCHAR(36)
+  #                 constraints:
+  #                   nullable: false
+  #             - column:
+  #                 name: instanceType
+  #                 type: VARCHAR(36)
+  #                 constraints:
+  #                   nullable: false
+  #             - column:
+  #                 name: annually
+  #                 type: SMALLINT
+  #                 constraints:
+  #                   nullable: false
+  #             - column:
+  #                 name: monthly
+  #                 type: TINYINT
+  #                 constraints:
+  #                   nullable: false
+  #             - column:
+  #                 name: dataType
+  #                 type: VARCHAR(50)
+  #                 constraints:
+  #                   nullable: false
+  #             - column:
+  #                 name: average
+  #                 type: MEDIUMTEXT
+  #             - column:
+  #                 name: minimum
+  #                 type: MEDIUMTEXT
+  #             - column:
+  #                 name: maximum
+  #                 type: MEDIUMTEXT
+  #             - column:
+  #                 name: registered
+  #                 type: TIMESTAMP
+  #                 constraints:
+  #                   nullable: false
+  #             - column:
+  #                 name: modified
+  #                 type: TIMESTAMP
   - changeSet:
       id: "7"
       author: ky
