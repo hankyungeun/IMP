@@ -381,8 +381,8 @@
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <div th:if="${user != null}">
                                     <span th:text="${user.userId}"></span>
-                                    <span>님 안녕하세요</span>
-                                </div>
+                                    <span>님 안녕하세요</span>옇
+웃                                </div>
                             <!-- Dropdown - User Information -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
                                 aria-labelledby="userDropdown">
@@ -418,8 +418,10 @@
                     <!-- Page Heading -->
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
                         <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
-                        <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
-                                class="fas fa-download fa-sm text-white-50"></i> Generate Report</a>
+                        <a button type="button" class="btn btn-primary" href="/logout">로그아웃</a>
+
+                        <!--                        <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"></a>-->
+<!--                                class="fas fa-download fa-sm text-white-50"></i> Generate Report</a>-->
                     </div>
 
                     <!-- Content Row -->
