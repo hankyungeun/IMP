@@ -21,7 +21,7 @@ public class HomeController {
             Model model, Account account) {
         // 세션에 회원 데이터가 없으면 홈으로 이동
         if (loginUser == null) {
-            return "home";
+            return "redirect:/login";
         }
 
         // 세션이 유지되면 로그인 홈으로 이동
