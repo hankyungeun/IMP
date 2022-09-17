@@ -34,3 +34,6 @@ build/
 application-secure.yaml
 /logs/
 /logs/
+/logs/
+logs\
+logs\
