@@ -33,7 +33,8 @@ build/
 .vscode/
 application-secure.yaml
 /logs/
-/logs/
-/logs/
 logs\
-logs\
+spring.log
+spring.log.2022-09-11.0.gz
+spring.log.2022-09-12.0.gz
+spring.log
