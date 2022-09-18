@@ -1,10 +1,13 @@
 package com.bootest.service;
 
+import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.LinkedHashMap;
+import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -30,7 +33,7 @@ public class ResourceUsageService {
 
     private final ObjectMapper mapper;
 
-    public List<GetMonthlyUsageDto> findAllByMonthAvg(String dateFrom, String dateTo, List<ResourceUsage> usages)
+    public List<GetMonthlyUsageDto> findAllByResource(String dateFrom, String dateTo, List<ResourceUsage> usages)
             throws JsonMappingException, JsonProcessingException {
 
         List<GetMonthlyUsageDto> results = new ArrayList<>();
@@ -191,13 +194,108 @@ public class ResourceUsageService {
                     resultValue = entry.getValue() / dateCounts.get(entry.getKey());
                 }
 
+                BigDecimal bd = BigDecimal.valueOf(resultValue);
+                bd = bd.setScale(2, RoundingMode.HALF_UP);
+
                 StatisticDataValueDto resultData = new StatisticDataValueDto();
                 resultData.setTime(entry.getKey());
-                resultData.setValue(resultValue);
+                resultData.setValue(bd.doubleValue());
                 results.add(resultData);
             }
         }
         return results;
     }
 
+    public List<GetMonthlyUsageDto> getAllAvgByMonth(String dateFrom, String dateTo, List<ResourceUsage> usages)
+            throws JsonMappingException, JsonProcessingException {
+
+        LocalDate start = LocalDate.now().withMonth(1);
+        LocalDate end = LocalDate.now().withMonth(12);
+
+        if (dateFrom != null && dateTo != null) {
+            start = LocalDate.parse(dateFrom, DateTimeFormatter.ISO_DATE);
+            end = LocalDate.parse(dateTo, DateTimeFormatter.ISO_DATE);
+        }
+
+        List<LocalDate> dates = start.datesUntil(end).collect(Collectors.toList());
+
+        Set<String> dateSet = new LinkedHashSet<>();
+
+        for (LocalDate ld : dates) {
+            String[] ldArr = ld.toString().split("-");
+            dateSet.add(ldArr[0] + "-" + ldArr[1]);
+        }
+
+        GetMonthlyUsageDto resultData = new GetMonthlyUsageDto();
+
+        List<StatisticDataValueDto> cpuAvgs = new ArrayList<>();
+        List<StatisticDataValueDto> memAvgs = new ArrayList<>();
+        List<StatisticDataValueDto> diskAvgs = new ArrayList<>();
+        List<StatisticDataValueDto> netInAvgs = new ArrayList<>();
+        List<StatisticDataValueDto> netOutAvgs = new ArrayList<>();
+
+        for (ResourceUsage ru : usages) {
+            for (String date : dateSet) {
+                String[] dateArr = date.split("-");
+
+                Short year = Short.parseShort(dateArr[0]);
+                Short month = Short.parseShort(dateArr[1]);
+
+                if (ru.getAnnually() == year && ru.getMonthly() == month) {
+
+                    if (ru.getDataType().equals(UsageDataType.CPU)) {
+                        StatisticDataDto cpuAvg = mapper.readValue(ru.getAverage(),
+                                StatisticDataDto.class);
+                        cpuAvgs.addAll(cpuAvg.getData());
+                    }
+
+                    if (ru.getDataType().equals(UsageDataType.MEMORY)) {
+                        StatisticDataDto memAvg = mapper.readValue(ru.getAverage(),
+                                StatisticDataDto.class);
+                        memAvgs.addAll(memAvg.getData());
+                    }
+
+                    if (ru.getDataType().equals(UsageDataType.DISK)) {
+                        StatisticDataDto diskAvg = mapper.readValue(ru.getAverage(),
+                                StatisticDataDto.class);
+                        diskAvgs.addAll(diskAvg.getData());
+                    }
+
+                    if (ru.getDataType().equals(UsageDataType.NET_IN)) {
+                        StatisticDataDto netInAvg = mapper.readValue(ru.getAverage(),
+                                StatisticDataDto.class);
+                        netInAvgs.addAll(netInAvg.getData());
+                    }
+
+                    if (ru.getDataType().equals(UsageDataType.NET_OUT)) {
+                        StatisticDataDto netOutAvg = mapper.readValue(ru.getAverage(),
+                                StatisticDataDto.class);
+                        netOutAvgs.addAll(netOutAvg.getData());
+                    }
+                }
+            }
+        }
+
+        if (!cpuAvgs.isEmpty()) {
+            resultData.setCpuAvg(getAverageByMonth(cpuAvgs, dateSet));
+        }
+
+        if (!memAvgs.isEmpty()) {
+            resultData.setMemAvg(getAverageByMonth(memAvgs, dateSet));
+        }
+
+        if (!diskAvgs.isEmpty()) {
+            resultData.setDiskAvg(getAverageByMonth(diskAvgs, dateSet));
+        }
+
+        if (!netInAvgs.isEmpty()) {
+            resultData.setNetInAvg(getAverageByMonth(netInAvgs, dateSet));
+        }
+
+        if (!netOutAvgs.isEmpty()) {
+            resultData.setNetOutAvg(getAverageByMonth(netOutAvgs, dateSet));
+        }
+
+        return List.of(resultData);
+    }
 }

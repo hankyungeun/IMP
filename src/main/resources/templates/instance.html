@@ -12,13 +12,20 @@
     <title>SB Admin 2 - Cards</title>
 
     <!-- Custom fonts for this template-->
-    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="../vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <link
             href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
             rel="stylesheet">
 
     <!-- Custom styles for this template-->
-    <link href="css/sb-admin-2.min.css" rel="stylesheet">
+    <link href="../css/sb-admin-2.min.css" rel="stylesheet">
+
+    <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.js"></script>
+    <script src="../js/instance-usage.js"></script>
+    <script src="../js/aws.js"></script>
 
 </head>
 
@@ -58,7 +65,7 @@
 
             <!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item">
-                <a class="nav-link collapsed" href="../instance.html" >
+                <a class="nav-link collapsed" href="/instanceUsage" >
                     <i class="fas fa-fw fa-cog"></i>
                     <span style="font-size: large; font-weight: bold;">Instance Usage</span>
                 </a>
@@ -98,27 +105,27 @@
                 <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Login Screens:</h6>
-                        <a class="collapse-item" href="../templates/login.html">Login</a>
-                        <a class="collapse-item" href="../templates/register.html">Register</a>
-                        <a class="collapse-item" href="forgot-password.html">Forgot Password</a>
+                        <a class="collapse-item" href="login.html">Login</a>
+                        <a class="collapse-item" href="register.html">Register</a>
+                        <a class="collapse-item" href="../forgot-password.html">Forgot Password</a>
                         <div class="collapse-divider"></div>
                         <h6 class="collapse-header">Other Pages:</h6>
-                        <a class="collapse-item" href="404.html">404 Page</a>
-                        <a class="collapse-item" href="blank.html">Blank Page</a>
+                        <a class="collapse-item" href="../404.html">404 Page</a>
+                        <a class="collapse-item" href="../blank.html">Blank Page</a>
                     </div>
                 </div>
             </li>
 
             <!-- Nav Item - Charts -->
             <li class="nav-item">
-                <a class="nav-link" href="charts.html">
+                <a class="nav-link" href="../charts.html">
                     <i class="fas fa-fw fa-chart-area"></i>
                     <span>Charts</span></a>
             </li>
 
             <!-- Nav Item - Tables -->
             <li class="nav-item">
-                <a class="nav-link" href="tables.html">
+                <a class="nav-link" href="../tables.html">
                     <i class="fas fa-fw fa-table"></i>
                     <span>Tables</span></a>
             </li>
@@ -255,7 +262,7 @@
                                 </h6>
                                 <a class="dropdown-item d-flex align-items-center" href="#">
                                     <div class="dropdown-list-image mr-3">
-                                        <img class="rounded-circle" src="img/undraw_profile_1.svg"
+                                        <img class="rounded-circle" src="../img/undraw_profile_1.svg"
                                              alt="...">
                                         <div class="status-indicator bg-success"></div>
                                     </div>
@@ -267,7 +274,7 @@
                                 </a>
                                 <a class="dropdown-item d-flex align-items-center" href="#">
                                     <div class="dropdown-list-image mr-3">
-                                        <img class="rounded-circle" src="img/undraw_profile_2.svg"
+                                        <img class="rounded-circle" src="../img/undraw_profile_2.svg"
                                              alt="...">
                                         <div class="status-indicator"></div>
                                     </div>
@@ -279,7 +286,7 @@
                                 </a>
                                 <a class="dropdown-item d-flex align-items-center" href="#">
                                     <div class="dropdown-list-image mr-3">
-                                        <img class="rounded-circle" src="img/undraw_profile_3.svg"
+                                        <img class="rounded-circle" src="../img/undraw_profile_3.svg"
                                              alt="...">
                                         <div class="status-indicator bg-warning"></div>
                                     </div>
@@ -313,7 +320,7 @@
                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <span class="mr-2 d-none d-lg-inline text-gray-600 small">Douglas McGee</span>
                                 <img class="img-profile rounded-circle"
-                                     src="img/undraw_profile.svg">
+                                     src="../img/undraw_profile.svg">
                             </a>
                             <!-- Dropdown - User Information -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
@@ -352,7 +359,7 @@
                                 <div class="card shadow mb-4">
                                     <!-- Card Header - Dropdown -->
                                     <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                                        <h6 class="m-0 font-weight-bold text-primary">Revenue Sources</h6>
+                                        <h6 class="m-0 font-weight-bold text-primary">Instance Status</h6>
                                         <div class="dropdown no-arrow">
                                             <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
                                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -375,40 +382,26 @@
                                         </div>
                                         <div class="mt-4 text-center small">
                                             <span class="mr-2">
-                                                <i class="fas fa-circle text-primary"></i> Direct
+                                                <i class="fas fa-circle text-primary"></i> running
                                             </span>
                                             <span class="mr-2">
-                                                <i class="fas fa-circle text-success"></i> Social
+                                                <i class="fas fa-circle text-success"></i> terminated
                                             </span>
                                             <span class="mr-2">
-                                                <i class="fas fa-circle text-info"></i> Referral
+                                                <i class="fas fa-circle text-info"></i> stopped
                                             </span>
                                         </div>
                                     </div>
                                 </div>
                             </div>
 
-                            <!-- Basic Card Example -->
-                            <div class="card shadow mb-4">
-                                <div class="card-header py-3">
-                                    <h6 class="m-0 font-weight-bold text-primary">Basic Card Example</h6>
-                                </div>
-                                <div class="card-body">
-                                    The styling for this basic card example is created by using default Bootstrap
-                                    utility classes. By using utility classes, the style of the card component can be
-                                    easily modified with no need for any custom CSS!
-                                </div>
-                            </div>
-<!--                        </div>-->
-
-                        <div class="col-lg-6">
-
-                            <!-- Dropdown Card Example -->
+                        <!-- Area Chart -->
+                        <div class="col-xl-8 col-lg-7">
                             <div class="card shadow mb-4">
                                 <!-- Card Header - Dropdown -->
                                 <div
                                         class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                                    <h6 class="m-0 font-weight-bold text-primary">Dropdown Card Example</h6>
+                                    <h6 class="m-0 font-weight-bold text-primary">Chart</h6>
                                     <div class="dropdown no-arrow">
                                         <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
                                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -425,26 +418,104 @@
                                     </div>
                                 </div>
                                 <!-- Card Body -->
-                                <div class="card-body">
-                                    Dropdown menus can be placed in the card header in order to extend the functionality
-                                    of a basic card. In this dropdown card example, the Font Awesome vertical ellipsis
-                                    icon in the card header can be clicked on in order to toggle a dropdown menu.
+                                <div class="card-body" >
+                                    <div class="chart-area">
+                                        <canvas id="myAreaChart"></canvas>
+                                    </div>
                                 </div>
                             </div>
+                        </div>
 
-                            <!-- Collapsable Card Example -->
+                        <!-- Area Chart -->
+                        <div class="col-xl-12 col-lg-7">
                             <div class="card shadow mb-4">
-                                <!-- Card Header - Accordion -->
-                                <a href="#collapseCardExample" class="d-block card-header py-3" data-toggle="collapse"
-                                   role="button" aria-expanded="true" aria-controls="collapseCardExample">
-                                    <h6 class="m-0 font-weight-bold text-primary">Collapsable Card Example</h6>
-                                </a>
-                                <!-- Card Content - Collapse -->
-                                <div class="collapse show" id="collapseCardExample">
-                                    <div class="card-body">
-                                        This is a collapsable card example using Bootstrap's built in collapse
-                                        functionality. <strong>Click on the card header</strong> to see the card body
-                                        collapse and expand!
+                                <!-- Card Header - Dropdown -->
+                                <div
+                                        class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                    <h6 class="m-0 font-weight-bold text-primary">Instance Information</h6>
+                                    <div class="dropdown no-arrow">
+                                        <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
+                                           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
+                                        </a>
+                                        <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in"
+                                             aria-labelledby="dropdownMenuLink">
+                                            <div class="dropdown-header">Dropdown Header:</div>
+                                            <a class="dropdown-item" href="#">Action</a>
+                                            <a class="dropdown-item" href="#">Another action</a>
+                                            <div class="dropdown-divider"></div>
+                                            <a class="dropdown-item" href="#">Something else here</a>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <!-- Card Body -->
+                                <div class="card-body">
+                                    <div class="table-responsive">
+                                        <table class="table table-bordered list" style="font-size:100%">
+                                            <thead>
+                                            <tr>
+                                                <!--                                               <th>Volume ID</th>   -->
+                                                <th>Instance Type</th>
+                                                <th>Availability Zone</th>
+                                                <th>OS</th>
+                                                <th>State</th>
+                                                <th>Create Time</th>
+                                            </tr>
+                                            </thead>
+                                            <tbody id="instanceList">
+
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+<!--                        instnace_List-->
+                        <div class="col-xl-12 col-lg-7">
+                            <div class="card shadow mb-4">
+                                <!-- Card Header - Dropdown -->
+                                <div
+                                        class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                    <h6 class="m-0 font-weight-bold text-primary">Instance Usage</h6>
+                                    <div class="dropdown no-arrow">
+                                        <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
+                                           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
+                                        </a>
+                                        <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in"
+                                             aria-labelledby="dropdownMenuLink">
+                                            <div class="dropdown-header">Dropdown Header:</div>
+                                            <a class="dropdown-item" href="#">Action</a>
+                                            <a class="dropdown-item" href="#">Another action</a>
+                                            <div class="dropdown-divider"></div>
+                                            <a class="dropdown-item" href="#">Something else here</a>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <!-- Card Body -->
+                                <div class="card-body">
+                                    <div class="table-responsive">
+                                        <table class="table table-bordered list" style="font-size:100%">
+                                            <thead>
+                                            <tr>
+                                                <!--                                               <th>Volume ID</th>   -->
+                                                <th>Account Name</th>
+                                                <th>region</th>
+                                                <th>Resource Id</th>
+                                                <th>Resource Name</th>
+                                                <th>OS</th>
+                                                <th>Instance Type</th>
+                                            </tr>
+                                            </thead>
+                                            <tbody id="resource_usage_list">
+
+                                            </tbody>
+                                        </table>
                                     </div>
                                 </div>
                             </div>
@@ -491,11 +562,12 @@
                 <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
                 <div class="modal-footer">
                     <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                    <a class="btn btn-primary" href="../templates/login.html">Logout</a>
+                    <a class="btn btn-primary" href="login.html">Logout</a>
                 </div>
             </div>
         </div>
     </div>
+
 
     <!-- Bootstrap core JavaScript-->
     <script src="../vendor/jquery/jquery.min.js"></script>
