@@ -131,7 +131,7 @@ var chartArea = {
       data: {
         labels: chartArea.labels,
         datasets: [{
-          label: "¸ÅÃâ¾×",
+          label: "Month",
           lineTension: 0.3,
           backgroundColor: "rgba(2,117,216,0.2)",
           borderColor: "rgba(2,117,216,1)",
@@ -143,6 +143,15 @@ var chartArea = {
           pointHitRadius: 50,
           pointBorderWidth: 2,
           data: chartArea.dataSets,
+        }, {
+          label: 'ë¼ì¸ ê·¸ë˜í”„2',
+          type : 'line',
+          fill : false,
+          lineTension : 0.2,
+          pointRadius : 0,
+          backgroundColor: 'rgb(255, 204, 0)',
+          borderColor: 'rgb(255, 204, 0)',
+          data: [100, 120, 150, 100, 180, 200]
         }],
       },
       options: {
@@ -160,12 +169,6 @@ var chartArea = {
             }
           }],
           yAxes: [{
-            /*          y°ª¿¡ µû¶ó ÃÖ¼Ò, ÃÖ´ëÄ¡ Ç¥½Ã¸¦ ÀÚµ¿À¸·Î ¼³Á¤ÇÏ±â À§ÇØ ÁÖ¼®Ã³¸®
-                          ticks: {
-                          min: 0,
-                          max: 40000,
-                          maxTicksLimit: 5
-                        },*/
             gridLines: {
               color: "rgba(0, 0, 0, .125)",
             }
@@ -184,9 +187,7 @@ var chartArea = {
       type : 'GET',
       url : 'usage',
       contentType: 'application/json',
-      //dataType Á¤ÀÇ
       dataType: 'json',
-      //¿äÃ»°á°ú°¡ ¼º°øÀÏ °æ¿ì
       success : function(data) {
         //console.log(data);
         $.each(data, function(index,obj){
@@ -195,7 +196,6 @@ var chartArea = {
         });
         chartArea.render();
       },
-      //¿äÃ»°á°ú°¡ ½ÇÆĞÀÏ °æ¿ì
       error : function(xhr, status, error){
       }
     });
