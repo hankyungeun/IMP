@@ -143,17 +143,16 @@ var chartArea = {
           pointHitRadius: 50,
           pointBorderWidth: 2,
           data: chartArea.dataSets,
+        }, {
+          label: '라인 그래프2',
+          type : 'line',
+          fill : false,
+          lineTension : 0.2,
+          pointRadius : 5,
+          backgroundColor: 'rgb(255, 204, 0)',
+          borderColor: 'rgb(255, 204, 0)',
+          data: [0, 0.5, 1, 1.5, 2.5, 3]
         }],
-          // {
-        //   label: '라인 그래프2',
-        //   type : 'line',
-        //   fill : false,
-        //   lineTension : 0.2,
-        //   pointRadius : 0,
-        //   backgroundColor: 'rgb(255, 204, 0)',
-        //   borderColor: 'rgb(255, 204, 0)',
-        //   data: [100, 120, 150, 100, 180, 200]
-        // }],
       },
 
       options: {
