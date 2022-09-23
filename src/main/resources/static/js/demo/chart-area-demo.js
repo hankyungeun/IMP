@@ -132,6 +132,7 @@ var chartArea = {
         labels: chartArea.labels,
         datasets: [{
           label: "Month",
+          fill : false,
           lineTension: 0.3,
           backgroundColor: "rgba(2,117,216,0.2)",
           borderColor: "rgba(2,117,216,1)",
@@ -145,13 +146,22 @@ var chartArea = {
           data: chartArea.dataSets,
         }, {
           label: '라인 그래프2',
-          type : 'line',
           fill : false,
           lineTension : 0.2,
           pointRadius : 5,
+          pointBorderColor: "rgba(255,255,255,0.8)",
           backgroundColor: 'rgb(255, 204, 0)',
           borderColor: 'rgb(255, 204, 0)',
           data: [0, 0.5, 1, 1.5, 2.5, 3]
+        }, {
+            label: '라인 그래프3',
+            fill : false,
+            lineTension : 0.2,
+            pointRadius : 5,
+            pointBorderColor: "rgba(255,255,255,0.8)",
+            backgroundColor: 'rgb(255,149,239)',
+            borderColor: 'rgb(255, 149, 239)',
+            data: [2.5, .3, 1, 2, 2.3, 1.5]
         }],
       },
 
