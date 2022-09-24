@@ -125,43 +125,49 @@ Chart.defaults.global.defaultFontColor = '#292b2c';
 var chartArea = {
   labels : [],
   dataSets : [],
+  diskData : [],
+  memData : [],
   render : function() {
     new Chart($("#myAreaChart"), {
       type: 'line',
       data: {
         labels: chartArea.labels,
         datasets: [{
-          label: "Month",
+          label: "CPU",
           fill : false,
           lineTension: 0.3,
-          backgroundColor: "rgba(2,117,216,0.2)",
-          borderColor: "rgba(2,117,216,1)",
+          backgroundColor: "rgb(54,185,204)",
+          borderColor: "rgb(54,185,204)",
           pointRadius: 5,
-          pointBackgroundColor: "rgba(2,117,216,1)",
+          pointBackgroundColor: "rgb(34,180,201)",
           pointBorderColor: "rgba(255,255,255,0.8)",
           pointHoverRadius: 5,
           pointHoverBackgroundColor: "rgba(2,117,216,1)",
           pointHitRadius: 50,
           pointBorderWidth: 2,
-          data: chartArea.dataSets,
+          data: chartArea.dataSets
         }, {
-          label: '라인 그래프2',
+          label: 'Disk',
           fill : false,
           lineTension : 0.2,
           pointRadius : 5,
           pointBorderColor: "rgba(255,255,255,0.8)",
-          backgroundColor: 'rgb(255, 204, 0)',
-          borderColor: 'rgb(255, 204, 0)',
-          data: [0, 0.5, 1, 1.5, 2.5, 3]
+          backgroundColor: 'rgb(255, 203, 71)',
+          borderColor: 'rgb(255, 203, 71)',
+          pointBackgroundColor: "rgb(255,187,36)",
+          pointBorderWidth: 2,
+          data: chartArea.diskData
         }, {
-            label: '라인 그래프3',
+            label: 'Memory',
             fill : false,
             lineTension : 0.2,
             pointRadius : 5,
             pointBorderColor: "rgba(255,255,255,0.8)",
-            backgroundColor: 'rgb(255,149,239)',
-            borderColor: 'rgb(255, 149, 239)',
-            data: [2.5, .3, 1, 2, 2.3, 1.5]
+            backgroundColor: 'rgb(255,192,203)',
+            borderColor: 'rgb(255, 192, 203)',
+            pointBackgroundColor: "rgb(255,176,189)",
+            pointBorderWidth: 2,
+            data: chartArea.memData
         }],
       },
 
@@ -175,7 +181,7 @@ var chartArea = {
             bottom: 0
           }
         },
-        responsive : true,
+        responsive: true,
         scales: {
           xAxes: [{
             time: {
@@ -195,7 +201,7 @@ var chartArea = {
           }],
         },
         legend: {
-          display: false
+          // position: 'left'
         }
       }
     });
@@ -203,6 +209,9 @@ var chartArea = {
   showData : function(){
     labels = [];
     dataSets= [];
+    diskData = [];
+    memData = [];
+
     $.ajax({
       type : 'GET',
       url : 'usage',
@@ -211,11 +220,55 @@ var chartArea = {
       success : function(data) {
 
         $.each(data, function(index,obj){
+          let dates = [];
+          let diskMap = new Map();
+          let memMap = new Map();
+
+          //if(obj.cpuAvg.length =! obj.diskAvg.length){
+            for(var i=0; i < obj.cpuAvg.length; i++){
+              dates.push(obj.cpuAvg[i].time);
+            }
+          //}
 
           for (var i =0; i < obj.cpuAvg.length; i++) {
-            console.log(obj.cpuAvg[i].time);
+            // console.log(obj.cpuAvg[i].time);
             chartArea.labels.push(obj.cpuAvg[i].time);
             chartArea.dataSets.push(obj.cpuAvg[i].value);
+          }
+          for (var i = 0; i < dates.length; i++) {
+            for (var j = 0; j < obj.diskAvg.length; j++){
+
+              let value = 0;
+
+              if (dates[i] == obj.diskAvg[j].time) {
+                value = obj.diskAvg[j].value;
+                diskMap.set(dates[i], value);
+                break;
+              }
+              diskMap.set(dates[i], value);
+            }
+          }
+
+          for (var i of diskMap.values()) {
+            chartArea.diskData.push(i);
+          }
+
+          for (var i = 0; i < dates.length; i++) {
+            for (var j = 0; j < obj.memAvg.length; j++){
+
+              let value = 0;
+
+              if (dates[i] == obj.memAvg[j].time) {
+                value = obj.memAvg[j].value;
+                memMap.set(dates[i], value);
+                break;
+              }
+              memMap.set(dates[i], value);
+            }
+          }
+
+          for (var i of memMap.values()) {
+            chartArea.memData.push(i);
           }
         });
         chartArea.render();
