@@ -1,12 +1,16 @@
 package com.bootest.controller;
 
+import java.time.LocalDate;
 import java.util.List;
+import java.util.Set;
+import java.util.stream.Collectors;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.bootest.dto.GetInstanceStateDto;
 import com.bootest.dto.GetMonthlyUsageDto;
 import com.bootest.model.ResourceUsage;
 import com.bootest.repository.ResourceUsageRepo;
@@ -181,6 +185,55 @@ public class ResourceUsageController {
         List<ResourceUsage> usages = resourceUsageRepo.findAll(searchBuilder.build());
 
         return service.findAllByResource(dateFrom, dateTo, usages);
+    }
+
+    @GetMapping("/state")
+    public GetInstanceStateDto findAllInstanceState() {
+
+        LocalDate now = LocalDate.now();
+        String[] nowArr = now.toString().split("-");
+
+        SearchBuilder<ResourceUsage> searchBuilder = SearchBuilder.builder();
+
+        searchBuilder.with("dataType", SearchOperationType.EQUAL, UsageDataType.CPU);
+
+        searchBuilder.with("annually", SearchOperationType.EQUAL, Short.parseShort(nowArr[0]));
+        searchBuilder.with("monthly", SearchOperationType.EQUAL, Short.parseShort(nowArr[1]));
+
+        List<ResourceUsage> usages = resourceUsageRepo.findAll(searchBuilder.build());
+
+        Integer running = 0;
+        Integer stopped = 0;
+        Integer terminated = 0;
+        Integer spot = 0;
+        Integer onDemand = 0;
+
+        for (ResourceUsage usage : usages) {
+
+            if (usage.getLifeCycle().equals("spot")) {
+                spot++;
+            } else {
+                onDemand++;
+            }
+
+            if (usage.getResourceState().equals("running") || usage.getResourceState().equals("pending")) {
+                running++;
+            } else if (usage.getResourceState().equals("stopped") || usage.getResourceState().equals("stopping")) {
+                stopped++;
+            } else if (usage.getResourceState().equals("terminated")
+                    || usage.getResourceState().equals("shutting-down")) {
+                terminated++;
+            }
+        }
+
+        GetInstanceStateDto state = new GetInstanceStateDto();
+        state.setOnDemand(onDemand);
+        state.setRunning(running);
+        state.setSpot(spot);
+        state.setTerminated(terminated);
+        state.setStopped(stopped);
+
+        return state;
     }
 
 }
