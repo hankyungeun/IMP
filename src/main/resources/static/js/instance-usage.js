@@ -18,7 +18,6 @@ function resource_list(){
 
 function resource_list_result(list){
     $(list).each(function(index, item) {
-        console.log(item);
         $('tbody#resource_usage_list').append('<tr><td>'
             // + item.accountId + '</td><td>'
             + item.accountName + '</td><td>'

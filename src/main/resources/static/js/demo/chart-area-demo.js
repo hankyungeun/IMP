@@ -207,10 +207,6 @@ var chartArea = {
     });
   },
   showData : function(){
-    labels = [];
-    dataSets= [];
-    diskData = [];
-    memData = [];
 
     $.ajax({
       type : 'GET',
@@ -231,7 +227,7 @@ var chartArea = {
           //}
 
           for (var i =0; i < obj.cpuAvg.length; i++) {
-            // console.log(obj.cpuAvg[i].time);
+            console.log(obj.cpuAvg[i].time);
             chartArea.labels.push(obj.cpuAvg[i].time);
             chartArea.dataSets.push(obj.cpuAvg[i].value);
           }
