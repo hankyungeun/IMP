@@ -227,9 +227,9 @@ public class ResourceUsageController {
         }
 
         GetInstanceStateDto state = new GetInstanceStateDto();
-        state.setOnDemand(onDemand);
+        // state.setOnDemand(onDemand);
         state.setRunning(running);
-        state.setSpot(spot);
+        // state.setSpot(spot);
         state.setTerminated(terminated);
         state.setStopped(stopped);
 

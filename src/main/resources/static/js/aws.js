@@ -46,7 +46,7 @@ function instance_list(){
 
 function instance_list_result(list){
     $(list).each(function(index, item) {
-        $('tbody#instanceList').append('<tr><td>'
+        $('#instanceList').append('<tr><td>'
             + item.instanceType + '</td><td>'
             + item.availabilityZone + '</td><td>'
             + item.os + '</td><td>'
