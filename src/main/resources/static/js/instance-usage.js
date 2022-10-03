@@ -3,27 +3,39 @@ $(function(){
 });
 
 function resource_list(){
-    $.ajax({
+    $('#resource_usage_list').DataTable().ajax({
+    // $.ajax({
         url : 'usage/resource',
         method : 'GET',
         contentType:'application/json;',
         dataType:'json',
 
-        error:function(error,status,msg){
-            alert("»óÅÂÄÚµå " + status + "¿¡·¯¸Ş½ÃÁö" + msg );
-        },
-        success:resource_list_result
+        // error:function(error,status,msg){
+        //     alert("ìƒíƒœì½”ë“œ" + status + "ì—ëŸ¬ë©”ì„¸ì§€" + msg );
+        // },
+        dataSrc:
+            function resource_list_result(list){
+                $(list).each(function(index, item) {
+                    $.append('<tr><td>'
+                        + item.accountName + '</td><td>'
+                        + item.region + '</td><td>'
+                        + item.resourceId + '</td><td>'
+                        + item.resourceName + '</td><td>'
+                        + item.os + '</td><td>'
+                        + item.instanceType +'</td></tr>' );
+                });
+            }
     });
 }
 
-function resource_list_result(list){
-    $(list).each(function(index, item) {
-        $('#resource_usage_list').append('<tr><td>'
-            + item.accountName + '</td><td>'
-            + item.region + '</td><td>'
-            + item.resourceId + '</td><td>'
-            + item.resourceName + '</td><td>'
-            + item.os + '</td><td>'
-            + item.instanceType +'</td></tr>' );
-    });
-}
+// function resource_list_result(list){
+//     $(list).each(function(index, item) {
+//         $('#resource_usage_list').append('<tr><td>'
+//             + item.accountName + '</td><td>'
+//             + item.region + '</td><td>'
+//             + item.resourceId + '</td><td>'
+//             + item.resourceName + '</td><td>'
+//             + item.os + '</td><td>'
+//             + item.instanceType +'</td></tr>' );
+//     });
+// }
