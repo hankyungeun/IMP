@@ -16,7 +16,10 @@ spring:
         exclude: logs/**
 
 task:
-  :usage: true
+  usage: false
+  enable-spot: false
+  enable-od: false
+  master-account: 515313355389
 
 
 
