@@ -11,6 +11,7 @@ import java.util.Date;
 
 @Data
 @Entity
+@Table(name = "resource_usage")
 public class ResourceUsage {
 
     @Id
@@ -29,10 +30,10 @@ public class ResourceUsage {
     @Column(name = "resource_id", nullable = false, length = 50)
     private String resourceId;
 
-    @Column(name = "resource_name",length = 256)
+    @Column(name = "resource_name", length = 256)
     private String resourceName;
 
-    @Column(name="resource_state", nullable = false, length = 50)
+    @Column(name = "resource_state", nullable = false, length = 50)
     private String resourceState;
 
     @Column(name = "life_cycle", nullable = false, length = 30)

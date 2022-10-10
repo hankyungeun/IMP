@@ -20,10 +20,10 @@ public class Account {
     @Column(nullable = false, length = 36)
     private String id;
 
-    @Column(nullable = false, length = 50)
+    @Column(name = "user_id", nullable = false, length = 50)
     private String userId;
 
-    @Column(nullable = false, length = 20)
+    @Column(name = "account_id", nullable = false, length = 20)
     private String accountId;
 
     @Column(nullable = false, length = 64)
@@ -32,10 +32,10 @@ public class Account {
     @Column(length = 300)
     private String regions;
 
-    @Column(length = 100)
+    @Column(name = "access_key",length = 100)
     private String accessKey;
 
-    @Column(length = 100)
+    @Column(name = "secret_key", length = 100)
     private String secretKey;
 
     @CreationTimestamp
