@@ -12,7 +12,7 @@ public interface ResourceUsageRepo extends JpaRepository<ResourceUsage, String>,
 
     Optional<ResourceUsage> findByResourceIdAndAnnuallyAndMonthlyAndDataType(String resourceId, short annually, short monthly, UsageDataType dataType);
 
-    Optional<ResourceUsage> findByAccountIdAndRegionAndResourceIdAndAnnuallyAndMonthlyAndDataType(String accountId, String region, String resourceId, short annaully, short monthly, UsageDataType dataType);
+    Optional<ResourceUsage> findByAccountIdAndRegionAndResourceIdAndAnnuallyAndMonthlyAndDataType(String accountId, String region, String resourceId, short annually, short monthly, UsageDataType dataType);
 
     List<ResourceUsage> findAllByResourceStateAndAnnuallyAndMonthlyAndDataType(String resourceState, short annually, short monthly, UsageDataType dataType);
 
