@@ -17,34 +17,34 @@ public class ResourceUsage {
     @Column(nullable = false, length = 36)
     private String id;
 
-    @Column(nullable = false, length = 50)
+    @Column(name = "account_id", nullable = false, length = 50)
     private String accountId;
 
-    @Column(nullable = false, length = 64)
+    @Column(name = "account_name", nullable = false, length = 64)
     private String accountName;
 
     @Column(nullable = false, length = 50)
     private String region;
 
-    @Column(nullable = false, length = 50)
+    @Column(name = "resource_id", nullable = false, length = 50)
     private String resourceId;
 
-    @Column(length = 256)
+    @Column(name = "resource_name",length = 256)
     private String resourceName;
 
-    @Column(nullable = false, length = 50)
+    @Column(name="resource_state", nullable = false, length = 50)
     private String resourceState;
 
-    @Column(nullable = false, length = 30)
+    @Column(name = "life_cycle", nullable = false, length = 30)
     private String lifeCycle;
 
-    @Column(nullable = false, length = 36)
+    @Column(name = "image_id", nullable = false, length = 36)
     private String imageId;
 
     @Column(nullable = false, length = 36)
     private String os;
 
-    @Column(nullable = false, length = 36)
+    @Column(name = "instance_type", nullable = false, length = 36)
     private String instanceType;
 
     @Column(nullable = false)
@@ -53,7 +53,7 @@ public class ResourceUsage {
     @Column(nullable = false)
     private short monthly;
 
-    @Column(nullable = false, length = 50)
+    @Column(name = "data_type", nullable = false, length = 50)
     @Enumerated(EnumType.STRING)
     private UsageDataType dataType;
 

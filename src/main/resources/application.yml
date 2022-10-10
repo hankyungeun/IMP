@@ -15,14 +15,6 @@ spring:
         enabled: false
         exclude: logs/**
 
-task:
-  usage: false
-  enable-spot: false
-  enable-od: false
-  master-account: 515313355389
-
-
-
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://localhost:3306/project2022?serverTimezone=UTC&characterEncoding=UTF-8
@@ -39,6 +31,18 @@ task:
       naming:
           implicit-strategy: org.hibernate.boot.model.naming.ImplicitNamingStrategyLegacyHbmImpl
           physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+
+task:
+  usage: false
+  enable-spot: false
+  enable-od: false
+  optimizer: 
+    enabled: false
+    avg-cpu: 1
+    max-cpu: 5
+    avg-mem: 10
+    max-mem: 20
+  master-account: 515313355389
 
 
 

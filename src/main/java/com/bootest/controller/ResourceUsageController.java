@@ -2,8 +2,6 @@ package com.bootest.controller;
 
 import java.time.LocalDate;
 import java.util.List;
-import java.util.Set;
-import java.util.stream.Collectors;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -225,11 +223,10 @@ public class ResourceUsageController {
                 terminated++;
             }
         }
-
         GetInstanceStateDto state = new GetInstanceStateDto();
-        // state.setOnDemand(onDemand);
+        state.setOnDemand(onDemand);
         state.setRunning(running);
-        // state.setSpot(spot);
+        state.setSpot(spot);
         state.setTerminated(terminated);
         state.setStopped(stopped);
 

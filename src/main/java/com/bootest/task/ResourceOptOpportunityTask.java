@@ -1,151 +1,122 @@
-// package com.gytni.vrm.task;
+package com.bootest.task;
 
-// import java.io.IOException;
-// import java.time.Instant;
-// import java.time.LocalDate;
-// import java.time.ZoneId;
-// import java.util.HashSet;
-// import java.util.List;
-// import java.util.Set;
-// import java.util.stream.Collectors;
+import java.io.IOException;
+import java.time.Instant;
+import java.time.LocalDate;
+import java.time.ZoneId;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+import java.util.stream.Collectors;
 
-// import org.springframework.scheduling.annotation.EnableScheduling;
-// import org.springframework.scheduling.annotation.Scheduled;
-// import org.springframework.stereotype.Component;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.scheduling.annotation.EnableScheduling;
+import org.springframework.scheduling.annotation.Scheduled;
+import org.springframework.stereotype.Component;
 
-// import com.fasterxml.jackson.core.JsonParseException;
-// import com.fasterxml.jackson.core.JsonProcessingException;
-// import com.fasterxml.jackson.databind.JsonMappingException;
-// import com.gytni.vrm.aspect.Timer;
-// import com.gytni.vrm.aws.AwsClientManager;
-// import com.gytni.vrm.model.Account;
-// import com.gytni.vrm.model.ResultObject;
-// import com.gytni.vrm.model.VrmResourceUsage;
-// import com.gytni.vrm.repo.AccountRepo;
-// import com.gytni.vrm.repo.VrmResourceUsageRepo;
-// import com.gytni.vrm.service.RightSizeOpportunityService;
-// import com.gytni.vrm.service.UnusedAndVersionOpportunityService;
-// import com.gytni.vrm.type.UsageDataType;
+import com.bootest.aws.Ec2ClientManager;
+import com.bootest.model.Account;
+import com.bootest.model.ResourceUsage;
+import com.bootest.repository.AccountRepo;
+import com.bootest.repository.ResourceUsageRepo;
+import com.bootest.service.RightSizeOpportunityService;
+import com.bootest.service.UnusedAndVersionOpportunityService;
+import com.bootest.type.UsageDataType;
+import com.fasterxml.jackson.core.JsonParseException;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.JsonMappingException;
 
-// import lombok.RequiredArgsConstructor;
-// import lombok.extern.slf4j.Slf4j;
-// import software.amazon.awssdk.regions.Region;
-// import software.amazon.awssdk.services.ec2.Ec2Client;
-// import
-// software.amazon.awssdk.services.elasticloadbalancingv2.ElasticLoadBalancingV2Client;
+import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
+import software.amazon.awssdk.regions.Region;
+import software.amazon.awssdk.services.ec2.Ec2Client;
 
-// @Slf4j
-// @Component
-// @RequiredArgsConstructor
-// @EnableScheduling
-// public class ResourceOptOpportunityTask {
+@Slf4j
+@Component
+@RequiredArgsConstructor
+@EnableScheduling
+public class ResourceOptOpportunityTask {
 
-// private final AccountRepo accountRepo;
-// private final AwsClientManager awscm;
-// private final VrmResourceUsageRepo vrmResourceUsageRepo;
-// private final UnusedAndVersionOpportunityService unusedNVersionOpService;
-// private final RightSizeOpportunityService rightSizeOpportunityService;
-// private final LoadConfig loadConfig;
+    private final AccountRepo accountRepo;
+    private final Ec2ClientManager ec2cm;
+    private final ResourceUsageRepo resourceUsageRepo;
+    private final UnusedAndVersionOpportunityService unusedNVersionOpService;
+    private final RightSizeOpportunityService rightSizeOpportunityService;
 
-// @Timer
-// @Scheduled(cron = "0 0 * * * *")
-// public ResultObject doOptimizationOpportunityTask() throws
-// JsonParseException, JsonMappingException, IOException {
-// ResultObject result = new ResultObject();
+    @Value("${task.optimizer.enabled}")
+    private boolean isScheduledTaskEnabled;
 
-// if (loadConfig.isScheduledTaskEnabled("optimizeOpportunity")) {
-// optimizationOpportunityTask();
-// result.setMessage("Do Optimization Opportunity Check Task Complete");
-// result.setResult(true);
-// } else {
-// log.debug("doOptimizationOpportunityCache is disabled");
-// result.setMessage("Do Optimization Opportunity Check Task Disabled");
-// result.setResult(true);
-// }
-// return result;
-// }
+    @Scheduled(cron = "0 0 * * * *")
+    public void doOptimizationOpportunityTask() throws JsonParseException, JsonMappingException, IOException {
 
-// @Timer
-// @Scheduled(cron = "0 0 * * * *")
-// public ResultObject doRightSizeOpportunityTask() throws JsonMappingException,
-// JsonProcessingException {
-// ResultObject result = new ResultObject();
+        if (isScheduledTaskEnabled) {
+            optimizationOpportunityTask();
+        } else {
+            log.debug("doOptimizationOpportunityCache is disabled");
+        }
+    }
 
-// if (loadConfig.isScheduledTaskEnabled("optimizeOpportunity")) {
-// rightSizeOpportunityTask();
-// result.setMessage("Do Optimization Opportunity Check Task Complete");
-// result.setResult(true);
-// } else {
-// log.debug("doOptimizationOpportunityCache is disabled");
-// result.setMessage("Do Optimization Opportunity Check Task Disabled");
-// result.setResult(true);
-// }
-// return result;
-// }
+    @Scheduled(cron = "0 0 * * * *")
+    public void doRightSizeOpportunityTask() throws JsonMappingException,
+            JsonProcessingException {
+        if (isScheduledTaskEnabled) {
+            rightSizeOpportunityTask();
+        } else {
+            log.debug("doOptimizationOpportunityCache is disabled");
+        }
+    }
 
-// public void optimizationOpportunityTask() throws JsonParseException,
-// JsonMappingException, IOException {
-// List<Account> accounts = accountRepo.findAll();
+    public void optimizationOpportunityTask() throws JsonParseException,
+            JsonMappingException, IOException {
+        List<Account> accounts = accountRepo.findAll();
 
-// for (Account a : accounts) {
-// String[] regionStrArr = a.getRegions().split(", ");
+        for (Account a : accounts) {
+            String[] regionStrArr = a.getRegions().split(", ");
 
-// for (String regionStr : regionStrArr) {
+            for (String regionStr : regionStrArr) {
 
-// Region region = Region.of(regionStr);
+                Region region = Region.of(regionStr);
 
-// Ec2Client ec2 = awscm.getEc2(region, a);
-// ElasticLoadBalancingV2Client elb = awscm.getElb(region, a);
+                Ec2Client ec2 = ec2cm.getEc2WithAccount(region, a);
 
-// // Instance Optimizer
-// unusedNVersionOpService.instanceOptimizationTask(a, ec2, regionStr);
+                // Instance Optimizer
+                unusedNVersionOpService.instanceOptimizationTask(a, ec2, regionStr);
 
-// // Volume optimizer
-// unusedNVersionOpService.volumeOptimizationTask(a, ec2, regionStr);
+                // Volume optimizer
+                unusedNVersionOpService.volumeOptimizationTask(a, ec2, regionStr);
 
-// // EIP optimizer
-// unusedNVersionOpService.eipOptimizationTask(a, ec2, regionStr);
+            }
+        }
+    }
 
-// // Snapshot optimizer
-// unusedNVersionOpService.snapshotOptimizationTask(a, ec2, regionStr);
+    public void rightSizeOpportunityTask() throws JsonMappingException,
+            JsonProcessingException {
+        LocalDate now = LocalDate.now();
 
-// // Load Balancer optimizer
-// unusedNVersionOpService.elbOptimizationTask(a, elb, regionStr);
-// }
-// }
-// }
+        Integer year = now.getYear();
+        Integer month = now.getMonthValue();
 
-// public void rightSizeOpportunityTask() throws JsonMappingException,
-// JsonProcessingException {
-// LocalDate now = LocalDate.now();
+        List<ResourceUsage> usages = resourceUsageRepo.findAllByResourceStateAndAnnuallyAndMonthlyAndDataType(
+                "running",
+                year.shortValue(), month.shortValue(), UsageDataType.CPU);
 
-// Integer year = now.getYear();
-// Integer month = now.getMonthValue();
+        LocalDate minusPeriod = now.minusDays(30);
 
-// List<VrmResourceUsage> usages =
-// vrmResourceUsageRepo.findAllByResourceStateAndAnnuallyAndMonthlyAndDataType(
-// "running",
-// year.shortValue(), month.shortValue(), UsageDataType.CPU);
+        Instant to = now.atStartOfDay(ZoneId.systemDefault()).toInstant();
+        Instant from = minusPeriod.atStartOfDay(ZoneId.systemDefault()).toInstant();
 
-// LocalDate minusPeriod =
-// now.minusDays(loadConfig.getOptimizationConfig().getDays());
+        List<LocalDate> dates = minusPeriod.datesUntil(now).collect(Collectors.toList());
 
-// Instant to = now.atStartOfDay(ZoneId.systemDefault()).toInstant();
-// Instant from = minusPeriod.atStartOfDay(ZoneId.systemDefault()).toInstant();
+        Set<String> dateSet = new HashSet<>();
+        for (LocalDate ld : dates) {
+            String[] ldArray = ld.toString().split("-");
+            dateSet.add(ldArray[0] + "-" + ldArray[1]);
+        }
 
-// List<LocalDate> dates =
-// minusPeriod.datesUntil(now).collect(Collectors.toList());
+        for (ResourceUsage usage : usages) {
+            rightSizeOpportunityService.rightSizeOpportunityTask(dateSet, usage, to,
+                    from);
+        }
+    }
 
-// Set<String> dateSet = new HashSet<>();
-// for (LocalDate ld : dates) {
-// String[] ldArray = ld.toString().split("-");
-// dateSet.add(ldArray[0] + "-" + ldArray[1]);
-// }
-
-// for (VrmResourceUsage usage : usages) {
-// rightSizeOpportunityService.rightSizeOpportunityTask(dateSet, usage, to,
-// from);
-// }
-// }
-
-// }
+}
