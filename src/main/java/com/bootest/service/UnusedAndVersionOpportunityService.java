@@ -35,7 +35,7 @@ import software.amazon.awssdk.services.ec2.model.VolumeType;
 @RequiredArgsConstructor
 public class UnusedAndVersionOpportunityService {
 
-    private final Ec2ResourceDescribeService ec2Desc;
+    private final Ec2ResDescribeService ec2Desc;
     private final InstanceFamilyUpToDate upToDate;
     private final OptimizerRepo optimizerRepo;
     private final AwsInstanceTypeRepo awsInstanceTypeRepo;

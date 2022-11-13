@@ -265,3 +265,62 @@ databaseChangeLog:
               - column:
                   name: modified
                   type: TIMESTAMP
+  - changeSet:
+      id: "11"
+      author: ky
+      changes:
+        - createTable:
+            tableName: optimizer
+            columns:
+              - column:
+                  name: id
+                  type: VARCHAR(36)
+                  constraints:
+                    primaryKey: true
+              - column:
+                  name: region
+                  type: VARCHAR(30)
+              - column:
+                  name: account_id
+                  type: VARCHAR(50)
+              - column:
+                  name: accoun_name
+                  type: VARCHAR(64)
+              - column:
+                  name: resource_id
+                  type: VARCHAR(300)
+              - column:
+                  name: resource_name
+                  type: VARCHAR(256)
+              - column:
+                  name: service_type
+                  type: VARCHAR(50)
+              - column:
+                  name: resource_type
+                  type: VARCHAR(100)
+              - column:
+                  name: optimization_type
+                  type: VARCHAR(50)
+              - column:
+                  name: recommended_action
+                  type: VARCHAR(300)
+              - column:
+                  name: optimization_reason
+                  type: VARCHAR(300)
+              - column:
+                  name: instance_os
+                  type: VARCHAR(50)
+              - column:
+                  name: optimized
+                  type: TINYINT
+              - column:
+                  name: estimated_monthly_savings
+                  type: FLOAT
+              - column:
+                  name: registered
+                  type: TIMESTAMP
+                  constraints:
+                    nullable: false
+              - column:
+                  name: modified
+                  type: TIMESTAMP
