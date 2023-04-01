@@ -119,11 +119,10 @@ public class ResourceUsageController {
             @RequestParam(required = false) String imageId,
             @RequestParam(required = false) String os,
             @RequestParam(required = false) String instanceType,
-            @RequestParam(required = false) UsageDataType dataType,
-            @RequestParam(required = false) String dateFrom,
-            @RequestParam(required = false) String dateTo) throws JsonMappingException, JsonProcessingException {
+            @RequestParam(required = false) UsageDataType dataType) throws JsonMappingException, JsonProcessingException {
         SearchBuilder<ResourceUsage> searchBuilder = SearchBuilder.builder();
-
+        String dateFrom = "2023-01-01";
+        String dateTo = "2023-12-31";
         if (accountId != null) {
             searchBuilder.with("accountId", SearchOperationType.EQUAL, accountId);
         }
@@ -188,7 +187,7 @@ public class ResourceUsageController {
     @GetMapping("/state")
     public GetInstanceStateDto findAllInstanceState() {
 
-        LocalDate now = LocalDate.now();
+        LocalDate now = LocalDate.of(2023, 3, 1);
         String[] nowArr = now.toString().split("-");
 
         SearchBuilder<ResourceUsage> searchBuilder = SearchBuilder.builder();
