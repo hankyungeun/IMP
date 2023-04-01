@@ -2,6 +2,7 @@ $(function(){
     resource_list();
 });
 
+//recommendation 표
 function resource_list(){
     // $('#resource_usage_list').DataTable().ajax({
     $('#resource_usage_list').DataTable({

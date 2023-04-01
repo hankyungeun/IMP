@@ -111,23 +111,28 @@ var pieChart = {
       url : "usage/state",
       contentType : 'application/json',
       dataType: 'json',
-      success : function(data) {
-
-        $.each(data, function(inx, obj) {
-
-          console.log(inx)
-          pieChart.chartLabels.push(inx);
-          pieChart.chartData1.push(obj);
-
-        });
-
-        pieChart.render();
-
-      },
       error : function(XMLHttpRequest, textStatus, errorThrown) {
-      }
+      },
+      success : showData_result
     });
   }
-
 } ;
+function showData_result(data) {
+  $.each(data, function(inx, obj) {
+    if(inx == "running"){
+      pieChart.chartLabels.push(inx);
+      pieChart.chartData1.push(obj);
+    }
+    if(inx == "stopped"){
+      pieChart.chartLabels.push(inx);
+      pieChart.chartData1.push(obj);
+    }
+    if(inx == "terminated"){
+      pieChart.chartLabels.push(inx);
+      pieChart.chartData1.push(obj);
+    }
+  });
+
+  pieChart.render();
+}
 pieChart.showData();
