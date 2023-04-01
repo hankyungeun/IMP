@@ -6,5 +6,6 @@ import lombok.Data;
 
 @Data
 public class OptimizationRequestFormDto {
+    private String accountId;
     private List<OptimizationRequestDataDto> data;
 }

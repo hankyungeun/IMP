@@ -5,6 +5,7 @@ import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
@@ -13,6 +14,7 @@ import lombok.Data;
 
 @Data
 @Entity
+@Table(name = "aws_instance_type")
 public class AwsInstanceType {
 
     @Id
@@ -22,22 +24,22 @@ public class AwsInstanceType {
     @Column(nullable = false, length = 30)
     private String region;
 
-    @Column(nullable = false, length = 50)
+    @Column(name = "instance_type", nullable = false, length = 50)
     private String instanceType;
 
     @Column
     private Short vcpus;
 
-    @Column
+    @Column(name = "memory_gib")
     private Float memoryGib;
 
-    @Column(length = 50)
+    @Column(name = "network_performance", length = 50)
     private String networkPerformance;
 
-    @Column
+    @Column(name = "od_linux_pricing")
     private Float odLinuxPricing;
 
-    @Column
+    @Column(name = "od_windows_pricing")
     private Float odWindowsPricing;
 
     @CreationTimestamp

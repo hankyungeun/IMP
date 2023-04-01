@@ -1,28 +1,36 @@
 package com.bootest.service;
 
 import java.io.IOException;
+import java.time.Instant;
+import java.time.LocalDate;
+import java.time.ZoneId;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
+import java.util.concurrent.CompletableFuture;
+import java.util.concurrent.ExecutionException;
+import java.util.stream.Collectors;
 
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
 
 import com.bootest.aws.Ec2ClientManager;
-import com.bootest.dto.optimizer.InstanceResourceDetailsDto;
+import com.bootest.dto.optimizer.GetInstanceOptResponse;
+import com.bootest.dto.optimizer.GetInstanceRightSizeOptResponse;
+import com.bootest.dto.optimizer.GetResourceOptResponse;
+import com.bootest.dto.optimizer.GetRightSizeOptResponse;
+import com.bootest.dto.optimizer.GetVolOptResponse;
 import com.bootest.dto.optimizer.OptimizationRequestDataDto;
-import com.bootest.dto.optimizer.OptimizationTargetDataDto;
-import com.bootest.dto.optimizer.RightSizeRecommendationDto;
+import com.bootest.dto.optimizer.RightSizeThresholdRequest;
 import com.bootest.model.Account;
-import com.bootest.model.AwsInstanceType;
-import com.bootest.model.Optimizer;
-import com.bootest.repository.AccountRepo;
-import com.bootest.repository.AwsInstanceTypeRepo;
-import com.bootest.repository.OptimizerRepo;
-import com.bootest.searcher.SearchBuilder;
-import com.bootest.searcher.SearchOperationType;
+import com.bootest.model.ResourceUsage;
+import com.bootest.repository.ResourceUsageRepo;
 import com.bootest.type.OptimizationType;
 import com.bootest.type.ServiceType;
+import com.bootest.type.UsageDataType;
 import com.fasterxml.jackson.core.JsonParseException;
+import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonMappingException;
 
 import lombok.RequiredArgsConstructor;
@@ -31,17 +39,11 @@ import software.amazon.awssdk.regions.Region;
 import software.amazon.awssdk.services.ec2.Ec2Client;
 import software.amazon.awssdk.services.ec2.model.DescribeInstanceTypeOfferingsRequest;
 import software.amazon.awssdk.services.ec2.model.DescribeInstanceTypeOfferingsResponse;
-import software.amazon.awssdk.services.ec2.model.DescribeInstanceTypesRequest;
-import software.amazon.awssdk.services.ec2.model.DescribeInstanceTypesResponse;
 import software.amazon.awssdk.services.ec2.model.Filter;
 import software.amazon.awssdk.services.ec2.model.Instance;
-import software.amazon.awssdk.services.ec2.model.InstanceLifecycleType;
-import software.amazon.awssdk.services.ec2.model.InstanceStateName;
-import software.amazon.awssdk.services.ec2.model.InstanceTypeInfo;
 import software.amazon.awssdk.services.ec2.model.InstanceTypeOffering;
 import software.amazon.awssdk.services.ec2.model.LocationType;
 import software.amazon.awssdk.services.ec2.model.Volume;
-import software.amazon.awssdk.services.ec2.model.VolumeState;
 
 @Slf4j
 @RequiredArgsConstructor
@@ -50,134 +52,177 @@ public class OptimizationService {
 
     private final Ec2ResDescribeService ec2Desc;
     private final Ec2ResStateChange state;
-    private final AwsInstanceTypeRepo awsInstanceTypeRepo;
     private final Ec2ClientManager awscm;
-    private final AccountRepo accountRepo;
-    private final OptimizerRepo optimizerRepo;
     private final InstancesService instanceService;
     private final VolumeService volumeService;
+    private final ResourceUsageRepo resourceUsageRepo;
+    private final UnusedAndVersionOptService unusedAndVersionOptService;
+
+    public GetResourceOptResponse findOptimizable(Account a, String regionId)
+            throws InterruptedException, IOException, ExecutionException {
+
+        Region region = Region.of(regionId);
+
+        Ec2Client ec2 = awscm.getEc2WithAccount(region, a);
+
+        CompletableFuture<GetInstanceOptResponse> instanceOpts = unusedAndVersionOptService.getInstanceOptimizable(a,
+                ec2, regionId);
+
+        // CompletableFuture<GetVolOptResponse> volOpts =
+        // unusedAndVersionOptService.getVolumeOptimizable(a, ec2,
+        // regionId);
+
+        return new GetResourceOptResponse(regionId, instanceOpts.get());
+    }
+
+    public GetRightSizeOptResponse findRightSizable(Account credential, String regionId,
+            RightSizeThresholdRequest rstRequest, Integer days)
+            throws InterruptedException, ExecutionException, JsonMappingException, JsonProcessingException {
+        List<GetInstanceRightSizeOptResponse> results = new ArrayList<>();
+
+        Integer year = 2023;
+        Integer month = 3;
+
+        LocalDate now = LocalDate.of(year, month, 23);
+
+        List<ResourceUsage> usages = resourceUsageRepo
+                .findAllByAccountIdAndRegionAndResourceStateAndAnnuallyAndMonthlyAndDataType(
+                        credential.getAccountId(), regionId, "running", year.shortValue(), month.shortValue(),
+                        UsageDataType.CPU);
+
+        LocalDate minusPeriod = now.minusDays(days);
+
+        Instant to = now.atStartOfDay(ZoneId.systemDefault()).toInstant();
+        Instant from = minusPeriod.atStartOfDay(ZoneId.systemDefault()).toInstant();
+
+        List<LocalDate> dates = minusPeriod.datesUntil(now).collect(Collectors.toList());
+
+        Set<String> dateSet = new HashSet<>();
+        for (LocalDate ld : dates) {
+            String[] ldArray = ld.toString().split("-");
+            dateSet.add(ldArray[0] + "-" + ldArray[1]);
+        }
+
+        for (ResourceUsage usage : usages) {
+            CompletableFuture<GetInstanceRightSizeOptResponse> rightSizingData = unusedAndVersionOptService
+                    .rightSizeOpt(dateSet, usage, to, from, rstRequest);
+
+            if (rightSizingData.get() != null) {
+                results.add(rightSizingData.get());
+            }
+        }
+
+        return new GetRightSizeOptResponse(regionId, results);
+    }
 
     @Async("threadPoolTaskExecutor")
-    public void optimize(OptimizationRequestDataDto temp)
+    public CompletableFuture<Boolean> optimizer(OptimizationRequestDataDto temp, Account credential)
             throws JsonParseException, JsonMappingException, IOException, InterruptedException {
-        Optimizer optimizer = optimizerRepo.findByResourceIdAndOptimizationType(temp.getResourceId(), temp.getType())
-                .orElseThrow(() -> new IllegalArgumentException("Invalid Resource ID " + temp.getResourceId()));
 
-        Account account = accountRepo.findByAccountId(optimizer.getAccountId())
-                .orElseThrow(() -> new IllegalArgumentException("Invalid Account ID " + optimizer.getAccountId()));
+        Boolean resourceOptimized = false;
 
-        Region region = Region.of(optimizer.getRegion());
+        Region region = Region.of(temp.getRegion());
 
-        Ec2Client ec2 = awscm.getEc2WithAccount(region, account);
+        Ec2Client ec2 = awscm.getEc2WithAccount(region, credential);
 
-        if (optimizer.getServiceType().equals(ServiceType.INSTANCE)) {
-            if (optimizer.getOptimizationType().equals(OptimizationType.UNUSED)) {
-                if (instanceValidator(ec2, optimizer.getResourceId())) {
-                    instanceService.terminateInstance(ec2, List.of(optimizer.getResourceId()));
-                    optimizer.setOptimized(true);
-                    optimizerRepo.save(optimizer);
-                } else {
-                    throw new IllegalArgumentException(
-                            "Unable to terminate the instance: " + optimizer.getResourceId());
+        if (temp.getServiceType().equals(ServiceType.INSTANCE)) {
+
+            List<Instance> instances = ec2Desc.getInstanceDesc(ec2, temp.getResourceId());
+
+            if (instances != null && !instances.isEmpty()) {
+
+                String lifecycle = instances.get(0).instanceLifecycleAsString() == null ? "on-demand" : "spot";
+                String resourceName = ec2Desc.getResourceName(instances.get(0).tags());
+
+                if (temp.getOptimizationType().equals(OptimizationType.UNUSED)) {
+
+                    try {
+                        instanceService.terminateInstance(ec2, List.of(temp.getResourceId()));
+
+                        resourceOptimized = true;
+                    } catch (Exception e) {
+                        log.error("Unable to terminate instance id: {}, due to reason: {}", temp.getResourceId(),
+                                e.getMessage(), e);
+                    }
+
+                } else if (temp.getOptimizationType().equals(OptimizationType.RIGHT_SIZE)) {
+
+                    try {
+                        Boolean rightSized = doInstanceRightSize(ec2, instances.get(0), lifecycle, temp.getResourceId(),
+                                temp.getRecommendation(), resourceName);
+
+                        if (rightSized) {
+                            resourceOptimized = true;
+                        }
+                    } catch (Exception e) {
+                        log.error("Right-Size request failed. message: {}", e.getMessage(), e);
+                    }
+
+                } else if (temp.getOptimizationType().equals(OptimizationType.VERSION_UP)) {
+
+                    try {
+                        Boolean versionUp = doInstanceRightSize(ec2, instances.get(0), lifecycle, temp.getResourceId(),
+                                temp.getRecommendation(), resourceName);
+
+                        if (versionUp) {
+                            resourceOptimized = true;
+                        }
+                    } catch (Exception e) {
+                        log.error("Version-Up request failed. message: {}", e.getMessage(), e);
+                    }
+
                 }
-            } else if (optimizer.getOptimizationType().equals(OptimizationType.RIGHT_SIZE)) {
-                Boolean optimized = instanceRightSize(ec2, optimizer.getResourceId(), temp.getRecommendation(),
-                        optimizer.getRegion());
-                if (!optimized) {
-                    throw new IllegalArgumentException(
-                            "Instance Right-Size Request Failed: " + optimizer.getResourceId());
-                } else {
-                    optimizer.setOptimized(true);
-                    optimizerRepo.save(optimizer);
-                }
-            } else if (optimizer.getOptimizationType().equals(OptimizationType.VERSION_UP)) {
-                Boolean optimized = instanceRightSize(ec2, optimizer.getResourceId(), optimizer.getRecommendation(),
-                        optimizer.getRegion());
-                if (!optimized) {
-                    throw new IllegalArgumentException(
-                            "Instance Version-Up Request Failed: " + optimizer.getResourceId());
-                } else {
-                    optimizer.setOptimized(true);
-                    optimizerRepo.save(optimizer);
-                }
+
             }
-        } else if (optimizer.getServiceType().equals(ServiceType.VOLUME)) {
-            if (optimizer.getOptimizationType().equals(OptimizationType.UNUSED)) {
-                if (volumeValidator(ec2, optimizer.getResourceId())) {
-                    volumeService.deleteVolume(ec2, optimizer.getResourceId());
-                    optimizer.setOptimized(true);
-                    optimizerRepo.save(optimizer);
-                } else {
-                    throw new IllegalArgumentException("Delete Volume Request Failed: " + optimizer.getResourceId());
-                }
-            } else if (optimizer.getOptimizationType().equals(OptimizationType.VERSION_UP)) {
-                Boolean optimized = volumeService.modifyVolumeType(ec2, optimizer.getResourceId(),
-                        optimizer.getRecommendation());
-                if (!optimized) {
-                    throw new IllegalArgumentException(
-                            "Volume Version-Up Request Failed: " + optimizer.getResourceId());
-                } else {
-                    optimizer.setOptimized(true);
-                    optimizerRepo.save(optimizer);
-                }
-            }
-        }
-    }
 
-    public Boolean volumeValidator(Ec2Client ec2, String volumeId) {
-        Boolean optimize = false;
-        List<Volume> volumes = ec2Desc.getVolumeDesc(ec2, volumeId, null);
+        } else if (temp.getServiceType().equals(ServiceType.VOLUME)) {
 
-        if (volumes != null && !volumes.isEmpty()) {
-            for (Volume v : volumes) {
-                if (v.state().equals(VolumeState.AVAILABLE)) {
-                    optimize = true;
-                }
-            }
-        }
-        return optimize;
-    }
+            List<Volume> volumes = ec2Desc.getVolumeDesc(ec2, temp.getResourceId(), null);
 
-    public Boolean instanceValidator(Ec2Client ec2, String instanceId) {
-        Boolean optimize = false;
-        List<Instance> instances = ec2Desc.getInstanceDesc(ec2, instanceId);
+            if (volumes != null && !volumes.isEmpty()) {
+                if (temp.getOptimizationType().equals(OptimizationType.UNUSED)) {
 
-        if (instances != null && !instances.isEmpty()) {
-            for (Instance i : instances) {
-                if (!i.instanceLifecycle().equals(InstanceLifecycleType.SPOT)) {
-                    if (i.state().name().equals(InstanceStateName.STOPPED)) {
-                        optimize = true;
+                    try {
+                        volumeService.deleteVolume(ec2, temp.getResourceId());
+
+                        resourceOptimized = true;
+                    } catch (Exception e) {
+                        log.error("Delete volume request failed. message: {}", e.getMessage(), e);
+                    }
+
+                } else if (temp.getOptimizationType().equals(OptimizationType.VERSION_UP)) {
+
+                    try {
+                        Boolean optimized = volumeService.modifyVolumeType(ec2, temp.getResourceId(),
+                                temp.getRecommendation());
+
+                        if (optimized) {
+                            resourceOptimized = true;
+                        }
+                    } catch (Exception e) {
+                        log.error("Modify volume request failed. message: {}", e.getMessage(), e);
                     }
                 }
             }
+
         }
-        return optimize;
+        return CompletableFuture.completedFuture(resourceOptimized);
     }
 
-    public Boolean instanceRightSize(Ec2Client ec2, String instanceId, String recommendation, String region)
-            throws InterruptedException {
+    public Boolean doInstanceRightSize(Ec2Client ec2, Instance i, String lifecycle, String instanceId,
+            String recommendedType, String region) throws InterruptedException {
         Boolean optimized = false;
 
-        List<Instance> instances = ec2Desc.getInstanceDesc(ec2, instanceId);
+        if (!lifecycle.equals("spot")) {
+            List<String> aZones = getInstanceTypeOffering(ec2, recommendedType);
 
-        if (instances != null && !instances.isEmpty()) {
-            for (Instance i : instances) {
-                String lifeCycle = i.instanceLifecycle() == InstanceLifecycleType.SPOT ? "spot" : "on-demand";
-                if (!lifeCycle.equals("spot")) {
-                    List<String> aZones = getInstanceTypeOffering(ec2, recommendation);
+            for (String zone : aZones) {
+                if (i.placement().availabilityZone().equals(zone)) {
+                    state.stopInstance(ec2, instanceId);
+                    instanceService.modifyInstanceAttribute(ec2, instanceId, recommendedType);
+                    optimized = true;
 
-                    for (String zone : aZones) {
-                        if (i.placement().availabilityZone().equals(zone)) {
-                            state.stopInstance(ec2, instanceId);
-                            try {
-                                instanceService.modifyInstanceAttribute(ec2, instanceId, recommendation);
-                            } catch (Exception e) {
-                                log.error("Right-Size Failed");
-                            }
-                            state.startInstance(instanceId, ec2);
-                            optimized = true;
-                        }
-                    }
+                    state.startInstance(instanceId, ec2);
                 }
             }
         }
@@ -201,132 +246,6 @@ public class OptimizationService {
             }
         } catch (Exception e) {
             log.error("Describe Instance Type Offering Request Failed (Message: {})", e.getMessage(), e);
-        }
-        return results;
-    }
-
-    public OptimizationTargetDataDto getOptTargetData(Optimizer target) {
-        OptimizationTargetDataDto data = new OptimizationTargetDataDto();
-        data.setRegion(target.getRegion());
-        data.setAccountId(target.getAccountId());
-        data.setAccountName(target.getAccountName());
-        data.setResourceId(target.getResourceId());
-        data.setResourceName(target.getResourceName());
-        data.setServiceType(target.getServiceType());
-        data.setResourceType(target.getResourceType());
-        data.setOptimizationType(target.getOptimizationType());
-        data.setRecommendedAction(target.getRecommendedAction());
-        data.setEstimatedMonthlySavings(target.getEstimatedMonthlySavings());
-
-        if (target.getServiceType().equals(ServiceType.INSTANCE)
-                && !target.getOptimizationType().equals(OptimizationType.UNUSED)) {
-
-            Account account = accountRepo.findByAccountId(target.getAccountId())
-                    .orElseThrow(() -> new IllegalArgumentException("Invalid Account ID"));
-            Region region = Region.of(target.getRegion());
-            Ec2Client ec2 = awscm.getEc2WithAccount(region, account);
-
-            // Current Instance Info
-            InstanceResourceDetailsDto instanceDetails = getInstanceResourceDetails(target.getRegion(),
-                    target.getResourceType(), target.getInstanceOs(), ec2, null);
-            data.setInstanceDetails(instanceDetails);
-
-            if (target.getOptimizationType().equals(OptimizationType.RIGHT_SIZE)) {
-                // Right Size Recommendations
-                data.setRightSizeRecommendations(getInstanceRecommendation(target, instanceDetails, ec2));
-            } else if (target.getOptimizationType().equals(OptimizationType.VERSION_UP)) {
-                // Version Up Recommendation
-                data.setVersionUpInstanceRecommendation(getInstanceResourceDetails(target.getRegion(),
-                        target.getRecommendation(), target.getInstanceOs(), ec2, instanceDetails.getMonthlyPrice()));
-            }
-        }
-        return data;
-    }
-
-    public InstanceResourceDetailsDto getInstanceResourceDetails(
-            String regionStr,
-            String resourceType,
-            String os,
-            Ec2Client ec2,
-            Float currentMonthly) {
-        AwsInstanceType instanceType = awsInstanceTypeRepo.findByRegionAndInstanceType(regionStr, resourceType)
-                .orElseThrow(() -> new IllegalArgumentException("Invalid Resource Info"));
-
-        DescribeInstanceTypesRequest request = DescribeInstanceTypesRequest.builder()
-                .instanceTypesWithStrings(resourceType)
-                .build();
-
-        try {
-            DescribeInstanceTypesResponse response = ec2.describeInstanceTypes(request);
-
-            InstanceResourceDetailsDto data = new InstanceResourceDetailsDto();
-
-            for (InstanceTypeInfo info : response.instanceTypes()) {
-
-                Float hourlyPrice = 0f;
-                if (os.equals("Linux")) {
-                    hourlyPrice = instanceType.getOdLinuxPricing();
-                } else {
-                    hourlyPrice = instanceType.getOdWindowsPricing();
-                }
-
-                Float montlyPrice = hourlyPrice * 24 * 30;
-
-                data.setOs(os);
-                data.setInstanceType(info.instanceTypeAsString());
-                data.setVCpus(instanceType.getVcpus().intValue());
-                data.setMemoryGiB(instanceType.getMemoryGib());
-                data.setNetworkPerformance(info.networkInfo().networkPerformance());
-                data.setHourlyPrice(hourlyPrice);
-                data.setMonthlyPrice(montlyPrice);
-                data.setHypervisor(info.hypervisorAsString());
-                data.setArchitecture(info.processorInfo().supportedArchitectures().toString());
-                data.setSustainedClockSpeedInGhz(info.processorInfo().sustainedClockSpeedInGhz());
-
-                if (currentMonthly != null) {
-                    data.setEstimatedMonthlySavings(currentMonthly - montlyPrice);
-                }
-            }
-            return data;
-        } catch (Exception e) {
-            log.error("Describe Instance Type Request Failed (Message: {})", e.getMessage(), e);
-            return null;
-        }
-    }
-
-    public List<RightSizeRecommendationDto> getInstanceRecommendation(
-            Optimizer optimizer,
-            InstanceResourceDetailsDto details,
-            Ec2Client ec2) {
-        List<RightSizeRecommendationDto> results = new ArrayList<>();
-
-        if (details != null) {
-
-            SearchBuilder<AwsInstanceType> searchBuilder = SearchBuilder.builder();
-            searchBuilder.with("region", SearchOperationType.EQUAL, optimizer.getRegion());
-            searchBuilder.with("vCpus", SearchOperationType.EQUAL, details.getVCpus());
-            searchBuilder.with("memoryGiB", SearchOperationType.EQUAL, details.getMemoryGiB());
-            List<AwsInstanceType> instanceTypes = awsInstanceTypeRepo.findAll(searchBuilder.build());
-
-            if (!instanceTypes.isEmpty()) {
-                for (AwsInstanceType vit : instanceTypes) {
-                    if (details.getOs().equals("Linux")) {
-                        if (details.getHourlyPrice() >= vit.getOdLinuxPricing()) {
-                            RightSizeRecommendationDto additional = new RightSizeRecommendationDto();
-                            additional.setRecommendation(getInstanceResourceDetails(optimizer.getRegion(),
-                                    vit.getInstanceType(), optimizer.getInstanceOs(), ec2, details.getMonthlyPrice()));
-                            results.add(additional);
-                        }
-                    } else {
-                        if (details.getHourlyPrice() >= vit.getOdWindowsPricing()) {
-                            RightSizeRecommendationDto additional = new RightSizeRecommendationDto();
-                            additional.setRecommendation(getInstanceResourceDetails(optimizer.getRegion(),
-                                    vit.getInstanceType(), optimizer.getInstanceOs(), ec2, details.getMonthlyPrice()));
-                            results.add(additional);
-                        }
-                    }
-                }
-            }
         }
         return results;
     }
