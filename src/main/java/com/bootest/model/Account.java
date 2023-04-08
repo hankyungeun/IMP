@@ -1,5 +1,6 @@
 package com.bootest.model;
 
+import java.io.Serializable;
 import java.util.Date;
 
 import javax.persistence.Column;
@@ -13,7 +14,7 @@ import lombok.Data;
 @Entity
 @Data
 // @NoArgsConstructor
-public class Account {
+public class Account implements Serializable {
 
     @Id
     @Column(nullable = false, length = 36)
