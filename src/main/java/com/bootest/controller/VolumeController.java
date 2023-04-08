@@ -3,7 +3,6 @@
 package com.bootest.controller;
 
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 import java.util.UUID;
 
@@ -20,15 +19,12 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.web.bind.annotation.*;
 
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.servlet.ModelAndView;
 import software.amazon.awssdk.regions.Region;
 import software.amazon.awssdk.services.ec2.Ec2Client;
 import software.amazon.awssdk.services.ec2.model.DescribeVolumesRequest;
 import software.amazon.awssdk.services.ec2.model.DescribeVolumesResponse;
 import software.amazon.awssdk.services.ec2.model.Volume;
 import software.amazon.awssdk.services.ec2.model.VolumeAttachment;
-
-import javax.xml.transform.Result;
 
 @RestController
 @RequiredArgsConstructor
@@ -46,19 +42,14 @@ public class VolumeController {
         SearchBuilder<RecoVolume> searchBuilder = SearchBuilder.builder();
 
         if (volumeId != null) {
-            searchBuilder.with("volumeId", SearchOperationType.EQUAL, volumeId);
+            searchBuilder.with("volumeId", SearchOperationType.CONTAINS_IGNORE_CASE, volumeId);
         }
 
-        List<RecoVolume> result = volumeRepo.findAll(searchBuilder.build());
-
-//        return volumeRepo.findAll(searchBuilder.build());
-
-        return result;
+        return volumeRepo.findAll(searchBuilder.build());
     }
 
     @GetMapping("/get")
     public List<RecoVolume> getVolumeData() throws JsonProcessingException {
-//            public ModelAndView getVolumeData() throws JsonProcessingException {
 
         List<RecoVolume> results = new ArrayList<>();
 
@@ -75,12 +66,11 @@ public class VolumeController {
 
                 Ec2Client ec2 = ec2cm.getEc2WithAccount(region, account);
 
-                DescribeVolumesRequest request = DescribeVolumesRequest.builder()
-                        .maxResults(100)
-                        .nextToken(nextToken)
-                        .build();
-
                 do {
+                    DescribeVolumesRequest request = DescribeVolumesRequest.builder()
+                            .maxResults(100)
+                            .nextToken(nextToken)
+                            .build();
 
                     DescribeVolumesResponse response = ec2.describeVolumes(request);
 
@@ -88,10 +78,7 @@ public class VolumeController {
                         List<AttachmentDataDto> attachedIds = new ArrayList<>();
 
                         for (VolumeAttachment va : v.attachments()) {
-                            AttachmentDataDto attachData = new AttachmentDataDto();
-                            attachData.setInstanceId(va.instanceId());
-                            attachData.setDeviceName(va.device());
-                            attachedIds.add(attachData);
+                            attachedIds.add(new AttachmentDataDto(va.instanceId(), va.device()));
                         }
 
                         AttachmentDto attachments = new AttachmentDto();
@@ -128,14 +115,7 @@ public class VolumeController {
             }
         }
 
-
-//        ModelAndView modelAndView = new ModelAndView();
-//        modelAndView.setViewName("index");
-//        modelAndView.addObject("response", volumeRepo.saveAll(results));
-//
-//        return modelAndView;
         return volumeRepo.saveAll(results);
-
     }
 
 }

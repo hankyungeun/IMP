@@ -14,7 +14,6 @@ import com.bootest.service.FindOnDemandPrice;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.scheduling.annotation.EnableScheduling;
-import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 
 import lombok.RequiredArgsConstructor;
@@ -41,7 +40,7 @@ public class InstanceTypeTask {
     @Value("${task.enable-od}")
     private boolean enabledJob;
 
-    @Scheduled(cron = "0 0 0 * * MON")
+    // @Scheduled(cron = "0 0 0 * * MON")
     public void doReloadInstanceTypes() throws Exception {
         if (enabledJob) {
             reloadInstanceTypeInfo(List.of(Region.AP_NORTHEAST_2));

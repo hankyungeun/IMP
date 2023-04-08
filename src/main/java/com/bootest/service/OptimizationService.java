@@ -20,7 +20,6 @@ import com.bootest.dto.optimizer.GetInstanceOptResponse;
 import com.bootest.dto.optimizer.GetInstanceRightSizeOptResponse;
 import com.bootest.dto.optimizer.GetResourceOptResponse;
 import com.bootest.dto.optimizer.GetRightSizeOptResponse;
-import com.bootest.dto.optimizer.GetVolOptResponse;
 import com.bootest.dto.optimizer.OptimizationRequestDataDto;
 import com.bootest.dto.optimizer.RightSizeThresholdRequest;
 import com.bootest.model.Account;

@@ -47,7 +47,7 @@ public class InstanceTask {
     @Value("${task.usage}")
     private boolean isScheduledTaskEnabled;
 
-    @Scheduled(cron = "0 0 * * * *")
+    // @Scheduled(cron = "0 0 * * * *")
     public void doResourceUsageInfoCache() throws JsonProcessingException {
         if (isScheduledTaskEnabled) {
             updateResourceUsage(List.of(LocalDate.now()));

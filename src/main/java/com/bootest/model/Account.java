@@ -9,7 +9,6 @@ import javax.persistence.Id;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 import lombok.Data;
-import lombok.NoArgsConstructor;
 
 @Entity
 @Data
@@ -32,7 +31,7 @@ public class Account {
     @Column(length = 300)
     private String regions;
 
-    @Column(name = "access_key",length = 100)
+    @Column(name = "access_key", length = 100)
     private String accessKey;
 
     @Column(name = "secret_key", length = 100)

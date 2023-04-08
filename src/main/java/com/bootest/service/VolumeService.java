@@ -6,12 +6,8 @@ import java.util.List;
 import org.springframework.stereotype.Service;
 
 import com.bootest.aws.Ec2ClientManager;
-import com.bootest.dto.TagDto;
-import com.bootest.dto.volume.AttachVolumeDto;
-import com.bootest.dto.volume.DeleteVolumeDto;
 import com.bootest.dto.volume.DescribeVolumeDataDto;
 import com.bootest.dto.volume.DescribeVolumeDto;
-import com.bootest.dto.volume.DetachVolumeDto;
 import com.bootest.dto.volume.ModifyVolumeDto;
 import com.bootest.dto.volume.VolumeAttachmentSpecification;
 import com.bootest.model.Account;
@@ -23,15 +19,10 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import software.amazon.awssdk.regions.Region;
 import software.amazon.awssdk.services.ec2.Ec2Client;
-import software.amazon.awssdk.services.ec2.model.AttachVolumeRequest;
-import software.amazon.awssdk.services.ec2.model.CreateVolumeRequest;
-import software.amazon.awssdk.services.ec2.model.CreateVolumeResponse;
 import software.amazon.awssdk.services.ec2.model.DeleteVolumeRequest;
-import software.amazon.awssdk.services.ec2.model.DetachVolumeRequest;
 import software.amazon.awssdk.services.ec2.model.Ec2Exception;
 import software.amazon.awssdk.services.ec2.model.ModifyVolumeRequest;
 import software.amazon.awssdk.services.ec2.model.ModifyVolumeResponse;
-import software.amazon.awssdk.services.ec2.model.ResourceType;
 import software.amazon.awssdk.services.ec2.model.Volume;
 import software.amazon.awssdk.services.ec2.model.VolumeAttachment;
 
@@ -58,13 +49,7 @@ public class VolumeService {
 
                 List<DescribeVolumeDataDto> data = getVolumeSpecifications(ec2, null);
 
-                DescribeVolumeDto volume = new DescribeVolumeDto();
-                volume.setAccountId(a.getAccountId());
-                volume.setAccountName(a.getName());
-                volume.setRegionId(regionStr);
-                volume.setData(data);
-
-                results.add(volume);
+                results.add(new DescribeVolumeDto(a.getAccountId(), a.getName(), regionStr, data));
             }
         }
         return results;
@@ -130,39 +115,6 @@ public class VolumeService {
         return volume;
     }
 
-    public ResultObject delete(DeleteVolumeDto temp) {
-        Account account = accountRepo.findByAccountId(temp.getAccountId())
-                .orElseThrow(() -> new IllegalArgumentException("Invalid Account ID: " + temp.getAccountId()));
-
-        Region region = Region.of(temp.getRegionId());
-
-        Ec2Client ec2 = awscm.getEc2WithAccount(region, account);
-
-        return deleteVolume(ec2, temp.getVolumeId());
-    }
-
-    public ResultObject attach(AttachVolumeDto temp) {
-        Account account = accountRepo.findByAccountId(temp.getAccountId())
-                .orElseThrow(() -> new IllegalArgumentException("Invalid Account ID: " + temp.getAccountId()));
-
-        Region region = Region.of(temp.getRegionId());
-
-        Ec2Client ec2 = awscm.getEc2WithAccount(region, account);
-
-        return attachVolume(ec2, temp.getVolumeId(), temp.getInstanceId(), temp.getDevice());
-    }
-
-    public ResultObject detach(DetachVolumeDto temp) {
-        Account account = accountRepo.findByAccountId(temp.getAccountId())
-                .orElseThrow(() -> new IllegalArgumentException("Invalid Account ID: " + temp.getAccountId()));
-
-        Region region = Region.of(temp.getRegionId());
-
-        Ec2Client ec2 = awscm.getEc2WithAccount(region, account);
-
-        return detachVolume(ec2, temp.getVolumeId(), temp.getInstanceId(), temp.getForce());
-    }
-
     public ResultObject modify(ModifyVolumeDto temp) {
         Account account = accountRepo.findByAccountId(temp.getAccountId())
                 .orElseThrow(() -> new IllegalArgumentException("Invalid Account ID: " + temp.getAccountId()));
@@ -173,58 +125,6 @@ public class VolumeService {
 
         return modifyVolume(ec2, temp.getVolumeId(), temp.getVolumeType(), temp.getMultiAttachEnabled(), temp.getIops(),
                 temp.getSize(), temp.getThroughput());
-    }
-
-    public ResultObject createVolume(
-            Ec2Client ec2,
-            String volumeType,
-            Integer size,
-            String availZone,
-            String snapshotId,
-            String kmsKey,
-            List<TagDto> tags,
-            Integer iops,
-            Integer throughPut) {
-        ResultObject result = new ResultObject();
-        log.info("Create Volume Request Start");
-
-        CreateVolumeRequest.Builder requestBuilder = CreateVolumeRequest.builder()
-                .volumeType(volumeType)
-                .size(size)
-                .availabilityZone(availZone);
-
-        if (snapshotId != null) {
-            requestBuilder.snapshotId(snapshotId);
-        }
-
-        if (kmsKey != null) {
-            requestBuilder.encrypted(true).kmsKeyId(kmsKey);
-        }
-
-        if (tags != null) {
-            requestBuilder
-                    .tagSpecifications(descService.getTagSpecificationViaVrmTag(tags, List.of(ResourceType.VOLUME)));
-        }
-
-        if (volumeType.equals("io2") || volumeType.equals("gp3")) {
-            requestBuilder.iops(iops).throughput(throughPut);
-        } else if (volumeType.equals("io1")) {
-            requestBuilder.iops(iops);
-        }
-
-        try {
-            CreateVolumeResponse response = ec2.createVolume(requestBuilder.build());
-            log.info("Create Volume Request Complete (volumeId={})", response.volumeId());
-            result.setResult(true);
-            result.setMessage("Create Volume Request Complete");
-            result.setData(response.volumeId());
-            return result;
-        } catch (Ec2Exception e) {
-            log.error("Create Volume Request Failed (Message: {})", e.getMessage(), e);
-            result.setResult(false);
-            result.setMessage("Create Volume Request Failed (Message: " + e.getMessage() + ")");
-            return result;
-        }
     }
 
     /**
@@ -255,87 +155,6 @@ public class VolumeService {
             log.error("Delete Volume Request Failed (Message: {})", e.getMessage(), e);
             result.setResult(false);
             result.setMessage("Delete Volume Request Failed (Message: " + e.getMessage() + ")");
-            return result;
-        }
-    }
-
-    /**
-     * Request to attach volume to an instance with id and device name.
-     * Device name decides the role of the volume.
-     * ex. Root volume: /dev/xvda
-     * 
-     * @author minsoo
-     * @param ec2
-     * @param temp
-     * @return
-     */
-    public ResultObject attachVolume(
-            Ec2Client ec2,
-            String volumeId,
-            String instanceId,
-            String device) {
-        ResultObject result = new ResultObject();
-        log.info("Attach Volume Request Start (instanceId={}, volumeId={})", instanceId, volumeId);
-
-        AttachVolumeRequest request = AttachVolumeRequest.builder()
-                .volumeId(volumeId)
-                .instanceId(instanceId)
-                .device(device)
-                .build();
-
-        try {
-            ec2.attachVolume(request);
-            log.info("Attach Volume Request Complete (instanceId={}, volumeId={})", instanceId, volumeId);
-            result.setResult(true);
-            result.setMessage("Attach Volume Request Complete");
-            return result;
-        } catch (Ec2Exception e) {
-            log.error("Attach Volume Request Failed (Message: {})", e.getMessage(), e);
-            result.setResult(false);
-            result.setMessage("Attach Volume Request Failed (Message: " + e.getMessage() + ")");
-            return result;
-        }
-    }
-
-    /**
-     * Request to detach volume from an instance with id.
-     * 
-     * @author minsoo
-     * @param ec2
-     * @param temp
-     * @return
-     */
-    public ResultObject detachVolume(
-            Ec2Client ec2,
-            String volumeId,
-            String instanceId,
-            Boolean force) {
-        ResultObject result = new ResultObject();
-        log.info("Detach Volume Request Start (volumeId={}, instanceId={})", volumeId, instanceId);
-
-        DetachVolumeRequest.Builder requestBuilder = DetachVolumeRequest.builder()
-                .volumeId(volumeId);
-
-        if (instanceId != null) {
-            requestBuilder.instanceId(instanceId);
-        }
-
-        if (force != null) {
-            if (force) {
-                requestBuilder.force(force);
-            }
-        }
-
-        try {
-            ec2.detachVolume(requestBuilder.build());
-            log.info("Detach Volume Request Complete (volumeId={}, instanceId={})", volumeId, instanceId);
-            result.setResult(true);
-            result.setMessage("Detach Volume Request Complete");
-            return result;
-        } catch (Ec2Exception e) {
-            log.error("Detach Volume Request Failed (Reason: {})", e.getMessage(), e);
-            result.setResult(false);
-            result.setMessage("Detach Volume Request Failed (Message: " + e.getMessage() + ")");
             return result;
         }
     }
