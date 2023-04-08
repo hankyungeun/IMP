@@ -217,7 +217,7 @@ var chartArea = {
 
         $.each(data, function(index,obj){
           let dates = [];
-          let diskMap = new Map();
+          // let diskMap = new Map();
           let memMap = new Map();
 
           //if(obj.cpuAvg.length =! obj.diskAvg.length){
@@ -231,41 +231,41 @@ var chartArea = {
             chartArea.labels.push(obj.cpuAvg[i].time);
             chartArea.dataSets.push(obj.cpuAvg[i].value);
           }
-          for (var i = 0; i < dates.length; i++) {
-            for (var j = 0; j < obj.diskAvg.length; j++){
+          // for (var i = 0; i < dates.length; i++) {
+          //   for (var j = 0; j < obj.diskAvg.length; j++){
+          //
+          //     let value = 0;
+          //
+          //     if (dates[i] == obj.diskAvg[j].time) {
+          //       value = obj.diskAvg[j].value;
+          //       diskMap.set(dates[i], value);
+          //       break;
+          //     }
+          //     diskMap.set(dates[i], value);
+          //   }
+          // }
+          //
+          // for (var i of diskMap.values()) {
+          //   chartArea.diskData.push(i);
+          // }
 
-              let value = 0;
-
-              if (dates[i] == obj.diskAvg[j].time) {
-                value = obj.diskAvg[j].value;
-                diskMap.set(dates[i], value);
-                break;
-              }
-              diskMap.set(dates[i], value);
-            }
-          }
-
-          for (var i of diskMap.values()) {
-            chartArea.diskData.push(i);
-          }
-
-          for (var i = 0; i < dates.length; i++) {
-            for (var j = 0; j < obj.memAvg.length; j++){
-
-              let value = 0;
-
-              if (dates[i] == obj.memAvg[j].time) {
-                value = obj.memAvg[j].value;
-                memMap.set(dates[i], value);
-                break;
-              }
-              memMap.set(dates[i], value);
-            }
-          }
-
-          for (var i of memMap.values()) {
-            chartArea.memData.push(i);
-          }
+          // for (var i = 0; i < dates.length; i++) {
+          //   for (var j = 0; j < obj.memAvg.length; j++){
+          //
+          //     let value = 0;
+          //
+          //     if (dates[i] == obj.memAvg[j].time) {
+          //       value = obj.memAvg[j].value;
+          //       memMap.set(dates[i], value);
+          //       break;
+          //     }
+          //     memMap.set(dates[i], value);
+          //   }
+          // }
+          //
+          // for (var i of memMap.values()) {
+          //   chartArea.memData.push(i);
+          // }
         });
         chartArea.render();
       },
