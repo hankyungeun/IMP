@@ -51,6 +51,6 @@ function instance_list_result(list){
             + item.availabilityZone + '</td><td>'
             + item.os + '</td><td>'
             + item.instanceState + '</td><td>'
-            + item.registered);
+            + item.registered + '</td><td>');
     });
 }
