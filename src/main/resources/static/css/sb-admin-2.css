@@ -1213,6 +1213,9 @@ pre code {
     flex: 0 0 58.33333%;
     max-width: 58.33333%;
   }
+  .col-lg-99 {
+    width: 1000px;
+  }
   .col-lg-8 {
     flex: 0 0 66.66667%;
     max-width: 66.66667%;
@@ -1374,6 +1377,10 @@ pre code {
   .col-xl-6 {
     flex: 0 0 50%;
     max-width: 50%;
+  }
+  .col-xl-99 {
+    flex: 0 0 50%;
+    max-width: 100%;
   }
   .col-xl-7 {
     flex: 0 0 58.33333%;

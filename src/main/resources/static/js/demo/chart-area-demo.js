@@ -146,29 +146,31 @@ var chartArea = {
           pointHitRadius: 50,
           pointBorderWidth: 2,
           data: chartArea.dataSets
-        }, {
-          label: 'Disk',
-          fill : false,
-          lineTension : 0.2,
-          pointRadius : 5,
-          pointBorderColor: "rgba(255,255,255,0.8)",
-          backgroundColor: 'rgb(255, 203, 71)',
-          borderColor: 'rgb(255, 203, 71)',
-          pointBackgroundColor: "rgb(255,187,36)",
-          pointBorderWidth: 2,
-          data: chartArea.diskData
-        }, {
-            label: 'Memory',
-            fill : false,
-            lineTension : 0.2,
-            pointRadius : 5,
-            pointBorderColor: "rgba(255,255,255,0.8)",
-            backgroundColor: 'rgb(255,192,203)',
-            borderColor: 'rgb(255, 192, 203)',
-            pointBackgroundColor: "rgb(255,176,189)",
-            pointBorderWidth: 2,
-            data: chartArea.memData
-        }],
+        }
+        // , {
+        //   label: 'Disk',
+        //   fill : false,
+        //   lineTension : 0.2,
+        //   pointRadius : 5,
+        //   pointBorderColor: "rgba(255,255,255,0.8)",
+        //   backgroundColor: 'rgb(255, 203, 71)',
+        //   borderColor: 'rgb(255, 203, 71)',
+        //   pointBackgroundColor: "rgb(255,187,36)",
+        //   pointBorderWidth: 2,
+        //   data: chartArea.diskData
+        // }, {
+        //     label: 'Memory',
+        //     fill : false,
+        //     lineTension : 0.2,
+        //     pointRadius : 5,
+        //     pointBorderColor: "rgba(255,255,255,0.8)",
+        //     backgroundColor: 'rgb(255,192,203)',
+        //     borderColor: 'rgb(255, 192, 203)',
+        //     pointBackgroundColor: "rgb(255,176,189)",
+        //     pointBorderWidth: 2,
+        //     data: chartArea.memData
+        // }
+        ],
       },
 
       options: {
