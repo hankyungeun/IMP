@@ -66,7 +66,6 @@
             <!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item">
                 <a class="nav-link collapsed" href="/instanceUsage" >
-                    <i class="fas fa-fw fa-cog"></i>
                     <span style="font-size: large; font-weight: bold;">Instance Usage</span>
                 </a>
             </li>
@@ -74,11 +73,15 @@
             <!-- Nav Item - Utilities Collapse Menu -->
             <li class="nav-item">
                 <a class="nav-link collapsed" href="/recommendation" >
-                    <i class="fas fa-fw fa-wrench"></i>
                     <span style="font-size: large; font-weight: bold;">Recommendation</span>
                 </a>
             </li>
-
+            <hr class="sidebar-divider">
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="/account" >
+                    <span style="font-size: large; font-weight: bold;">Register AWS Account</span>
+                </a>
+            </li>
 
             <!-- Divider -->
             <hr class="sidebar-divider d-none d-md-block">
@@ -268,9 +271,10 @@
                         <li class="nav-item dropdown no-arrow">
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Douglas McGee</span>
-                                <img class="img-profile rounded-circle"
-                                     src="../img/undraw_profile.svg">
+                                <div th:if="${user != null}">
+                                    <span th:text="${user.userId}"></span>
+                                    <span>님 안녕하세요</span>
+                                </div>
                             </a>
                             <!-- Dropdown - User Information -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
