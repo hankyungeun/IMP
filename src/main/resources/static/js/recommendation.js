@@ -7,6 +7,8 @@ $(function(){
 let regionId;
 let accountId;
 let recommendContents;
+let outDatedInstancesresult;
+let unusedInstancesresult
 
 function getAccount() {
     $.ajax({
@@ -33,8 +35,23 @@ function getAccount() {
                 success: function (result) {
                     console.log("계정 아이디 : " + accountId)
                     console.log("지역 : " + regionId)
-                    console.log(result.data[0].instanceOptResponse)
-                    recommendContents = result.data[0].instanceOptResponse
+                    console.log(result.data[0].instanceOptResponse.unusedInstances)
+                    // recommendContents = result.data[0].instanceOptResponse.outDatedInstances
+                    if(result.data[0].instanceOptResponse.outDatedInstances != null){
+                        outDatedInstancesresult = ("오래된 인스턴스 있음")
+                    }
+
+                    else{
+                        outDatedInstancesresult = ("인스턴스가 최신입니다")
+                    }
+
+                    if(result.data[0].instanceOptResponse.unusedInstances != null){
+                        unusedInstancesresult = ("미사용 인스턴스 있음")
+                    }
+
+                    else{
+                        unusedInstancesresult = ("모든 인스턴스 사용중")
+                    }
 
                     $.ajax({
                         url: 'instance',
@@ -57,12 +74,12 @@ function getAccount() {
                                     + '<div class="window">'
                                     + '<div class="popup">'
                                     + '<div id="close"> X </div>'
-                                    + '<h5>제목</h5>'
-                                    + recommendContents
+                                    + '<h5>추천 인스턴스</h5>'
+                                    + '<div class="outDatedInstances">' + outDatedInstancesresult + '</div>'
+                                    + '<div class="unusedInstances">' + unusedInstancesresult + '</div>'
                                     + '</div></div></div>'
                                 )
                             })
-                            // console.log(document.getElementById("instanceList"));
                         }
                     });
                 }
