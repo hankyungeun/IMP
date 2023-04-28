@@ -6,9 +6,10 @@ $(function(){
 
 let regionId;
 let accountId;
-let recommendContents;
-let outDatedInstancesresult;
-let unusedInstancesresult
+let outDatedInstancesResult;
+let outDatedInstancesContents;
+let unusedInstancesResult;
+let unusedInstancesContents;
 
 function getAccount() {
     $.ajax({
@@ -35,22 +36,26 @@ function getAccount() {
                 success: function (result) {
                     console.log("계정 아이디 : " + accountId)
                     console.log("지역 : " + regionId)
-                    console.log(result.data[0].instanceOptResponse.unusedInstances)
+                    console.log(result.data[0].instanceOptResponse.outDatedInstances[0])
+                    console.log(result.data[0].instanceOptResponse.unusedInstances[0])
                     // recommendContents = result.data[0].instanceOptResponse.outDatedInstances
                     if(result.data[0].instanceOptResponse.outDatedInstances != null){
-                        outDatedInstancesresult = ("오래된 인스턴스 있음")
+                        outDatedInstancesResult = ("오래된 인스턴스 있음")
+                        outDatedInstancesContents = (result.data[0].instanceOptResponse.outDatedInstances[0].original.instanceType + "를 "
+                            + result.data[0].instanceOptResponse.outDatedInstances[0].recommendation.instanceType + "으로 업그레이드 하세요")
                     }
 
                     else{
-                        outDatedInstancesresult = ("인스턴스가 최신입니다")
+                        outDatedInstancesResult = ("인스턴스가 최신입니다")
                     }
 
                     if(result.data[0].instanceOptResponse.unusedInstances != null){
-                        unusedInstancesresult = ("미사용 인스턴스 있음")
+                        unusedInstancesResult = ("미사용 인스턴스 있음")
+                        unusedInstancesContents = ("삭제시 절약 가능 비용 : " + result.data[0].instanceOptResponse.unusedInstances[0].estimatedMonthlySavings + "$")
                     }
 
                     else{
-                        unusedInstancesresult = ("모든 인스턴스 사용중")
+                        unusedInstancesResult = ("모든 인스턴스 사용중")
                     }
 
                     $.ajax({
@@ -69,14 +74,16 @@ function getAccount() {
                                     + item.os + '</td><td>'
                                     + item.instanceState + '</td><td>'
                                     + item.registered + '</td><td>'
-                                    + '<button id="show">버튼</button>'
+                                    + '<button id="show">추천내용</button>'
                                     + '<div class="background">'
                                     + '<div class="window">'
                                     + '<div class="popup">'
                                     + '<div id="close"> X </div>'
                                     + '<h5>추천 인스턴스</h5>'
-                                    + '<div class="outDatedInstances">' + outDatedInstancesresult + '</div>'
-                                    + '<div class="unusedInstances">' + unusedInstancesresult + '</div>'
+                                    + '<div class="outDatedInstances">' + outDatedInstancesResult + '</div>'
+                                    + '<div class="outDatedInstances">' + outDatedInstancesContents + '</div>'
+                                    + '<div class="unusedInstances">' + unusedInstancesResult + '</div>'
+                                    + '<div class="unusedInstances">' + unusedInstancesContents + '</div>'
                                     + '</div></div></div>'
                                 )
                             })
@@ -97,4 +104,20 @@ window.onload = function (){
     // 모달창 리스너
     document.querySelector("#show").addEventListener('click', show);
     document.querySelector("#close").addEventListener('click', close);
+}
+
+function getInstance() {
+    $.ajax({
+        url: 'instance/get',
+        method: 'GET',
+        contentType: 'application/json;',
+        dataType: 'json',
+        error: function (error, status, msg) {
+            alert("상태코드 " + status + "에러메시지" + msg);
+        },
+        success: function () {
+            alert("인스턴스를 가져왔습니다")
+        }
+
+    });
 }
