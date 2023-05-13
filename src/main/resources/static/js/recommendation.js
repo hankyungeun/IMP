@@ -94,17 +94,37 @@ function getAccount() {
         }
     });
 }
-window.onload = function (){
-    function show () {
-        document.querySelector(".background").className = "background show";
+// window.onload = function (){
+//     function show () {
+//         document.querySelector(".background").className = "background show";
+//     }
+//     function close () {
+//         document.querySelector(".background").className = "background";
+//     }
+//     // 모달창 리스너
+//     var element = document.getElementById('show');
+//     if(element){
+//
+//     element.addEventListener('click', show);
+//     document.querySelector("#close").addEventListener('click', close);
+//     }
+// }
+
+$(function() {
+    function show() {
+        $('.background').addClass('show');
     }
-    function close () {
-        document.querySelector(".background").className = "background";
+
+    function close() {
+        $('.background').removeClass('show');
     }
-    // 모달창 리스너
-    document.querySelector("#show").addEventListener('click', show);
-    document.querySelector("#close").addEventListener('click', close);
-}
+
+    $(document).on('click', '#show', show);
+    $(document).on('click', '#close', close);
+
+    // getAccount() 등 다른 함수 호출
+});
+
 
 function getInstance() {
     $.ajax({
