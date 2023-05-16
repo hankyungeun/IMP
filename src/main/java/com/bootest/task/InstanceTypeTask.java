@@ -14,6 +14,7 @@ import com.bootest.service.FindOnDemandPrice;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.scheduling.annotation.EnableScheduling;
+import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 
 import lombok.RequiredArgsConstructor;
@@ -40,7 +41,7 @@ public class InstanceTypeTask {
     @Value("${task.enable-od}")
     private boolean enabledJob;
 
-    // @Scheduled(cron = "0 0 0 * * MON")
+    @Scheduled(cron = "0 0 0 * * MON")
     public void doReloadInstanceTypes() throws Exception {
         if (enabledJob) {
             reloadInstanceTypeInfo(List.of(Region.AP_NORTHEAST_2));
@@ -66,6 +67,7 @@ public class InstanceTypeTask {
             List<InstanceTypeInfo> instanceTypesInfo = null;
 
             try {
+                // 인스턴스 유형들의 정보를 가지고 온다 (cpu, memory, 네트워크 성능 등)
                 instanceTypesInfo = getInstanceTypesInfo(ec2);
             } catch (Exception e) {
                 log.warn(
@@ -75,10 +77,12 @@ public class InstanceTypeTask {
 
             if (instanceTypesInfo != null) {
 
+                // 리눅스 및 윈도우 OS의 온디멘드 가격 정보를 가져온다
                 List<InstanceTypeSpecDto> linuxOdPrices = findOd.getAllOdPrice(region.toString(), account, "Linux");
                 List<InstanceTypeSpecDto> windowsOdPrices = findOd.getAllOdPrice(region.toString(), account, "Windows");
 
                 for (InstanceTypeInfo iti : instanceTypesInfo) {
+                    // DB 포멧에 맞게 데이터 삽입 후 저장 또는 업데잍
                     AwsInstanceType vrmInstanceType = instanceTypesRepo
                             .findByRegionAndInstanceType(region.toString(), iti.instanceTypeAsString())
                             .orElseGet(() -> {

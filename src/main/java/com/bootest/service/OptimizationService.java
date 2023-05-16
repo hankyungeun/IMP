@@ -84,6 +84,7 @@ public class OptimizationService {
 
         LocalDate now = LocalDate.of(year, month, 23);
 
+        // 사용량 조회
         List<ResourceUsage> usages = resourceUsageRepo
                 .findAllByAccountIdAndRegionAndResourceStateAndAnnuallyAndMonthlyAndDataType(
                         credential.getAccountId(), regionId, "running", year.shortValue(), month.shortValue(),

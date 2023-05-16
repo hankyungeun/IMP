@@ -1,5 +1,6 @@
 package com.bootest.task;
 
+//인스턴스 사용량
 import java.time.Instant;
 import java.time.LocalDate;
 import java.time.ZoneId;
@@ -18,6 +19,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.scheduling.annotation.EnableScheduling;
+import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 
 import com.bootest.model.Account;
@@ -46,7 +48,8 @@ public class InstanceTask {
     @Value("${task.usage}")
     private boolean isScheduledTaskEnabled;
 
-    // @Scheduled(cron = "0 0 * * * *")
+    //정해진 시간 간격으로 updateResourceUsage 함수 호출
+    @Scheduled(cron = "0 0 * * * *")
     public void doResourceUsageInfoCache() throws JsonProcessingException {
         if (isScheduledTaskEnabled) {
             updateResourceUsage(List.of(LocalDate.now()));
@@ -56,13 +59,14 @@ public class InstanceTask {
         }
     }
 
+//    리소스 사용 현황 업데이트 디비저장
     public void updateResourceUsage(List<LocalDate> dates) throws JsonProcessingException {
         log.info("Update Resource Usage Request Start");
 
         ZoneId zone = ZoneId.systemDefault();
 
         for (LocalDate ld : dates) {
-
+            // 매월 한시간 마다 월 1일부터 월말의 데이터를 조회 후 업데이트 한다
             Instant startTime = ld.withDayOfMonth(1).atStartOfDay(zone).toInstant();
             Instant endTime = ld.plusMonths(1).withDayOfMonth(1).atStartOfDay(zone).toInstant();
 
@@ -79,9 +83,11 @@ public class InstanceTask {
 
                     Region region = Region.of(regionStr);
 
+                    //아마존 키를 가지고 api를 사용할수있는 클라이언트 생성
                     Ec2Client ec2 = ec2cm.getEc2WithAccount(region, a);
                     CloudWatchClient cwc = cwccm.getCwc(region, a);
 
+//                    만들어진 인스턴스 저장
                     List<Instance> instances = getInstances(ec2);
 
                     if (instances == null || instances.isEmpty()) {
@@ -89,7 +95,7 @@ public class InstanceTask {
                     }
 
                     for (Instance i : instances) {
-
+                        // 각 항목에 맞게 cpu, net in/out 사용량을 조회 후 avg, min, max 로 나눠 DTO 에 담는다
                         MetricStatisticDto cpu = getUsageMetricStatistics(cwc, i.instanceId(), startTime, endTime,
                                 "CPUUtilization");
                         MetricStatisticDto netIn = getUsageMetricStatistics(cwc, i.instanceId(), startTime, endTime,
@@ -112,6 +118,7 @@ public class InstanceTask {
                             }
                         }
 
+                        // DTO 의 값이 널이 아닐 경우 해당 내용을 저장한다.
                         if (cpu != null) {
                             saveUsage(a, regionStr, i, year, month, UsageDataType.CPU, resourceName, cpu);
                         }
@@ -133,6 +140,7 @@ public class InstanceTask {
         }
     }
 
+    //모든 인스턴스 정보 가져오기
     public List<Instance> getInstances(Ec2Client ec2) {
         List<Instance> results = new ArrayList<>();
 

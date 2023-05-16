@@ -1,3 +1,4 @@
+//추천인스턴스띄워주기
 $(function(){
     // recommendation_Instance();
     getAccount();

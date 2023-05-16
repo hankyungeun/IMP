@@ -64,6 +64,7 @@ public class UnusedAndVersionOptService {
     private final ResourceUsageRepo resourceUsageRepo;
     private final InstanceTypePricingService itPricingService;
 
+    //한달치 가격 예상
     public Float getInstanceMonthlySavings(String lifeCycle, String instanceType, String regionId, InstanceSqlType os,
             String availZone) throws JsonMappingException, JsonProcessingException {
         Float result = 0f;
@@ -91,6 +92,7 @@ public class UnusedAndVersionOptService {
             if (!replaceFamily.contains(currentFamily)) {
 
                 if (os != null) {
+                    //해당 os를 지원하는 인스턴스인지 찾아줌
                     if (os.equals(InstanceSqlType.LINUX)) {
                         if (ait.getOdLinuxPricing() != null) {
                             if (ait.getOdLinuxPricing() < currentInstanceType.getOdLinuxPricing()) {
@@ -211,6 +213,7 @@ public class UnusedAndVersionOptService {
         List<GetUnusedInstanceOptResponse> unusedResults = new ArrayList<>();
         List<GetModernInstanceOptResponse> outdatedResults = new ArrayList<>();
 
+        // 인스턴스 정보 조회
         List<Instance> instances = ec2Desc.getInstanceDesc(ec2, null);
 
         if (instances != null && !instances.isEmpty()) {
@@ -222,7 +225,7 @@ public class UnusedAndVersionOptService {
                 String lifeCycle = i.instanceLifecycle() == InstanceLifecycleType.SPOT ? "spot" : "on-demand";
                 String resourceName = ec2Desc.getResourceName(i.tags());
 
-                // Unused instances collector
+                // Unused instances collector  미사용 인스턴스 조회
                 if (i.state().name().equals(InstanceStateName.STOPPED)) {
 
                     Float savings = getInstanceMonthlySavings(lifeCycle, i.instanceTypeAsString(), regionId, os,
@@ -234,6 +237,7 @@ public class UnusedAndVersionOptService {
                             credential.getAccountId(), resourceName, reason, savings, lifeCycle));
                 }
 
+                //현 인스턴스 유형 정보 조회
                 AwsInstanceType currentInstanceType = awsInstanceTypeRepo
                         .findByRegionAndInstanceType(regionId, i.instanceTypeAsString()).orElse(null);
 
@@ -245,12 +249,14 @@ public class UnusedAndVersionOptService {
                     String reason = "Outdated Resource Type";
 
                     if (instanceTypeSplit.length >= 2) {
-                        size = instanceTypeSplit[1];
-                        generation = instanceTypeSplit[0];
+                        size = instanceTypeSplit[1];  // micro, small, medium
+                        generation = instanceTypeSplit[0]; // t2, t3, c5
                     }
 
+                    // 현 세대를 전달 후 한세대 오려서 값을 받는다 t2 -> t3
                     String targetGen = raiseGeneration(generation);
 
+                    // 조회한 세대가 실제로 있는지 찾아봄
                     SearchBuilder<AwsInstanceType> searchBuilder = new SearchBuilder<>();
                     searchBuilder.with("region", SearchOperationType.EQUAL, regionId);
                     searchBuilder.with("instanceType", SearchOperationType.CONTAINS_IGNORE_CASE, size);
@@ -263,7 +269,9 @@ public class UnusedAndVersionOptService {
                                 awsInsTypes, architecture);
 
                         if (recommendation != null) {
+                            // 원가
                             Float originMntlyCost = 0f;
+                            // 추천 가격
                             Float recommendedMntlyCost = 0f;
 
                             if (os != null) {
@@ -307,8 +315,9 @@ public class UnusedAndVersionOptService {
         if (!mergedCpuUsageData.isEmpty()) {
             if (!rstRequest.getAvgCpu().isNaN() && rstRequest.getAvgCpu() != null && rstRequest.getAvgCpu() > 0) {
 
+                // 평균 cpu 사용량 맵핑
                 Map<String, Double> avgCpuMap = getAvgStatistics(mergedCpuUsageData, "avg");
-
+                // 평균 맵핑의 평균치 구함
                 avgCpu = usageService.getAvgUsage(avgCpuMap, from, to);
 
             }
@@ -467,6 +476,7 @@ public class UnusedAndVersionOptService {
         return results;
     }
 
+    // 바꿔야 할 경우 사이즈 한단계 낮춰서 비용 비교 후 추천 전달
     public GetInstanceRightSizeOptResponse getRecommendedInstanceType(ResourceUsage usage)
             throws JsonMappingException, JsonProcessingException {
         GetInstanceRightSizeOptResponse rightSizeResult = null;

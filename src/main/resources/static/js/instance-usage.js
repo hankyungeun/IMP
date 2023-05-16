@@ -1,3 +1,4 @@
+//인스턴스사용량가져오기
 $(function(){
     resource_list();
 });

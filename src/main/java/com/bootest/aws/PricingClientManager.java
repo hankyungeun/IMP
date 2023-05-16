@@ -17,6 +17,7 @@ import software.amazon.awssdk.services.pricing.PricingClient;
 @Component
 public class PricingClientManager {
 
+    //특정 계정에 대한 Pricing클라이언트를 반환
     public PricingClient getPricingClient(Account account) {
         Map<String, PricingClient> clients = new HashMap<String, PricingClient>();
         if (clients.isEmpty()) {

@@ -35,6 +35,8 @@ public class InstanceController {
     private final StorageAssociationRepo storageAssociationRepo;
 
     @GetMapping
+//    /디비에 저장된 인스턴스 목록을 가져온다
+    //인스턴스 아이디로 필터링 가능
     public List<InstanceReco> findAll(
             @RequestParam(name = "instanceId", required = false) String instanceId) {
         SearchBuilder<InstanceReco> searchBuilder = SearchBuilder.builder();
@@ -48,6 +50,7 @@ public class InstanceController {
         return result;
     }
 
+    //아마존으로부터 DescribeInstancesRequest api를 사용해 인스턴스 목록을 디비에 저장한다
     @GetMapping("/get")
     public void save() {
         String nextToken = null;
@@ -62,12 +65,11 @@ public class InstanceController {
 
             Ec2Client ec2 = ec2cm.getEc2WithAccount(region, account);
 
-            DescribeInstancesRequest request = DescribeInstancesRequest.builder()
-                    .maxResults(100)
-                    .nextToken(nextToken)
-                    .build();
-
             do {
+                DescribeInstancesRequest request = DescribeInstancesRequest.builder()
+                        .maxResults(100)
+                        .nextToken(nextToken)
+                        .build();
 
                 DescribeInstancesResponse res = ec2.describeInstances(request);
 

@@ -1,3 +1,4 @@
+// 사용 인스턴스 / 볼륨 목록get
 $(function(){
     volume_list();
     instance_list();

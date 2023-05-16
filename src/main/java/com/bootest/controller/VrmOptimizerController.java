@@ -40,6 +40,7 @@ public class VrmOptimizerController {
     private final AccountRepo accountRepo;
 
     @GetMapping
+    //사용하지 않는 인스턴스, 버전 관리가 필요한 인스턴스 조회
     public ResponseEntity<ResultObject> findAllOptimizable(@RequestParam String accountId,
             @RequestParam String regionId) throws InterruptedException, IOException, ExecutionException {
         ResultObject result = new ResultObject();
@@ -65,6 +66,7 @@ public class VrmOptimizerController {
     public ResponseEntity<ResultObject> findRightSizeOptimizable(
             @RequestParam String accountId,
             @RequestParam String regionId,
+            // 비교일
             @RequestParam(required = false) Integer days,
             @RequestBody RightSizeThresholdRequest request)
             throws InterruptedException, ExecutionException, IOException {
@@ -94,6 +96,7 @@ public class VrmOptimizerController {
     }
 
     @PostMapping
+    // 요청시 추천 사항대로 적용
     public ResponseEntity<ResultObject> optimize(@RequestBody OptimizationRequestFormDto temp)
             throws JsonParseException, JsonMappingException, IOException, InterruptedException {
         ResultObject result = new ResultObject();

@@ -15,6 +15,7 @@ import software.amazon.awssdk.services.ec2.Ec2Client;
 
 @Slf4j
 @Component
+//ec2서비스와 상호작용하기위한 ec2클라이언트를 관리
 public class Ec2ClientManager {
 
     public Ec2Client getEc2WithAccount(Region region, Account account) {

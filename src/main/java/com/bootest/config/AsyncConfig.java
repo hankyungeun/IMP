@@ -9,6 +9,7 @@ import org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor;
 
 @Configuration
 @EnableAsync
+//비동기처리
 public class AsyncConfig {
 
     @Bean(name = "threadPoolTaskExecutor")
