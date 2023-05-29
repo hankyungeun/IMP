@@ -30,6 +30,7 @@ import software.amazon.awssdk.services.pricing.model.*;
 @Slf4j
 @RequiredArgsConstructor
 @Service
+//온디맨드 가격 정보를 조회하는 서비스
 public class FindOnDemandPrice {
 
         private final AccountRepo accountRepo;
@@ -49,6 +50,8 @@ public class FindOnDemandPrice {
          * @return
          * @throws Exception
          */
+
+        //특정 지역과 계정에 대한 온디맨드 인스턴스의 가격 정보 조회
         public List<InstanceTypeSpecDto> getAllOdPrice(String regionCode, Account account, String os) throws Exception {
 
                 List<InstanceTypeSpecDto> results = new ArrayList<>();

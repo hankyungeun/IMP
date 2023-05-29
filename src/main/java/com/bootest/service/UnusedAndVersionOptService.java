@@ -495,7 +495,7 @@ public class UnusedAndVersionOptService {
             searchBuilder.with("memoryGib", SearchOperationType.LESS_THAN_OR_EQUAL, currentInstancetype.getMemoryGib());
 
             if (currentInstancetype.getOdLinuxPricing() != null) {
-                searchBuilder.with("linuxPricing", SearchOperationType.LESS_THAN,
+                searchBuilder.with("odLinuxPricing", SearchOperationType.LESS_THAN,
                         currentInstancetype.getOdLinuxPricing());
             }
 

@@ -95,7 +95,6 @@ public class InstanceTask {
                     }
 
                     for (Instance i : instances) {
-                        // 각 항목에 맞게 cpu, net in/out 사용량을 조회 후 avg, min, max 로 나눠 DTO 에 담는다
                         MetricStatisticDto cpu = getUsageMetricStatistics(cwc, i.instanceId(), startTime, endTime,
                                 "CPUUtilization");
                         MetricStatisticDto netIn = getUsageMetricStatistics(cwc, i.instanceId(), startTime, endTime,

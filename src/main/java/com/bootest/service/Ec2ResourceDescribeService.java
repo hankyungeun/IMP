@@ -5,6 +5,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
+import java.util.stream.Collectors;
 
 import org.springframework.stereotype.Service;
 
@@ -206,15 +207,16 @@ public class Ec2ResourceDescribeService {
 
         String nextToken = null;
 
-        DescribeInstancesRequest.Builder requestBuilder = DescribeInstancesRequest.builder()
-                .nextToken(nextToken);
-
-        if (id != null) {
-            requestBuilder.instanceIds(id);
-        }
-
         try {
             do {
+
+                DescribeInstancesRequest.Builder requestBuilder = DescribeInstancesRequest.builder()
+                        .nextToken(nextToken);
+
+                if (id != null) {
+                    requestBuilder.instanceIds(id);
+                }
+
                 DescribeInstancesResponse response = ec2.describeInstances(requestBuilder.build());
 
                 for (Reservation r : response.reservations()) {
