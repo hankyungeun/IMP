@@ -21,6 +21,9 @@ public class InstanceReco {
     @Column(nullable = false, length = 36)
     private String id;
 
+    @Column(name = "account_id", nullable = false, length = 30)
+    private String accountId;
+
     @Column(name = "instance_id", nullable = false, length = 30)
     private String instanceId;
 

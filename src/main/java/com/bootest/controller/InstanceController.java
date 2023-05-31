@@ -1,7 +1,9 @@
 package com.bootest.controller;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
+import java.util.stream.Collectors;
 
 import com.bootest.aws.Ec2ClientManager;
 import com.bootest.model.*;
@@ -24,6 +26,8 @@ import software.amazon.awssdk.services.ec2.model.InstanceBlockDeviceMapping;
 import software.amazon.awssdk.services.ec2.model.Reservation;
 import software.amazon.awssdk.services.ec2.model.Tag;
 
+import javax.servlet.http.HttpServletRequest;
+
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/instance")
@@ -35,11 +39,24 @@ public class InstanceController {
     private final StorageAssociationRepo storageAssociationRepo;
 
     @GetMapping
-//    /디비에 저장된 인스턴스 목록을 가져온다
+    //디비에 저장된 인스턴스 목록을 가져온다
     //인스턴스 아이디로 필터링 가능
     public List<InstanceReco> findAll(
+            HttpServletRequest request,
             @RequestParam(name = "instanceId", required = false) String instanceId) {
         SearchBuilder<InstanceReco> searchBuilder = SearchBuilder.builder();
+
+        User user = (User) request.getSession().getAttribute("loginUser");
+
+        List<Account> accounts = new ArrayList<>();
+
+        if (user != null) {
+            accounts.addAll(user.getAccounts());
+        }
+
+        if (!accounts.isEmpty()) {
+            searchBuilder.with("accountId", SearchOperationType.EQUAL, accounts.stream().map(Account::getAccountId).collect(Collectors.toSet()));
+        }
 
         if (instanceId != null) {
             searchBuilder.with("volumeId", SearchOperationType.EQUAL, instanceId);

@@ -5,6 +5,7 @@ package com.bootest.controller;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
+import java.util.stream.Collectors;
 
 import com.bootest.aws.Ec2ClientManager;
 import com.bootest.dto.volume.AttachmentDataDto;
@@ -26,6 +27,8 @@ import software.amazon.awssdk.services.ec2.model.DescribeVolumesResponse;
 import software.amazon.awssdk.services.ec2.model.Volume;
 import software.amazon.awssdk.services.ec2.model.VolumeAttachment;
 
+import javax.servlet.http.HttpServletRequest;
+
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/volume")
@@ -38,8 +41,21 @@ public class VolumeController {
 
     @GetMapping
     public List<RecoVolume> findAll(
+            HttpServletRequest request,
             @RequestParam(name = "volumeId", required = false) String volumeId) {
         SearchBuilder<RecoVolume> searchBuilder = SearchBuilder.builder();
+
+        User user = (User) request.getSession().getAttribute("loginUser");
+
+        List<Account> accounts = new ArrayList<>();
+
+        if (user != null) {
+            accounts.addAll(user.getAccounts());
+        }
+
+        if (!accounts.isEmpty()) {
+            searchBuilder.with("accountId", SearchOperationType.EQUAL, accounts.stream().map(Account::getAccountId).collect(Collectors.toSet()));
+        }
 
         if (volumeId != null) {
             searchBuilder.with("volumeId", SearchOperationType.CONTAINS_IGNORE_CASE, volumeId);
