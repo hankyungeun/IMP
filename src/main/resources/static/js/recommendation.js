@@ -10,7 +10,7 @@ let accountId;
 let outDatedInstancesResult;
 let outDatedInstancesContents;
 let unusedInstancesResult;
-let unusedInstancesContents;
+let unusedInstancesContents = [];
 
 function getAccount() {
     $.ajax({
@@ -37,6 +37,7 @@ function getAccount() {
                 success: function (result) {
                     console.log("계정 아이디 : " + accountId)
                     console.log("지역 : " + regionId)
+                    console.log(result.data[0])
                     console.log(result.data[0].instanceOptResponse.outDatedInstances[0])
                     console.log(result.data[0].instanceOptResponse.unusedInstances[0])
                     // recommendContents = result.data[0].instanceOptResponse.outDatedInstances
@@ -50,13 +51,13 @@ function getAccount() {
                         outDatedInstancesResult = ("인스턴스가 최신입니다")
                     }
 
-                    if(result.data[0].instanceOptResponse.unusedInstances != null){
-                        unusedInstancesResult = ("미사용 인스턴스 있음")
-                        unusedInstancesContents = ("삭제시 절약 가능 비용 : " + result.data[0].instanceOptResponse.unusedInstances[0].estimatedMonthlySavings + "$")
+                    if(result.data[0].instanceOptResponse.unusedInstances == null || result.data[0].instanceOptResponse.unusedInstances == ''){
+                        unusedInstancesResult = ("모든 인스턴스 사용중")
                     }
 
                     else{
-                        unusedInstancesResult = ("모든 인스턴스 사용중")
+                        unusedInstancesResult = ("미사용 인스턴스 있음")
+                        unusedInstancesContents = ("삭제시 절약 가능 비용 : " + result.data[0].instanceOptResponse.unusedInstances[0].estimatedMonthlySavings + "$")
                     }
 
                     $.ajax({

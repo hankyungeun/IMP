@@ -226,7 +226,7 @@ public class UnusedAndVersionOptService {
                 String resourceName = ec2Desc.getResourceName(i.tags());
 
                 // Unused instances collector  미사용 인스턴스 조회
-                if (i.state().name().equals(InstanceStateName.STOPPED)) {
+                if (i.state().name().equals(InstanceStateName.STOPPED) && os != null) {
 
                     Float savings = getInstanceMonthlySavings(lifeCycle, i.instanceTypeAsString(), regionId, os,
                             i.placement().availabilityZone());

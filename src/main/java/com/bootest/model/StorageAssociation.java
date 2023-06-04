@@ -18,13 +18,13 @@ import lombok.Data;
 public class StorageAssociation {
 
     @Id
-    @Column(nullable = false, length = 36)
+    @Column(name = "id", nullable = false, length = 36)
     private String id;
 
-    @Column(nullable = false, length = 30)
+    @Column(name = "instance_id",nullable = false, length = 30)
     private String instanceId;
 
-    @Column(nullable = false, length = 30)
+    @Column(name = "volume_id",nullable = false, length = 30)
     private String volumeId;
 
     @CreationTimestamp

@@ -1,6 +1,7 @@
 package com.bootest.controller;
 
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -36,6 +37,7 @@ import lombok.RequiredArgsConstructor;
 
 import javax.servlet.http.HttpServletRequest;
 
+
 @RequiredArgsConstructor
 @RestController
 @RequestMapping("/usage")
@@ -61,6 +63,9 @@ public class ResourceUsageController {
             @RequestParam(required = false) String dateFrom,
             @RequestParam(required = false) String dateTo) throws JsonMappingException, JsonProcessingException {
         SearchBuilder<ResourceUsage> searchBuilder = SearchBuilder.builder();
+
+        dateFrom = "2022-01-01";
+        dateTo = "2023-12-31";
 
         User user = (User) request.getSession().getAttribute("loginUser");
 
@@ -128,6 +133,7 @@ public class ResourceUsageController {
 
         List<ResourceUsage> usages = resourceUsageRepo.findAll(searchBuilder.build());
 
+
         return service.getAllAvgByMonth(dateFrom, dateTo, usages);
     }
 
@@ -145,7 +151,7 @@ public class ResourceUsageController {
             @RequestParam(required = false) String instanceType,
             @RequestParam(required = false) UsageDataType dataType) throws JsonMappingException, JsonProcessingException {
         SearchBuilder<ResourceUsage> searchBuilder = SearchBuilder.builder();
-        String dateFrom = "2023-01-01";
+        String dateFrom = "2022-01-01";
         String dateTo = "2023-12-31";
 
         User user = (User) request.getSession().getAttribute("loginUser");
@@ -277,7 +283,6 @@ public class ResourceUsageController {
         return state;
     }
 
-    // ip 주소/usages/summaries?param이름=skdflksj
     @GetMapping("/summaries")
     public ResponseEntity<ResultObject> getSummaries(
             HttpServletRequest request,
@@ -287,11 +292,6 @@ public class ResourceUsageController {
         ResultObject result = new ResultObject();
 
         SearchBuilder<ResourceUsage> searchBuilder = SearchBuilder.builder();
-
-        // 날짜 파라미터로 전달 하도록 완성되면 지우기!!!!!
-        dateFrom = "2023-01-01";
-        dateTo = "2023-12-31";
-        // 여기까지
 
         User user = (User) request.getSession().getAttribute("loginUser");
 
@@ -340,19 +340,19 @@ public class ResourceUsageController {
             List<StatisticDataValueDto> data = avgStat.getData();
 
             if (usage.getDataType().equals(UsageDataType.CPU)) {
-                cpuDailyAvgs.putAll(getDailyAverage(data));
+                cpuDailyAvgs.putAll(getDailyAverage(data, dateFrom, dateTo));
                 for (StatisticDataValueDto stat : data) {
                     totalAvgCpu += stat.getValue().floatValue();
                     cpuCnt++;
                 }
             } else if (usage.getDataType().equals(UsageDataType.NET_IN)) {
-                netInDailyAvgs.putAll(getDailyAverage(data));
+                netInDailyAvgs.putAll(getDailyAverage(data, dateFrom, dateTo));
                 for (StatisticDataValueDto stat : data) {
                     totalAvgNetIn += stat.getValue().floatValue();
                     netInCnt++;
                 }
             } else if (usage.getDataType().equals(UsageDataType.NET_OUT)) {
-                netOutDailyAvgs.putAll(getDailyAverage(data));
+                netOutDailyAvgs.putAll(getDailyAverage(data, dateFrom, dateTo));
                 for (StatisticDataValueDto stat : data) {
                     totalAvgNetOut += stat.getValue().floatValue();
                     netOutCnt++;
@@ -367,7 +367,10 @@ public class ResourceUsageController {
         return new ResponseEntity<ResultObject>(result, HttpStatus.OK);
     }
 
-    public Map<String, Float> getDailyAverage(List<StatisticDataValueDto> usageData) {
+    public Map<String, Float> getDailyAverage(List<StatisticDataValueDto> usageData, String dateFrom, String dateTo) {
+
+        LocalDate start = LocalDate.parse(dateFrom, DateTimeFormatter.ISO_DATE);
+        LocalDate end = LocalDate.parse(dateTo, DateTimeFormatter.ISO_DATE);
 
         Map<String, Float> dateAndUsages = new TreeMap<>();
         Map<String, Float> dateAndCounts = new TreeMap<>();
@@ -386,16 +389,20 @@ public class ResourceUsageController {
 
             if (date != null) {
 
-                if (dateAndUsages.containsKey(date)) {
-                    usage += usage + dateAndUsages.get(date);
-                }
+                LocalDate toDate = LocalDate.parse(date, DateTimeFormatter.ISO_DATE);
 
-                if (dateAndCounts.containsKey(date)) {
-                    cnt += cnt + dateAndCounts.get(date);
-                }
+                if (toDate.isAfter(start.minusDays(1)) && toDate.isBefore(end.plusDays(1))) {
+                    if (dateAndUsages.containsKey(date)) {
+                        usage += usage + dateAndUsages.get(date);
+                    }
 
-                dateAndUsages.put(date, usage);
-                dateAndCounts.put(date, cnt);
+                    if (dateAndCounts.containsKey(date)) {
+                        cnt += cnt + dateAndCounts.get(date);
+                    }
+
+                    dateAndUsages.put(date, usage);
+                    dateAndCounts.put(date, cnt);
+                }
             }
         }
 

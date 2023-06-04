@@ -223,6 +223,7 @@ var chartArea = {
           let memMap = new Map();
 
           //if(obj.cpuAvg.length =! obj.diskAvg.length){
+          console.log(obj.cpuAvg)
             for(var i=0; i < obj.cpuAvg.length; i++){
               dates.push(obj.cpuAvg[i].time);
             }

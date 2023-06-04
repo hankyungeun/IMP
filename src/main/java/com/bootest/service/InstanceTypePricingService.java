@@ -16,7 +16,7 @@ public class InstanceTypePricingService {
         InstanceSqlType result = null;
 
         for (InstanceOperationType iot : InstanceOperationType.values()) {
-            if (iot.getValue().equals(instanceUsageOperation)) {
+            if (iot.getValue().equals(instanceUsageOperation) && !iot.toString().equals("RHEL_HA")) {
                 result = InstanceSqlType.valueOf(iot.toString());
             }
         }

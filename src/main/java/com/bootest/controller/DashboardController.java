@@ -18,8 +18,11 @@ import software.amazon.awssdk.services.ec2.Ec2Client;
 import software.amazon.awssdk.services.ec2.model.VolumeType;
 
 import javax.servlet.http.HttpServletRequest;
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 import java.util.concurrent.CompletableFuture;
+import java.util.stream.Collectors;
 
 @RequiredArgsConstructor
 @RestController
@@ -32,12 +35,22 @@ public class DashboardController {
     private final AwsServicePricingRepo awsServicePricingRepo;
 
     @GetMapping
-    public ResponseEntity<ResultObject> getOverview() {
+    public ResponseEntity<ResultObject> getOverview(HttpServletRequest request) {
         ResultObject result = new ResultObject();
         Float moCost = 0f;
 
-        List<InstanceReco> irs = instanceRecoRepo.findAll();
-        List<RecoVolume> vols = recoVolumeRepo.findAll();
+        User user = (User) request.getSession().getAttribute("loginUser");
+
+        List<Account> accounts = new ArrayList<>();
+
+        if (user != null) {
+            accounts.addAll(user.getAccounts());
+        }
+
+        Set<String> accountIds = accounts.stream().map(Account::getAccountId).collect(Collectors.toSet());
+
+        List<InstanceReco> irs = instanceRecoRepo.findAllByAccountIdIn(accountIds);
+        List<RecoVolume> vols = recoVolumeRepo.findAllByAccountIdIn(accountIds);
 
         for (InstanceReco ir : irs) {
             String region = ir.getAvailabilityZone().substring(0, ir.getAvailabilityZone().length() - 1);
