@@ -35,36 +35,6 @@ public class Ec2ResourceDescribeService {
         return filters;
     }
 
-//    public List<TagDescription> getTagDesc(Ec2Client ec2, String instanceId, Boolean getName) {
-//
-//        DescribeTagsRequest.Builder requestBuilder = DescribeTagsRequest.builder();
-//
-//        List<Filter> filters = new ArrayList<>();
-//
-//        if (instanceId != null) {
-//            filters.add(Filter.builder().name("resource-id").values(instanceId).build());
-//        }
-//
-//        if (getName == true) {
-//            filters.add(Filter.builder().name("key").values("Name").build());
-//        }
-//
-//        if (!filters.isEmpty()) {
-//            requestBuilder.filters(filters);
-//        }
-//
-//        try {
-//
-//            DescribeTagsResponse response = ec2.describeTags(requestBuilder.build());
-//
-//            return response.tags();
-//
-//        } catch (Exception e) {
-//            log.error("Tags Not Found. Message: {}", e.getMessage());
-//            return null;
-//        }
-//    }
-//
     public List<Instance> getInstanceDesc(Ec2Client ec2, String id) {
 
         List<Instance> results = new ArrayList<>();
