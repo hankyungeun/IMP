@@ -32,7 +32,6 @@ public class SwaggerConfig {
 
     }
 
-    // http://minsoo.gytni.com/swagger-ui.html
     private ApiInfo apiInfo() {
         return new ApiInfo(
                 "VRM Rest API",

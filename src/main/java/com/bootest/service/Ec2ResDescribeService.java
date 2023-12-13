@@ -36,13 +36,6 @@ public class Ec2ResDescribeService {
         return filters;
     }
 
-    /**
-     * 인스턴스 상세정보 요청 획득
-     * 
-     * @param ec2
-     * @param id
-     * @return 1개 이상의 Instance 상세정보 리스트
-     */
     public List<Instance> getInstanceDesc(Ec2Client ec2, String id) {
 
         List<Instance> results = new ArrayList<>();
@@ -74,15 +67,6 @@ public class Ec2ResDescribeService {
         return results;
     }
 
-    /**
-     * 볼륨 Id 및 인스턴스 상세정보에 따른 볼륨 상세 정보 획득
-     * 
-     * @author Minsoo
-     * @param ec2
-     * @param volId
-     * @param instance
-     * @return 1개 이상의 Volume 상세정보 리스트
-     */
     public List<Volume> getVolumeDesc(Ec2Client ec2, String volId, Instance instance) {
 
         List<Volume> results = new ArrayList<>();

@@ -47,14 +47,6 @@ public class VolumeService {
                 temp.getSize(), temp.getThroughput());
     }
 
-    /**
-     * Request to delete a specified volume with id.
-     * 
-     * @author minsoo
-     * @param ec2
-     * @param volumeId
-     * @return
-     */
     public ResultObject deleteVolume(
             Ec2Client ec2,
             String volumeId) {

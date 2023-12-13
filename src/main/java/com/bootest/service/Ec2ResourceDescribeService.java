@@ -35,52 +35,36 @@ public class Ec2ResourceDescribeService {
         return filters;
     }
 
-    /**
-     * 태그 상세정보 획득
-     * 
-     * @param ec2
-     * @param instanceId
-     * @param getName
-     * @return 1 개 이상의 Tag 상세정보 List
-     */
-    public List<TagDescription> getTagDesc(Ec2Client ec2, String instanceId, Boolean getName) {
-
-        DescribeTagsRequest.Builder requestBuilder = DescribeTagsRequest.builder();
-
-        List<Filter> filters = new ArrayList<>();
-
-        if (instanceId != null) {
-            filters.add(Filter.builder().name("resource-id").values(instanceId).build());
-        }
-
-        if (getName == true) {
-            filters.add(Filter.builder().name("key").values("Name").build());
-        }
-
-        if (!filters.isEmpty()) {
-            requestBuilder.filters(filters);
-        }
-
-        try {
-
-            DescribeTagsResponse response = ec2.describeTags(requestBuilder.build());
-
-            return response.tags();
-
-        } catch (Exception e) {
-            log.error("Tags Not Found. Message: {}", e.getMessage());
-            return null;
-        }
-    }
-
-
-    /**
-     * 인스턴스 상세정보 요청 획득
-     * 
-     * @param ec2
-     * @param id
-     * @return 1개 이상의 Instance 상세정보 리스트
-     */
+//    public List<TagDescription> getTagDesc(Ec2Client ec2, String instanceId, Boolean getName) {
+//
+//        DescribeTagsRequest.Builder requestBuilder = DescribeTagsRequest.builder();
+//
+//        List<Filter> filters = new ArrayList<>();
+//
+//        if (instanceId != null) {
+//            filters.add(Filter.builder().name("resource-id").values(instanceId).build());
+//        }
+//
+//        if (getName == true) {
+//            filters.add(Filter.builder().name("key").values("Name").build());
+//        }
+//
+//        if (!filters.isEmpty()) {
+//            requestBuilder.filters(filters);
+//        }
+//
+//        try {
+//
+//            DescribeTagsResponse response = ec2.describeTags(requestBuilder.build());
+//
+//            return response.tags();
+//
+//        } catch (Exception e) {
+//            log.error("Tags Not Found. Message: {}", e.getMessage());
+//            return null;
+//        }
+//    }
+//
     public List<Instance> getInstanceDesc(Ec2Client ec2, String id) {
 
         List<Instance> results = new ArrayList<>();
@@ -113,15 +97,7 @@ public class Ec2ResourceDescribeService {
         return results;
     }
 
-    /**
-     * 볼륨 Id 및 인스턴스 상세정보에 따른 볼륨 상세 정보 획득
-     * 
-     * @author Minsoo
-     * @param ec2
-     * @param volId
-     * @param instance
-     * @return 1개 이상의 Volume 상세정보 리스트
-     */
+
     public List<Volume> getVolumeDesc(Ec2Client ec2, String volId, Instance instance) {
 
         List<Volume> results = new ArrayList<>();
@@ -159,61 +135,54 @@ public class Ec2ResourceDescribeService {
         return results;
     }
 
-    public List<SecurityGroupRule> getSecurityGroupRuleDesc(Ec2Client ec2, String ruleId, String groupId) {
+//    public List<SecurityGroupRule> getSecurityGroupRuleDesc(Ec2Client ec2, String ruleId, String groupId) {
+//
+//        List<SecurityGroupRule> results = new ArrayList<>();
+//
+//        String nextToken = null;
+//
+//        DescribeSecurityGroupRulesRequest.Builder requestBuilder = DescribeSecurityGroupRulesRequest.builder()
+//                .nextToken(nextToken);
+//
+//        if (ruleId != null) {
+//            requestBuilder.securityGroupRuleIds(ruleId);
+//        }
+//
+//        if (groupId != null) {
+//            Map<String, String> filterMap = new HashMap<>();
+//            filterMap.put("group-id", groupId);
+//
+//            requestBuilder.filters(getFilters(filterMap));
+//        }
+//
+//        try {
+//            do {
+//                DescribeSecurityGroupRulesResponse response = ec2.describeSecurityGroupRules(requestBuilder.build());
+//
+//                for (SecurityGroupRule sgr : response.securityGroupRules()) {
+//                    results.add(sgr);
+//                }
+//                nextToken = response.nextToken();
+//            } while (nextToken != null);
+//        } catch (Exception e) {
+//            log.error("Security Group Rules Not Found. Message: {}", e.getMessage());
+//            return null;
+//        }
+//        return results;
+//    }
 
-        List<SecurityGroupRule> results = new ArrayList<>();
-
-        String nextToken = null;
-
-        DescribeSecurityGroupRulesRequest.Builder requestBuilder = DescribeSecurityGroupRulesRequest.builder()
-                .nextToken(nextToken);
-
-        if (ruleId != null) {
-            requestBuilder.securityGroupRuleIds(ruleId);
-        }
-
-        if (groupId != null) {
-            Map<String, String> filterMap = new HashMap<>();
-            filterMap.put("group-id", groupId);
-
-            requestBuilder.filters(getFilters(filterMap));
-        }
-
-        try {
-            do {
-                DescribeSecurityGroupRulesResponse response = ec2.describeSecurityGroupRules(requestBuilder.build());
-
-                for (SecurityGroupRule sgr : response.securityGroupRules()) {
-                    results.add(sgr);
-                }
-                nextToken = response.nextToken();
-            } while (nextToken != null);
-        } catch (Exception e) {
-            log.error("Security Group Rules Not Found. Message: {}", e.getMessage());
-            return null;
-        }
-        return results;
-    }
-
-    /**
-     * Get a list of mapping that consists of Volume Id and Device name.
-     * 
-     * @author minsoo
-     * @param instances
-     * @return {volumeId, deviceName}, ...
-     */
-    public Map<String, String> getVolIdNDevName(Instance instance) {
-
-        log.info("Begin Volume Mapping Request instanceId: {}", instance.instanceId());
-
-        Map<String, String> results = new HashMap<>();
-
-        for (InstanceBlockDeviceMapping ibdm : instance.blockDeviceMappings()) {
-            results.put(ibdm.ebs().volumeId(), ibdm.deviceName());
-        }
-        log.info("Volume Mapping Request Complete instanceId: {}", instance.instanceId());
-        return results;
-    }
+//    public Map<String, String> getVolIdNDevName(Instance instance) {
+//
+//        log.info("Begin Volume Mapping Request instanceId: {}", instance.instanceId());
+//
+//        Map<String, String> results = new HashMap<>();
+//
+//        for (InstanceBlockDeviceMapping ibdm : instance.blockDeviceMappings()) {
+//            results.put(ibdm.ebs().volumeId(), ibdm.deviceName());
+//        }
+//        log.info("Volume Mapping Request Complete instanceId: {}", instance.instanceId());
+//        return results;
+//    }
 
     public String getResourceName(List<Tag> tags) {
         String name = null;
